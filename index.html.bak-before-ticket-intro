@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>奧捷耶誕跨年隨身攻略｜12 天 11 夜 · 結婚三周年</title>
+<meta name="description" content="布拉格 → 薩爾斯堡 → 茵斯布魯克 → 布拉格：耶誕市集 × 滑雪 × 跨年煙火，2026 聖誕季自由行隨身攻略。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+/* ============ 基礎 ============ */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a101d; --bg2:#0d1526; --card:#111c33; --card2:#15233e;
+  --line:#233457; --ink:#e9eefb; --muted:#9aa8c7; --dim:#6d7c9d;
+  --gold:#e8b45c; --gold2:#f5d194; --red:#e0525e; --green:#57b98a; --blue:#6fb3e0;
+  --radius:16px; --radius-s:10px;
+  --shadow:0 8px 28px rgba(2,6,18,.5);
+}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--topH,41px) + 64px)}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  line-height:1.75; letter-spacing:.02em; -webkit-font-smoothing:antialiased;
+}
+a{color:var(--gold);text-decoration:none}
+a:hover{color:var(--gold2);text-decoration:underline}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+h1,h2,h3,.serif{font-family:"Noto Serif TC","PingFang TC",serif}
+::selection{background:rgba(232,180,92,.35)}
+
+/* ============ 頂部狀態列 ============ */
+#topbar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(10,16,29,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+  font-size:13px;
+}
+#topbar .inner{max-width:980px;margin:0 auto;padding:8px 20px;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;justify-content:space-between}
+#topbar .grp{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block;margin-right:6px;box-shadow:0 0 8px var(--green)}
+.dot.off{background:var(--red);box-shadow:0 0 8px var(--red)}
+#nextKey b{color:var(--gold2)}
+#nextKey .cd{font-variant-numeric:tabular-nums;color:var(--ink);font-weight:700}
+.updated{color:var(--dim)}
+
+/* ============ Hero ============ */
+#hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(1200px 500px at 80% -10%, rgba(224,82,94,.22), transparent 60%),
+    radial-gradient(900px 420px at 10% 110%, rgba(111,179,224,.14), transparent 60%),
+    linear-gradient(180deg,#0d1526 0%, #0a101d 100%);
+  border-bottom:1px solid var(--line);
+  text-align:center;padding:64px 20px 52px;
+}
+#hero .badge{
+  display:inline-block;font-size:12px;letter-spacing:.32em;color:var(--gold);
+  border:1px solid rgba(232,180,92,.4);border-radius:999px;padding:6px 18px 6px 22px;
+  background:rgba(232,180,92,.07);margin-bottom:22px;font-weight:500;
+}
+#hero h1{font-size:clamp(30px,6vw,52px);font-weight:900;line-height:1.28;margin-bottom:14px}
+#hero h1 .heart{color:var(--red)}
+#hero .sub{color:var(--muted);font-size:clamp(14px,2.4vw,17px);margin-bottom:26px}
+#hero .sub b{color:var(--gold2);font-weight:700}
+#hero .chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+#hero .chip{
+  font-size:13px;padding:6px 14px;border-radius:999px;border:1px solid var(--line);
+  background:rgba(17,28,51,.7);color:var(--muted);
+}
+#hero .chip.red{border-color:rgba(224,82,94,.45);color:#f0a3ab;background:rgba(224,82,94,.1)}
+/* 雪 */
+.snow{position:absolute;inset:0;pointer-events:none;opacity:.5}
+.snow i{
+  position:absolute;top:-12px;border-radius:50%;background:#fff;
+  animation:fall linear infinite;font-style:normal;
+}
+@keyframes fall{to{transform:translateY(112vh)}}
+@keyframes drift{0%{transform:translateX(0)}50%{transform:translateX(26px)}100%{transform:translateX(0)}}
+.snow i{animation:fall linear infinite, drift ease-in-out infinite}
+
+/* ============ 日期分頁 ============ */
+#daytabs{
+  position:sticky;top:var(--topH,41px);z-index:49;
+  background:rgba(10,16,29,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+#daytabs .scroll{max-width:980px;margin:0 auto;display:flex;gap:8px;overflow-x:auto;padding:10px 20px;scrollbar-width:thin}
+#daytabs button{
+  flex:0 0 auto;border:1px solid var(--line);background:var(--card);color:var(--muted);
+  border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;font-family:inherit;
+  white-space:nowrap;transition:.18s;
+}
+#daytabs button b{color:var(--ink);font-weight:700;margin-right:4px}
+#daytabs button:hover{border-color:var(--gold);color:var(--gold2)}
+#daytabs button.on{background:linear-gradient(135deg,rgba(232,180,92,.2),rgba(232,180,92,.08));border-color:var(--gold);color:var(--gold2)}
+#daytabs button.on b{color:var(--gold2)}
+
+/* ============ 摘要卡片 ============ */
+section.block{padding:44px 0 8px}
+.sec-head{text-align:center;margin-bottom:26px}
+.sec-head .eyebrow{font-size:12px;letter-spacing:.3em;color:var(--gold);font-weight:700;margin-bottom:8px}
+.sec-head h2{font-size:clamp(22px,4vw,30px);font-weight:900}
+.sec-head p{color:var(--muted);font-size:14px;margin-top:8px}
+.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px}
+.panel{
+  background:linear-gradient(180deg,var(--card2),var(--card));
+  border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;box-shadow:var(--shadow);
+}
+.panel h3{font-size:17px;margin-bottom:14px;color:var(--gold2);display:flex;align-items:center;gap:8px}
+.panel .flight-row{display:flex;align-items:center;gap:12px;background:rgba(10,16,29,.5);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:10px}
+.panel .flight-row .dir{flex:1}
+.panel .flight-row .route{font-weight:700;font-size:15px}
+.panel .flight-row .time{color:var(--muted);font-size:13px}
+.panel .flight-row .em{font-size:24px}
+.panel .note{font-size:13px;color:var(--muted)}
+.panel .note b{color:var(--gold2)}
+.checklist{display:flex;flex-wrap:wrap;gap:8px}
+.checklist span{
+  font-size:13px;border:1px dashed var(--line);border-radius:999px;padding:4px 12px;color:var(--muted);
+  background:rgba(21,35,62,.5);
+}
+.checklist span::before{content:"✓ ";color:var(--green)}
+
+/* ============ 每日區塊 ============ */
+.day{padding:34px 0 10px;scroll-margin-top:calc(var(--topH,41px) + 64px);display:none}
+.day.active{display:block}
+.daypager{display:flex;gap:10px;justify-content:center;margin:24px 0 4px;flex-wrap:wrap}
+.daypager button{
+  font-family:inherit;font-size:14px;cursor:pointer;border:1px solid var(--line);
+  border-radius:999px;padding:9px 22px;background:var(--card);color:var(--muted);
+}
+.daypager button:hover{border-color:var(--gold);color:var(--gold2)}
+/* 定框檢視：行程內容固定在範圍內切換，頁面零捲動 */
+#days{
+  height:min(76vh,720px);height:min(76dvh,720px);
+  overflow-y:auto;overscroll-behavior:contain;
+  border:1px solid var(--line);border-radius:var(--radius);
+  background:rgba(13,21,38,.45);scrollbar-width:thin;
+}
+#days::-webkit-scrollbar{width:8px}
+#days::-webkit-scrollbar-track{background:transparent}
+#days::-webkit-scrollbar-thumb{background:var(--line);border-radius:4px}
+#days .day{padding:24px 16px 6px;margin:0 14px}
+.day-head{margin-bottom:18px}
+.day-head .tagrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+.day-head .daychip{font-size:12px;font-weight:900;letter-spacing:.18em;color:#0a101d;background:linear-gradient(135deg,var(--gold2),var(--gold));border-radius:6px;padding:3px 10px}
+.day-head .citytag{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 12px;background:rgba(17,28,51,.6)}
+.day-head .holiday{font-size:12px;color:#f0a3ab;border:1px solid rgba(224,82,94,.4);border-radius:999px;padding:3px 12px;background:rgba(224,82,94,.08)}
+.day-head h2{font-size:clamp(20px,3.6vw,27px);font-weight:900}
+.day-head .intro{color:var(--muted);font-size:14px;margin-top:6px}
+.day-head .routemap{margin-top:10px;display:inline-flex;align-items:center;gap:6px;font-size:13px;border:1px solid var(--line);border-radius:999px;padding:5px 14px;color:var(--blue);background:rgba(111,179,224,.07)}
+.day-head .routemap:hover{border-color:var(--blue);text-decoration:none}
+
+/* 時間軸 */
+.tl{border-left:2px solid var(--line);margin:18px 0 6px 8px;padding-left:22px;display:flex;flex-direction:column;gap:2px}
+.stop{position:relative;padding:10px 0}
+.stop::before{
+  content:"";position:absolute;left:-28px;top:20px;width:11px;height:11px;border-radius:50%;
+  background:var(--bg);border:3px solid var(--gold);
+}
+.stop .t{font-variant-numeric:tabular-nums;font-weight:900;color:var(--gold2);font-size:15px}
+.stop .n{font-weight:700;font-size:16px;margin-left:8px}
+.stop .s{color:var(--blue);font-size:13px;margin-left:8px}
+.stop .d{color:var(--muted);font-size:13.5px;margin-top:3px}
+.stop .nav{font-size:12.5px;margin-top:4px}
+.stop .nav a{margin-right:14px}
+.move{
+  display:flex;gap:8px;align-items:flex-start;color:var(--dim);font-size:13px;
+  padding:2px 0 2px 12px;
+}
+.move .ic{font-size:15px}
+.disclaimer{font-size:12.5px;color:var(--dim);margin-top:14px;padding-left:8px;border-left:2px solid var(--line)}
+
+/* 景點大卡 */
+.spotcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:22px}
+.spot{
+  background:linear-gradient(180deg,var(--card2),var(--card));
+  border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);
+}
+.spot .photo{
+  position:relative;height:120px;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#22304f 0%,#3a2b45 55%,#59293a 100%);
+}
+.spot .photo.w-prague{background:linear-gradient(135deg,#2b3a5e,#5b2b3f)}
+.spot .photo.w-salzburg{background:linear-gradient(135deg,#23444b,#173a4d)}
+.spot .photo.w-innsbruck{background:linear-gradient(135deg,#26405e,#3d3357)}
+.spot .photo .em{font-size:44px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.45))}
+.spot .photo .area{
+  position:absolute;left:14px;bottom:10px;font-size:12px;letter-spacing:.2em;color:rgba(255,255,255,.85);
+  background:rgba(10,16,29,.55);padding:3px 10px;border-radius:999px;backdrop-filter:blur(4px);
+}
+.spot .body{padding:16px 18px 18px}
+.spot h3{font-size:18px;font-weight:900;display:flex;align-items:baseline;gap:8px}
+.spot h3 small{font-size:12px;color:var(--dim);font-family:"Noto Sans TC";letter-spacing:.14em}
+.spot .lead{color:var(--muted);font-size:13.5px;margin:4px 0 12px}
+.spot h4{font-size:13px;color:var(--gold);letter-spacing:.1em;margin:14px 0 6px;display:flex;align-items:center;gap:6px}
+.spot ul{list-style:none}
+.spot ul li{font-size:13.5px;color:#c6d1ea;padding:3px 0 3px 18px;position:relative}
+.spot ul li::before{content:"●";position:absolute;left:0;font-size:8px;color:var(--gold);top:11px}
+.spot ul.photos li::before{content:"◎";font-size:9px;color:var(--blue)}
+.spot ul.eat li::before{content:"✦";color:var(--red);font-size:9px}
+.spot ul.care li::before{content:"!";font-weight:900;color:var(--red);font-size:11px;left:2px}
+.spot .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.spot .links a{
+  font-size:12.5px;border:1px solid var(--line);border-radius:999px;padding:4px 12px;color:var(--muted);
+}
+.spot .links a:hover{border-color:var(--gold);color:var(--gold2);text-decoration:none}
+/* 備忘 */
+.memo{margin-top:16px;border-top:1px dashed var(--line);padding-top:12px}
+.memo label{font-size:12px;color:var(--dim);letter-spacing:.1em;display:block;margin-bottom:6px}
+.memo textarea{
+  width:100%;min-height:56px;background:rgba(10,16,29,.6);border:1px solid var(--line);border-radius:10px;
+  color:var(--ink);font-family:inherit;font-size:13.5px;padding:8px 10px;resize:vertical;line-height:1.6;
+}
+.memo textarea:focus{outline:none;border-color:var(--gold)}
+.memo .saved{font-size:12px;color:var(--green);margin-left:8px;opacity:0;transition:.3s}
+.memo .saved.show{opacity:1}
+/* 提醒 */
+.remind{margin-top:12px;background:rgba(10,16,29,.5);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.remind .ttl{font-size:12px;color:var(--dim);letter-spacing:.1em;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center}
+.remind .ttl button{font-size:11px;color:var(--dim);background:none;border:none;cursor:pointer;font-family:inherit}
+.remind .ttl button:hover{color:var(--red)}
+.remind form{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.remind input[type="datetime-local"],.remind input[type="text"],.remind select{
+  background:#0a101d;border:1px solid var(--line);border-radius:8px;color:var(--ink);
+  font-family:inherit;font-size:12.5px;padding:5px 8px;
+}
+.remind input[type="text"]{flex:1;min-width:120px}
+.remind .set{border:1px solid var(--gold);color:var(--gold2);background:rgba(232,180,92,.12);border-radius:8px;padding:5px 14px;cursor:pointer;font-family:inherit;font-size:12.5px}
+.remind .set:hover{background:rgba(232,180,92,.25)}
+.remind .cdline{margin-top:8px;font-size:13px;color:var(--gold2);font-variant-numeric:tabular-nums}
+.remind .past{color:var(--dim)}
+
+/* ============ 特色專區（CITY PICKS 等） ============ */
+.picks-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.pick{
+  background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);
+  border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow);
+}
+.pick .pk-eyebrow{font-size:11.5px;letter-spacing:.22em;color:var(--blue);font-weight:700;margin-bottom:6px}
+.pick h3{font-size:17px;font-weight:900;margin-bottom:6px}
+.pick .lead{color:var(--muted);font-size:13px;margin-bottom:10px}
+.pick .howto{background:rgba(10,16,29,.55);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:12.5px;color:#c6d1ea;margin:10px 0}
+.pick .howto b{color:var(--gold2)}
+.pick a.more{font-size:12.5px}
+.anni .pk-eyebrow{color:#f0a3ab}
+.anni{border-color:rgba(224,82,94,.35)}
+
+/* ============ 天氣 ============ */
+#weather .tabs{display:flex;gap:8px;justify-content:center;margin-bottom:16px;flex-wrap:wrap}
+#weather .tabs button{
+  border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:999px;
+  padding:6px 18px;font-size:13.5px;cursor:pointer;font-family:inherit;
+}
+#weather .tabs button.on{border-color:var(--blue);color:var(--blue);background:rgba(111,179,224,.1)}
+.w-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(108px,1fr));gap:10px}
+.w-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 6px;text-align:center}
+.w-card .wd{font-size:12px;color:var(--dim)}
+.w-card .dt{font-size:11.5px;color:var(--muted)}
+.w-card .ic{font-size:26px;margin:4px 0}
+.w-card .tx{font-size:12px;font-weight:700;color:var(--gold2)}
+.w-card .pp{font-size:11px;color:var(--blue)}
+.w-note{font-size:12.5px;color:var(--dim);margin-top:14px;text-align:center}
+.w-src{display:flex;gap:14px;justify-content:center;margin-top:10px;font-size:12.5px;flex-wrap:wrap}
+
+/* ============ 頁尾 ============ */
+footer{border-top:1px solid var(--line);margin-top:44px;padding:28px 20px 40px;color:var(--dim);font-size:12.5px}
+footer .wrap{display:flex;flex-direction:column;gap:6px}
+footer b{color:var(--muted)}
+#backtop{
+  position:fixed;right:18px;bottom:18px;z-index:60;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--line);background:rgba(17,28,51,.9);color:var(--gold);font-size:18px;
+  cursor:pointer;backdrop-filter:blur(6px);
+}
+#backtop:hover{border-color:var(--gold)}
+noscript div{padding:40px 20px;text-align:center;color:var(--red)}
+
+@media (max-width:640px){
+  .stop .n{display:block;margin-left:0}
+  .stop .s{display:block;margin-left:0}
+  .spot .photo{height:96px}
+  #hero{padding:48px 16px 40px}
+}
+</style>
+</head>
+<body>
+
+<noscript><div>此頁需要開啟 JavaScript 才能顯示行程內容。</div></noscript>
+
+<!-- 頂部狀態列 -->
+<div id="topbar">
+  <div class="inner">
+    <div class="grp">
+      <span><span class="dot" id="netDot"></span><span id="netTxt">已連線</span></span>
+      <span id="nextKey">下一個重點時刻：<b>計算中</b></span>
+    </div>
+    <span class="updated">最後更新 <span id="updated">—</span></span>
+  </div>
+</div>
+
+<!-- Hero -->
+<section id="hero">
+  <div class="snow" id="snow"></div>
+  <div class="badge">PRAGUE · SALZBURG · INNSBRUCK · DEC 2026 — JAN 2027</div>
+  <h1>奧捷耶誕跨年隨身攻略<span class="heart"> ♥</span></h1>
+  <p class="sub">布拉格 → 薩爾斯堡 → 茵斯布魯克（滑雪）→ 布拉格<br><b>耶誕市集 × 冰河滑雪 × 跨年煙火</b> — 結婚三周年紀念之旅</p>
+  <div class="chips">
+    <span class="chip">12 天 11 夜（住宿 9 晚）</span>
+    <span class="chip">自由行</span>
+    <span class="chip">布拉格 4 晚 · 薩爾斯堡 1 晚 · 茵斯布魯克 4 晚</span>
+    <span class="chip red">♥ 結婚三周年</span>
+  </div>
+</section>
+
+<!-- 日期分頁 -->
+<nav id="daytabs" aria-label="日期分頁"><div class="scroll" id="tabScroll"></div></nav>
+
+<main class="wrap">
+
+  <!-- 摘要 -->
+  <section class="block" id="summary">
+    <div class="sec-head">
+      <div class="eyebrow">FLIGHT &amp; PREP</div>
+      <h2>航班摘要與行前提醒</h2>
+      <p>時刻以電子機票與官方公告為準；本頁倒數與提醒存於本機。</p>
+    </div>
+    <div class="summary-grid">
+      <div class="panel">
+        <h3>✈️ 航班摘要</h3>
+        <div class="flight-row">
+          <span class="em">🛫</span>
+          <div class="dir">
+            <div class="route">桃園 TPE → 布拉格 PRG</div>
+            <div class="time">12/23（三）21:15 起飛 → 12/24（四）06:05 抵達</div>
+          </div>
+        </div>
+        <div class="flight-row">
+          <span class="em">🛬</span>
+          <div class="dir">
+            <div class="route">布拉格 PRG → 桃園 TPE</div>
+            <div class="time">2027/1/2（六）10:55 起飛 → 1/3（日）07:10 抵達</div>
+          </div>
+        </div>
+        <p class="note">航班號依電子機票為準。去程建議 <b>18:15 前</b> 抵達桃園機場；回程建議 <b>08:00 前</b> 抵達 PRG（退稅預留 60–90 分鐘）。</p>
+      </div>
+      <div class="panel">
+        <h3>🧣 12–1 月穿著提醒</h3>
+        <p class="note" style="font-size:13.5px;line-height:1.9">
+          布拉格約 <b>−5～3°C</b>；茵斯布魯克市區 <b>−8～0°C</b>，雪場體感可低於 <b>−15°C</b>。<br>
+          發熱衣＋羊毛/刷毛中層＋防水雪衣；防滑防水靴；毛帽、圍脖、防水手套必備。<br>
+          雪地墨鏡/護目鏡、護唇與乳液防乾裂；室內暖氣強，洋蔥式穿脫。
+        </p>
+      </div>
+    </div>
+    <div class="panel" style="margin-top:16px">
+      <h3>📋 行前檢查清單</h3>
+      <div class="checklist">
+        <span>護照效期 6 個月以上</span>
+        <span>ETIAS／EES 新制先至官方確認</span>
+        <span>eSIM 或漫遊開通</span>
+        <span>歐規插頭（奧 C/F、捷 C/E）</span>
+        <span>EUR＋CZK 現金</span>
+        <span>旅平險＋滑雪加購</span>
+        <span>跨國火車票先訂位</span>
+        <span>耶誕／跨年晚餐訂位</span>
+        <span>滑雪裝備（雪衣褲、手套、護目鏡）或當地租</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 每日行程（JS 渲染） -->
+  <div id="days"></div>
+
+  <!-- 城市速查 -->
+  <section class="block" id="citypicks">
+    <div class="sec-head">
+      <div class="eyebrow">CITY PICKS</div>
+      <h2>自由時間，各城速查</h2>
+      <p>城市之間的空檔怎麼用？先選主線，再依剩餘時間加逛。</p>
+    </div>
+    <div class="picks-grid" id="picksGrid"></div>
+  </section>
+
+  <!-- 三周年 -->
+  <section class="block" id="anniversary">
+    <div class="sec-head">
+      <div class="eyebrow" style="color:#f0a3ab">3RD ANNIVERSARY</div>
+      <h2>給三周年的浪漫提案</h2>
+      <p> ♥ 十二天裡，把這幾個時刻留給彼此。</p>
+    </div>
+    <div class="picks-grid" id="anniGrid"></div>
+  </section>
+
+  <!-- Travel Mode -->
+  <section class="block" id="travelmode">
+    <div class="sec-head">
+      <div class="eyebrow">TRAVEL MODE</div>
+      <h2>自由行現場，再多準備這四件事</h2>
+    </div>
+    <div class="picks-grid" id="modeGrid"></div>
+  </section>
+
+  <!-- 天氣 -->
+  <section class="block" id="weather">
+    <div class="sec-head">
+      <div class="eyebrow">WEATHER</div>
+      <h2>三城市七日天氣</h2>
+      <p>出發前後貼近實際；七日預報為區域尺度，山區雪況以雪場官方為準。</p>
+    </div>
+    <div class="tabs" id="wTabs"></div>
+    <div class="panel" id="wPanel" style="text-align:center;color:var(--muted);padding:26px 18px">讀取中…</div>
+    <div class="w-note" id="wNote">資料來源：Open-Meteo（5 分鐘快取）。官方預報：捷克 CHMI、奧地利 GeoSphere。</div>
+    <div class="w-src">
+      <a href="https://www.chmi.cz/" target="_blank" rel="noopener">捷克水文氣象局 CHMI</a>
+      <a href="https://www.geosphere.at/" target="_blank" rel="noopener">GeoSphere Austria</a>
+      <a href="https://www.windy.com/?50.0875,14.4213,7" target="_blank" rel="noopener">Windy 雨雪雷達</a>
+    </div>
+  </section>
+
+  <!-- 資料來源 -->
+  <section class="block" id="sources">
+    <div class="sec-head">
+      <div class="eyebrow">SOURCES</div>
+      <h2>資料來源與版本說明</h2>
+    </div>
+    <div class="panel" style="font-size:13px;color:var(--muted);line-height:2">
+      本頁為<b style="color:var(--gold2)"> v1.1 行前改版（2026-10-05）：九天分頁・定框切換（12/24 第一天起算），薩爾斯堡 1 晚・茵斯布魯克 4 晚</b>，路線：布拉格 → 薩爾斯堡 → 茵斯布魯克 → 布拉格。<br>
+      交通時刻與車程為<b style="color:var(--gold2)">行前預估</b>：跨國列車以 ÖBB、DB、ČD、RegioJet 與 FlixBus 官方公告為準；1/1 為假日班表，務必先確認。<br>
+      景點門票、耶誕假期與週日營業時間常有調整，以各景點官網與現場公告為準；雪場開放與雪票價以 <b style="color:var(--gold2)">2026–27 雪季官網</b>為準。<br>
+      天氣由 Open-Meteo 提供，僅供行前參考。所有行程資料可直接編輯本頁頂端的 TRIPDATA 後重新開啟即可更新。
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span><b>奧捷耶誕跨年隨身攻略</b> — 結婚三周年紀念之旅 v1.1</span>
+    <span>本頁可離線瀏覽（備忘與提醒存在本機）；天氣、地圖與照片連結需網路。</span>
+    <span>緊急電話（歐盟）：112 ｜ 防扒提醒：市集與地鐵人潮處留意隨身物。</span>
+  </div>
+</footer>
+
+<button id="backtop" title="回到頂端" aria-label="回到頂端">↑</button>
+
+<script>
+/* =====================================================================
+   行程資料（要改行程改這裡：時間、站名、備訯、卡片內容）
+   ===================================================================== */
+const TRIPDATA = {
+  keyTimes: [
+    { label:"桃園機場建議抵達", iso:"2026-12-23T18:15:00+08:00" },
+    { label:"TPE 起飛（往布拉格）", iso:"2026-12-23T21:15:00+08:00" },
+    { label:"抵達布拉格 PRG", iso:"2026-12-24T06:05:00+01:00" },
+    { label:"建議出發：布拉格 → 薩爾斯堡（訂票後請設定實際時間）", iso:"2026-12-27T08:30:00+01:00" },
+    { label:"建議出發：薩爾斯堡 → 茵斯布魯克（訂票後請設定實際時間）", iso:"2026-12-28T12:30:00+01:00" },
+    { label:"跨年煙火！", iso:"2026-12-31T23:59:00+01:00" },
+    { label:"建議出發：茵斯布魯克 → 慕尼黑 → 布拉格（訂票後請設定實際時間）", iso:"2027-01-01T09:30:00+01:00" },
+    { label:"出發前往 PRG 機場", iso:"2027-01-02T07:45:00+01:00" },
+    { label:"PRG 起飛（回台北）", iso:"2027-01-02T10:55:00+01:00" },
+    { label:"抵達桃園，歡迎回家", iso:"2027-01-03T07:10:00+08:00" }
+  ],
+  days: [
+  /* ---------- 出發 12/23 ---------- */
+  {
+    id:"day1", tab:"出發", d:"12/23", wd:"三", city:"台北 → 布拉格", tag:"✈️ 飛行日", title:"出發．夜宿機上",
+    intro:"三周年之旅啟程。抵達歐洲是 12/24 清晨，機上好好睡，先贏時差一半。",
+    legs:[
+      { t:"14:00", n:"出發前往桃園機場", s:"家 → TPE", d:"國際線建議起飛前 3 小時抵達；航廈依機票確認。" },
+      { t:"18:15", n:"機場報到・托運", s:"桃園機場", d:"確認行李直掛布拉格；行動電源、貴重物品隨身。" },
+      { t:"21:15", n:"TPE 起飛", s:"台北 → 布拉格", d:"機上過夜，明日 06:05 抵達 PRG。" }
+    ],
+    cards:[
+      {
+        id:"d1-check", emoji:"🧾", area:"出發前", theme:"innsbruck", name:"行前最後檢查", lead:"登機前的最後確認，拍一張清單照存手機。",
+        best:["護照效期 6 個月以上＋電子機票確認頁","歐盟 EES／ETIAS 新制：出發前至官方網站確認是否需線上申請","旅平險生效（含滑雪加購）"],
+        eat:["保溫瓶過安檢後裝水帶上機","機上乾燥：乳液、護唇、眼罩耳塞"],
+        photo:["登機證兩張合照——三周年之旅的第一張照片"],
+        care:["eSIM 出發前先開通測試","現金：歐元 EUR 為主，捷克備少量克朗 CZK"]
+      }
+    ]
+  },
+  /* ---------- 第一天 12/24 ---------- */
+  {
+    id:"day2", tab:"第一天", d:"12/24", wd:"四", city:"布拉格", tag:"🎄 耶誕夜", title:"抵達布拉格・耶誕夜",
+    intro:"清晨落地、放慢節奏。時差讓你自然早醒，正好把清晨的查理大橋拍成明信片。",
+    route:["Vaclav Havel Airport Prague","Charles Bridge","Old Town Square Prague"],
+    legs:[
+      { t:"06:05", n:"抵達布拉格機場", s:"Václav Havel Airport", d:"入境（歐盟 EES 需拍照/指紋）、提領行李。" },
+      { move:"bus", dur:"約 45–60 分", txt:"巴士 119 → Nádraží Veleslavín 轉地鐵 A 線；Bolt/計程車約 30 分" },
+      { t:"08:30", n:"飯店寄放行李", s:"舊城區", d:"建議住老城/猶太區一帶，景點步行可達。" },
+      { t:"09:00", n:"早餐", s:"Café Louvre 或 Café Savoy", d:"百年咖啡館，悠閒開場。" },
+      { t:"10:30", n:"查理大橋 + 康帕島", s:"伏爾塔瓦河", d:"清晨橋面人最少，最適合拍照。" },
+      { t:"12:30", n:"老城廣場耶誕市集 + 天文鐘", s:"Staroměstské náměstí", d:"12/24 部分攤位提早收攏，主體市集傍晚前仍熱鬧（現場公告為準）。" },
+      { t:"13:30", n:"午餐", s:"Lokál Dlouhá 等捷克家常餐廳", d:"耶誕夜建議訂位。" },
+      { t:"15:00", n:"回飯店 Check-in・補眠", s:"", d:"短睡 30–60 分鐘對抗時差，別睡到晚上。" },
+      { t:"16:30", n:"舊城散步", s:"火藥塔、共和廣場", d:"16:00 天黑後市集與街道燈飾最迷人。" },
+      { t:"18:30", n:"耶誕夜晚餐", s:"預先訂位", d:"多數餐廳當晚供應固定菜單，務必提前預訂。" },
+      { t:"24:00", n:"（自由參加）午夜彌撒", s:"泰恩教堂/聖維特主教座堂", d:"免費入場、提早入座，氣氛莊嚴浪漫。" }
+    ],
+    cards:[
+      {
+        id:"d2-oldtown", emoji:"🎄", area:"布拉格 舊城", theme:"prague", name:"老城廣場・天文鐘",
+        lead:"耶誕市集主舞台。整點報時、旋轉木馬與紅屋頂一次收藏。",
+        best:["天文鐘整點報時（十二使徒現身）","舊市政廳塔樓俯瞰整片紅屋頂","泰恩教堂雙塔與市集燈飾同框"],
+        eat:["Svařák 熱紅酒（押金杯記得退）","Trdelník 肉桂捲、薑餅、蜂蜜蛋糕"],
+        photo:["塔樓拍紅屋頂海；藍調時刻約 15:40–16:10 最美"],
+        care:["市集人潮多留意隨身物","12/24 部分攤位提早收攤"],
+        official:{ url:"https://www.prague.eu/en", name:"布拉格官方旅遊網" },
+        mapQ:"Old Town Square, Prague"
+      },
+      {
+        id:"d2-charles", emoji:"🌉", area:"布拉格 伏爾塔瓦河", theme:"prague", name:"查理大橋",
+        lead:"1357 年開建的老石橋。清晨薄霧時分最像電影。",
+        best:["30 座巴洛克聖像一路排開","橋塔登頂看橋身全景","對岸小城區橋頭視角"],
+        eat:["橋頭咖啡館早餐","過橋後小城區巷內早午餐"],
+        photo:["清晨順光拍舊城方向；日出前藍調人最少"],
+        care:["清晨石面可能結霜濕滑","相機別放在欄杆上（掉河預約制）"],
+        mapQ:"Charles Bridge, Prague"
+      }
+    ]
+  },
+  /* ---------- 第二天 12/25 ---------- */
+  {
+    id:"day3", tab:"第二天", d:"12/25", wd:"五", city:"布拉格", tag:"🎄 聖誕節", holiday:"12/25 捷克國定假日", title:"布拉格城堡日．三周年晚餐",
+    intro:"聖誕節多數室內景點公休或縮短，城堡區照常開放，正好用步行把布拉格最高點走完。",
+    route:["Prague Castle","Nerudova Street","Lennon Wall","Petřín Tower"],
+    legs:[
+      { t:"09:00", n:"布拉格城堡區", s:"Pražský hrad", d:"聖維特主教座堂（聖誕節有彌撒）、舊皇宮、黃金小巷 22 號卡夫卡故居。" },
+      { move:"walk", dur:"下山約 15 分", txt:"聶魯達街慢慢逛下小城區" },
+      { t:"12:30", n:"小城區午餐", s:"Malá Strana", d:"巷內傳統餐館，Svíčková 奶油燉牛肉配捷克麵糰。" },
+      { t:"14:00", n:"列儂牆 → 康帕島", s:"小城區河岸", d:"彩繪牆與河畔磨坊輪，散步順路。" },
+      { t:"15:00", n:"佩特任山纜車 + 瞭望塔", s:"Petřín", d:"仿艾菲爾小塔，黃昏看整座城市點燈（日落約 16:00）。" },
+      { t:"17:30", n:"回市區休息", s:"", d:"換上好一點的外套——今晚是三周年晚餐。" },
+      { t:"19:00", n:"♥ 三周年紀念晚餐", s:"需提早數週訂位", d:"河景 Mlýnec（查理大橋景）、米其林 La Degustation 或 Field，任選一間。" }
+    ],
+    cards:[
+      {
+        id:"d3-castle", emoji:"🏰", area:"布拉格 城堡區", theme:"prague", name:"布拉格城堡",
+        lead:"世界最大古城堡群。聖誕節教堂有彌撒，動線可能微調。",
+        best:["聖維特主教座堂彩繪玻璃（慕夏之窗）","黃金小巷 22 號——卡夫卡故居","衛兵交接（整點）"],
+        eat:["城堡區葡萄園小舖（季節性）","下山後小城區傳統餐館"],
+        photo:["城堡西側平台俯瞰全市紅屋頂","換崗整點、教堂玫瑰窗逆光"],
+        care:["聖誕節參觀動線以現場公告為準","塔樓與教堂門票分開買"],
+        official:{ url:"https://www.hrad.cz/en", name:"布拉格城堡官網" },
+        mapQ:"Prague Castle"
+      },
+      {
+        id:"d3-anniv", emoji:"💍", area:"三周年提案", theme:"prague", name:"聖誕夜的紀念晚餐",
+        lead:"12/25 或 12/26 任選一晚，好好慶祝三周年。",
+        best:["Mlýnec：河岸第一排、查理大橋景","La Degustation：波希米亞 tasting menu","Field：米其林一星"],
+        eat:["建議搭餐酒（pairing）","甜點留給市集的熱紅酒與薑餅"],
+        photo:["晚餐後河岸散步，橋上夜景收尾"],
+        care:["聖誕期間多為固定菜單、價位較高","幾乎都要訂位——現在就設提醒"],
+        mapQ:"Mlýnec Prague"
+      }
+    ]
+  },
+  /* ---------- 第三天 12/26 ---------- */
+  {
+    id:"day4", tab:"第三天", d:"12/26", wd:"六", city:"布拉格", tag:"🎄 布拉格", title:"高堡・猶太區外觀・音樂會日",
+    intro:"聖誕假期的布拉格最適合散步與聽音樂；週六猶太博物館休館，改以街區巡禮。",
+    route:["Vyšehrad","Dancing House","Obecní dům"],
+    legs:[
+      { t:"09:00", n:"維謝赫拉德（高堡）", s:"Vyšehrad", d:"免費開放的河畔城堡遺跡，聖馬丁圓廳、城牆河景。" },
+      { t:"11:00", n:"伏爾塔瓦河畔散步 → 跳舞樓", s:"Dancing House", d:"河岸一路往市中心走，順路拍照。" },
+      { t:"12:30", n:"午餐", s:"河畔/共和廣場一帶", d:"餐廳多恢復正常營業。" },
+      { t:"14:00", n:"猶太區巡禮（外觀）", s:"Josefov", d:"舊新猶太會堂（歐洲最古老之一）、希伯來時鐘、巴黎街；週六館區休館。" },
+      { t:"15:30", n:"市政廳導覽", s:"Obecní dům", d:"新藝術風格大廳，內部導覽值得參加。" },
+      { t:"17:00", n:"瓦茨拉夫廣場 + 聖誕市集", s:"Wenceslas Square", d:"第二個市集舞台，規模較小但好逛。" },
+      { t:"19:00", n:"晚餐", s:"", d:"音樂會前簡單吃。" },
+      { t:"20:00", n:"聖誕音樂會", s:"市政廳斯美塔那廳/魯道夫廳", d:"行前於官網或售票網先訂票，聖誕週場次多。" }
+    ],
+    cards:[
+      {
+        id:"d4-vysehrad", emoji:"⛰", area:"布拉格 高堡", theme:"prague", name:"維謝赫拉德 Vyšehrad",
+        lead:"傳說中捷克發源地。人少、安靜、河景開闊。",
+        best:["城牆步道俯瞰伏爾塔瓦河大轉彎","聖彼得保羅教堂與墓園（德弗札克長眠處）","聖馬丁圓形羅馬教堂"],
+        eat:["高堡草地野餐（天氣好時）","回市區再正餐"],
+        photo:["城牆轉角拍鐵橋與河景","傍晚藍調配河面倒影"],
+        care:["冬季風大，注意保暖","坡道結霜慢走"],
+        mapQ:"Vyšehrad, Prague"
+      },
+      {
+        id:"d4-concert", emoji:"🎻", area:"布拉格 音樂", theme:"prague", name:"聖誕音樂會",
+        lead:"德弗札克與斯美塔那的故鄉，聖誕週音樂會場次密集。",
+        best:["市政廳 Obecní dům 斯美塔那廳","魯道夫音樂廳 Dvořák 廳","教堂燭光音樂會（老城多處）"],
+        eat:["中場休息吧台通常有香檳"],
+        photo:["音樂廳穹頂與水晶燈","演出中禁攝影，中場再拍"],
+        care:["票券先上網訂，現場排隊不一定有","提前 30 分鐘入場找位"],
+        mapQ:"Rudolfinum Prague"
+      }
+    ]
+  },
+  /* ---------- 第四天 12/27 ---------- */
+  {
+    id:"day5", tab:"第四天", d:"12/27", wd:"日", city:"布拉格 → 薩爾斯堡", tag:"🚄 移動日", holiday:"12/27 奧地利週日（商店多公休）", title:"前往薩爾斯堡",
+    intro:"跨國移動日，也是薩爾斯堡唯一一晚——今晚把老城走完，明早上要塞再出發。火車沿河谷走，車窗就是風景。",
+    legs:[
+      { t:"08:30", n:"布拉格中央車站出發", s:"Praha hl.n.", d:"火車往林茲（Linz）轉乘至薩爾斯堡；車票提早 2–4 週訂，票面時間以訂票為準。" },
+      { move:"train", dur:"約 5.5–6.5 小時（含轉乘）", txt:"林茲轉乘約 20–40 分；FlixBus 直達約 6 小時為替代方案" },
+      { t:"14:30", n:"抵達薩爾斯堡", s:"Salzburg Hbf", d:"飯店寄放行李，老城步行可達。" },
+      { t:"15:30", n:"糧食胡同老城散步", s:"Getreidegasse", d:"週日奧地利商店多公休，餐廳與景點照常；鍛鐵招牌本身就是風景。" },
+      { t:"17:00", n:"莫札特出生地", s:"Getreidegasse 9", d:"17:00 前入場（開放時間以現場為準）。" },
+      { t:"18:00", n:"大教堂廣場、莫札特廣場", s:"DomQuartier", d:"市集已收攤，但燈飾與要塞夜景仍在。" },
+      { t:"19:00", n:"晚餐", s:"Augustiner Bräustübl", d:"修道院酒館，自取酒杯打酒，每日營業。" }
+    ],
+    cards:[
+      {
+        id:"d5-salzburgold", emoji:"🎻", area:"薩爾斯堡 老城", theme:"salzburg", name:"糧食胡同・莫札特出生地",
+        lead:"老城最熱鬧的一條街，鍛鐵招牌一戶一個樣子。",
+        best:["莫札特出生地（Hagenauerhaus）","9 號黃色房子前的排隊人潮地標","老城廣場與要塞纜車入口"],
+        eat:["Café Fürst 的莫札特巧克力（原創店）","巷內香腸攤與麵包舖"],
+        photo:["鍛鐵招牌特寫一路拍到 9 號","傍晚要塞燈光下的老城屋頂"],
+        care:["週日商店公休，伴手禮改晚餐後或明早買","老城石板路，行李箱輪子會辛苦"],
+        official:{ url:"https://www.salzburg.info/en", name:"薩爾斯堡官方旅遊網" },
+        mapQ:"Getreidegasse, Salzburg"
+      }
+    ]
+  },
+  /* ---------- 第五天 12/28 ---------- */
+  {
+    id:"day6", tab:"第五天", d:"12/28", wd:"一", city:"薩爾斯堡 → 茵斯布魯克", tag:"🚄 移動＋要塞", title:"要塞晨遊 → 前往茵斯布魯克",
+    intro:"一晚版薩爾斯堡：上午要塞與米拉貝爾快速巡禮，午後火車進阿爾卑斯；傍晚茵斯布魯克舊城走完、滑雪裝備搞定。",
+    route:["Hohensalzburg Fortress","Mirabell Palace","Innsbruck Hauptbahnhof"],
+    legs:[
+      { t:"08:30", n:"退房・行李寄放（或寄車站置物櫃）", s:"飯店", d:"輕裝上要塞，行李傍晚才需要。" },
+      { t:"09:30", n:"要塞纜車上山・海布倫要塞", s:"Hohensalzburg", d:"開門即上人最少；城牆全景必看、博物館快速走。" },
+      { t:"11:00", n:"下山・Café Fürst 採買莫札特球", s:"Brodgasse（原創店）", d:"銀藍包裝才是原創；順路舊市集廣場。" },
+      { t:"11:45", n:"米拉貝爾花園快速巡禮", s:"Mirabellgarten", d:"真善美 Do-Re-Mi 場景，往車站方向順路。" },
+      { t:"12:30", n:"火車往茵斯布魯克", s:"Salzburg Hbf → Innsbruck Hbf", d:"直達約 1 小時 50 分–2 小時；以訂票班次為準。" },
+      { move:"train", dur:"約 2 小時", txt:"阿爾卑斯山谷路線，右側車窗山景" },
+      { t:"14:30", n:"抵達茵斯布魯克・寄放行李", s:"Innsbruck Hbf → 舊城飯店", d:"舊城步行 10–15 分可達。" },
+      { t:"15:30", n:"舊城巡禮：黃金屋頂、城市塔樓、皇宮", s:"Altstadt", d:"1500 年鍍金屋瓦、31 m 城市塔、Hofburg 皇宮。" },
+      { t:"17:00", n:"🎿 滑雪裝備租借＋確認巴士與雪票", s:"Glanzer / Intersport 等", d:"先租好明早直取；雪票線上買省排隊。" },
+      { t:"19:00", n:"晚餐", s:"Goldener Adler（1390 年老店）", d:"Tyrol 風味：Käsespätzle、Speckknödel。" }
+    ],
+    cards:[
+      {
+        id:"d6-festung", emoji:"🏔", area:"薩爾斯堡 要塞", theme:"salzburg", name:"海布倫要塞",
+        lead:"1077 年起建的山頂要塞，薩爾斯堡天際線的主角。",
+        best:["城牆 360° 眺望老城與阿爾卑斯山","要塞博物館與木偶博物館","纜車上升過程的老城屋頂視角"],
+        eat:["山頂咖啡館的薩赫蛋糕（Sachertorte）","下山後 Stieglkeller 景觀午餐"],
+        photo:["北塔平台拍老城全景","黃昏要塞打燈後從糧食胡同回望"],
+        care:["冬季纜車排隊 15–30 分","山上風大體感低 5 度"],
+        mapQ:"Hohensalzburg Fortress"
+      },
+      {
+        id:"d7-innsbruckold", emoji:"⛰", area:"茵斯布魯克 舊城", theme:"innsbruck", name:"黃金屋頂・舊城",
+        lead:"半小時內可以走完的舊城，卻有兩次冬奧（1964/1976）的底氣。",
+        best:["黃金屋頂（約 2,600 片鍍金瓦）","城市塔樓俯瞰舊城屋頂與北鏈山","Hofburg 皇宮與宮廷教堂（馬克西米利安一世的 28 座青銅像）"],
+        eat:["Goldener Adler 老店","Die Wilderin 當地食材現代料理","路邊攤的 Kiachl 油炸麵包"],
+        photo:["黃金屋頂前廣場仰拍","安娜柱配上北鏈山雪頂","傍晚從 Inn 河岸拍舊城天際線"],
+        care:["舊城餐廳週末與假期需訂位","商店街營業至 18:00–18:30 左右"],
+        official:{ url:"https://www.innsbruck.info/en", name:"茵斯布魯克官方旅遊網" },
+        mapQ:"Golden Roof, Innsbruck"
+      },
+      {
+        id:"d7-skigear", emoji:"🎿", area:"茵斯布魯克 滑雪準備", theme:"innsbruck", name:"滑雪裝備與雪票",
+        lead:"行前最後一晚把裝備搞定，明天 8 點直接上山。",
+        best:["雪板＋雪鞋＋雪杖套餐約 €30–45/天（依等級）","服飾（雪衣褲）多數店可加租","手套、護目鏡、安全帽自備較衛生"],
+        eat:["滑雪午餐山上餐廳（另計）","溫水瓶——奧地利山屋多可裝熱水"],
+        photo:["裝備店門口先拍一張帥的"],
+        care:["假期週（12/26–1/6）人潮多，前一晚租好","雪票線上買省排隊；價格以 2026–27 雪季官網為準","旅平險多不含滑雪，記得加購"],
+        mapQ:"Intersport Innsbruck old town"
+      }
+    ]
+  },
+  /* ---------- 第六天 12/29 ---------- */
+  {
+    id:"day7", tab:"第六天", d:"12/29", wd:"二", city:"茵斯布魯克", tag:"🎿 滑雪日①", title:"史度拜冰河滑雪日",
+    intro:"全年雪無虞的冰河雪場。全日滑雪主場日，晚上早睡——明天還有一天滑雪。",
+    legs:[
+      { t:"07:30", n:"早餐・取裝備", s:"飯店/租具店", d:"雪票若線上買好，先截圖離線可用。" },
+      { move:"bus", dur:"單程約 50–60 分", txt:"滑雪巴士往 Stubai Glacier（班次以官網/現場為準）" },
+      { t:"09:30", n:"滑雪開始", s:"Stubai Glacier", d:"纜車最高約 3,200 m，冰河視野開闊；中級雪道為主。" },
+      { t:"12:00", n:"山上午餐", s:"3,040 m 餐廳（Jochdohle 等）", d:"邊吃邊看冰河全景。" },
+      { t:"15:30", n:"收板・巴士回程", s:"", d:"末班巴士時間務必先確認。" },
+      { t:"18:30", n:"晚餐・早睡", s:"舊城", d:"Tiroler Gröstl（煎馬鈴薯牛肉蛋），滑雪是體力活。" }
+    ],
+    cards:[
+      {
+        id:"d8-stubai", emoji:"🏔", area:"茵斯布魯克 雪場", theme:"innsbruck", name:"史度拜冰河雪場",
+        lead:"從河谷一路滑上海拔 3,200 公尺的冰河，雪況全年穩定。",
+        best:["Schaufeljoch 山頂平台 360° 環景","冰河裂隙與雪簷地形（遠觀即可）","長程紅線一路滑回谷站"],
+        eat:["Jochdohle（3,040 m）景觀餐廳","Eisgrat 中繼站的薯條與熱巧克力"],
+        photo:["山頂平台雲海與南阿爾卑斯主峰群","午後順光拍冰河","纜車站建築與雪原大景"],
+        care:["海拔高：動作放慢、多喝水、注意高山反應","雪鏡必備（雪盲風險）、防曬要補","假設雪票約 €70–80（以官網為準）"],
+        official:{ url:"https://www.stubaigletscher.com/en", name:"Stubai Glacier 官網" },
+        mapQ:"Stubai Glacier, Neustift"
+      }
+    ]
+  },
+  /* ---------- 第七天 12/30 ---------- */
+  {
+    id:"day8", tab:"第七天", d:"12/30", wd:"三", city:"茵斯布魯克", tag:"🎿 滑雪日②", title:"滑雪日2：Nordkette 或奧運雪場",
+    intro:"滑雪第二天。預設市區直達的 Nordkette 輕鬆滑；想再大雪山，冰河二訪或 Axamer Lizum 二選一。",
+    route:["Nordkette Innsbruck","Golden Roof, Innsbruck"],
+    legs:[
+      { t:"08:30", n:"早餐・取裝備", s:"飯店/租具店", d:"線上雪票先截圖，離線也能過閘。" },
+      { move:"cable", dur:"市中心 → 2,256 m", txt:"Hungerburg 纜車（Zaha Hadid 車站）→ Seegrube → Hafelekar" },
+      { t:"09:30", n:"Nordkette 滑雪／觀景", s:"Hafelekar", d:"雪道小而精、視野無敵；或改 Axamer Lizum（巴士約 30–40 分）。" },
+      { t:"12:00", n:"山上午餐", s:"Seegrube 餐廳", d:"露臺座位與整座城市同框。" },
+      { t:"15:30", n:"回市區・最後採買", s:"商店街", d:"多數商店營業至傍晚，15:00 前買完最從容。" },
+      { t:"17:30", n:"回飯店休息", s:"", d:"把體力留給跨年夜。" },
+      { t:"19:00", n:"晚餐・早睡", s:"Stiftskeller Innsbruck", d:"明天跨年日，留點力氣。" }
+    ],
+    cards:[
+      {
+        id:"d9-nordkette", emoji:"🚡", area:"茵斯布魯克 北鏈山", theme:"innsbruck", name:"Nordkette 北鏈山",
+        lead:"從舊城 5 分鐘上山、20 分鐘到 2,256 m，世界罕見的城市滑雪。",
+        best:["Hafelekar 頂點俯瞰 Inn 河谷與城市","Seegrube 觀景台咖啡","夜間山頂看城市燈海（另計場次）"],
+        eat:["Seegrube 餐廳（露天座位）","山頂熱紅酒"],
+        photo:["山頂合照——背景是整座城市","從山上俯拍舊城屋頂與河流","夕陽時段山頂西向大景"],
+        care:["滑雪票與觀景纜車票不同，看清楚再買","山頂風大，體感可低於 −15°C","假期週（12/26–1/6）人潮多，早上山早收工"],
+        official:{ url:"https://www.nordkette.com/en", name:"Nordkette 官網" },
+        mapQ:"Nordkette Innsbruck"
+      },
+      {
+        id:"d8-ski2", emoji:"🎿", area:"茵斯布魯克 滑雪日2", theme:"innsbruck", name:"滑雪日2 怎麼選",
+        lead:"第二天滑哪裡？看雪況、體力與心情。",
+        best:["Nordkette：市區直達、半天可成，風景第一","Axamer Lizum：1976 冬奧雪場，中型雪場（巴士 30–40 分）","史度拜二訪：雪況最好、票價最高"],
+        eat:["山上餐廳簡單吃，省時間多滑一趟"],
+        photo:["Hafelekar 山頂俯瞰 Inn 河谷","Seegrube 露臺與城市同框"],
+        care:["惡天氣備案：Swarovski 水晶世界（Wattens，車程約 20–25 分）或舊城博物館","連續第二天滑雪注意膝蓋與體力，適時收工"],
+        mapQ:"Axamer Lizum"
+      }
+    ]
+  },
+  /* ---------- 第八天 12/31 ---------- */
+  {
+    id:"day9", tab:"第八天", d:"12/31", wd:"四", city:"茵斯布魯克", tag:"🎆 跨年日", title:"跨年日・Guten Rutsch！",
+    intro:"自由暖身的一天：悠閒早餐、市區散步，晚餐後河岸卡位煙火，午夜說聲三周年快樂。",
+    legs:[
+      { t:"09:30", n:"悠閒早餐・自由晨間", s:"飯店", d:"睡飽最重要；想加滑半日 Nordkette 可自費（雪票另計）。" },
+      { t:"11:30", n:"舊城最後散步・紀念品", s:"Marktplatz 商圈", d:"12/31 多數商店營業至傍晚，先買先安心。" },
+      { t:"15:00", n:"回飯店休息、換裝", s:"", d:"發熱衣、暖暖包全上，今晚會很冷。" },
+      { t:"18:30", n:"跨年晚餐", s:"務必預先訂位", d:"多數餐廳為固定菜單（3–5 道式）。" },
+      { t:"22:30", n:"舊城散步卡位", s:"Marktplatz / Inn 河岸", d:"河岸與北鏈山為背景的煙火視角最佳。" },
+      { t:"00:00", n:"🎆 跨年煙火・Guten Rutsch！", s:"茵斯布魯克", d:"三周年快樂，親愛的。" }
+    ],
+    cards:[
+      {
+        id:"d9-nye", emoji:"🎆", area:"茵斯布魯克 跨年", theme:"innsbruck", name:"跨年夜 Innsbruck",
+        lead:"舊城廣場、河岸與山邊同步放煙火，阿爾卑斯式的 Silvester。",
+        best:["Marktplatz Inn 河岸視角","舊城 Marktplatz 廣場人群同歡","飯店窗景跨年（備案）"],
+        eat:["香檳帶上山放河岸（玻璃杯小心）","跨年菜單多為三至五道式"],
+        photo:["煙火＋北鏈山剪影同框","倒數瞬間的眾人歡呼"],
+        care:["餐廳跨年菜單需提早訂位","深夜冷到骨頭：發熱衣、暖暖包全上","走路回飯店注意結霜路面"],
+        mapQ:"Marktplatz Innsbruck"
+      }
+    ]
+  },
+  /* ---------- 第九天 1/1 ---------- */
+  {
+    id:"day10", tab:"第九天", d:"1/1", wd:"五", city:"茵斯布魯克 → 慕尼黑 → 布拉格", tag:"🚄 移動日", holiday:"1/1 假日班表", title:"跨國移動．回布拉格",
+    intro:"縱貫阿爾卑斯的一日。火車翻山越嶺，抵達布拉格正好夜幕降臨。",
+    legs:[
+      { t:"08:30", n:"早餐・退房", s:"", d:"行李前晚先整理，早上輕鬆出發。" },
+      { t:"09:30", n:"火車往慕尼黑", s:"Innsbruck Hbf → München Hbf", d:"RJX 約 1 小時 45 分，穿越阿爾卑斯。" },
+      { t:"12:30", n:"慕尼黑轉乘", s:"München Hbf", d:"行李可寄置物櫃；轉乘預留 40 分以上。" },
+      { move:"train", dur:"約 5–5.5 小時", txt:"慕尼黑 → 布拉格（1/1 假日班表，務必先查先訂）" },
+      { t:"19:30", n:"抵達布拉格", s:"Praha hl.n.", d:"飯店選在車站與舊城之間，明天趕飛機更穩。" },
+      { t:"20:30", n:"舊城最後散步・輕食", s:"", d:"安靜的 1/1 夜晚，跟布拉格好好道別。" }
+    ],
+    cards:[
+      {
+        id:"d10-transfer", emoji:"🚄", area:"跨國移動", theme:"innsbruck", name:"跨國火車轉乘攻略",
+        lead:"三段車一次搞定：茵斯布魯克 → 慕尼黑 → 布拉格。",
+        best:["ÖBB / DB / ČD 官方 app 查即時動態","跨國段建議訂位（假期週一位難求）","慕尼黑站內置物櫃先寄行李再吃飯"],
+        eat:["慕尼黑中央車站麵包與香腸","布拉格抵達後舊城熱湯收尾"],
+        photo:["阿爾卑斯雪谷車窗（靠山側座位）","慕尼黑車站月台一景作結"],
+        care:["1/1 為假日班表，班次縮減務必先確認","轉乘預留 40 分鐘以上容錯","行李不離視線"],
+        mapQ:"München Hbf"
+      }
+    ]
+  },
+  /* ---------- 回程 1/2–1/3 ---------- */
+  {
+    id:"day11", tab:"回程", d:"1/2", wd:"六", city:"布拉格 → 台北", tag:"✈️ 回程", title:"回程．退稅別忘記",
+    intro:"1/2（六）10:55 起飛、1/3（日）07:10 抵達桃園。退稅要留時間，行李要留空位。",
+    legs:[
+      { t:"07:00", n:"早餐・退房", s:"", d:"行李前晚整理完畢。" },
+      { t:"07:45", n:"前往機場", s:"PRG 機場", d:"Bolt/計程車約 25–30 分，前一晚預約。" },
+      { t:"08:00", n:"報到托運 + 退稅", s:"PRG", d:"退稅單需海關驗章，預留 60–90 分鐘；國際線多於 T2（依機票）。" },
+      { t:"10:55", n:"PRG 起飛", s:"布拉格 → 台北", d:"回家。" },
+      { move:"plane", dur:"夜宿機上", txt:"1/3（日）上午抵達台北（依機票轉機安排）" },
+      { t:"07:10", n:"抵達桃園機場", s:"TPE", d:"三周年之旅，完美收官——這週多喝水、早點睡。" }
+    ],
+    cards:[
+      {
+        id:"d11-taxfree", emoji:"💶", area:"布拉格機場", theme:"prague", name:"退稅與返程檢查",
+        lead:"把該拿回來的拿回來，把該帶回家的帶回家。",
+        best:["退稅單（Global Blue 等）海關章在托運前處理","液體與登機行李規定再確認","護照、機票、旅平險單據收好"],
+        eat:["機場咖啡與最後一塊蜂蜜蛋糕"],
+        photo:["登機證＋機窗最後一張：三周年之旅完滿"],
+        care:["退稅排隊尖峰在起飛前 2–3 小時，早到早贏","免稅品收據與退稅單分開收"],
+        mapQ:"Vaclav Havel Airport Prague"
+      }
+    ]
+  }
+  ],
+
+  /* ---------- 城市速查 ---------- */
+  picks:[
+    {
+      eyebrow:"布拉格 · 第一天～第三天", name:"咖啡與甜點線", lead:"百年咖啡館與市集甜食，一條河岸散步串起來。",
+      points:["Café Louvre（1902，愛因斯坦常客）","Café Savoy：穹頂早餐","Choco- Café 熱巧克力、市集 Trdelník"],
+      howto:"<b>走法：</b>舊城 → 查理大橋 → 小城區河岸 → 咖啡館，全程步行。",
+      tip:"熱門店 10:00 前入座最從容。",
+      link:{ url:"https://www.prague.eu/en", name:"布拉格旅遊官網" }
+    },
+    {
+      eyebrow:"布拉格 · 第三天", name:"購物與伴手線", lead:"波希米亞水晶、慕夏海報與藥妝，一次買齊。",
+      points:["Palladium / Kotva 百貨（共和廣場）","波希米亞水晶與慕夏海報專賣店","Becherovka 草藥酒、木偶與卡夫卡周邊"],
+      howto:"<b>走法：</b>猶太區 → 共和廣場百貨 → 舊城市集收尾。",
+      tip:"假期與週日營業時間先查，水晶易碎請手提。",
+      link:{ url:"https://www.prague.eu/en", name:"購物指南" }
+    },
+    {
+      eyebrow:"薩爾斯堡 · 第四天～第五天", name:"老城與伴手線", lead:"莫札特的故鄉，甜點與音樂一樣有名。",
+      points:["Café Fürst 莫札特巧克力（原創，銀藍包裝）","糧食胡同鍛鐵招牌街","真善美半日導覽（若時間充裕）"],
+      howto:"<b>走法：</b>火車站 → 巴士/步行進老城 → 糧食胡同 → 河岸拍要塞。",
+      tip:"奧地利週日商店公休；伴手禮抓週一早上補齊。",
+      link:{ url:"https://www.salzburg.info/en", name:"薩爾斯堡旅遊官網" }
+    },
+    {
+      eyebrow:"茵斯布魯克 · 第五天～第九天", name:"市區與施華洛世奇", lead:"水晶世界半日， Tyrol 紀念品一次打包。",
+      points:["Swarovski Kristallwelten（Wattens，車程約 20–25 分）","Tyrol 毛氈帽與傳統服飾店","Kaufhaus Tyrol 商圈與老城紀念品店"],
+      howto:"<b>走法：</b>中央車站搭巴士/火車至 Wattens → 巨人入口進水晶世界 → 回程逛市中心。",
+      tip:"12/26–1/6 為奧地利假期，店休與人潮都要預期。",
+      link:{ url:"https://kristallwelten.swarovski.com/en/", name:"Swarovski 水晶世界" }
+    },
+    {
+      eyebrow:"滑雪 · 第六天～第八天", name:"滑雪裝備攻略", lead:"兩天滑雪的裝備與雪票，一次看懂。",
+      points:["大型連鎖租具（Glanzer / Intersport 等）前一晚先租","雪票線上預購，掃碼進閘","Innsbruck Card 適合觀景與博物館，不含滑雪票"],
+      howto:"<b>動線：</b>第六天 史度拜冰河（巴士 50–60 分）→ 第七天 Nordkette（市區直達）。",
+      tip:"假期週 8:30 前上纜車避開人龍；手套護目鏡自備。",
+      link:{ url:"https://www.innsbruck.info/en/experience/winter.html", name:"茵斯布魯克冬季指南" }
+    }
+  ],
+
+  /* ---------- 三周年提案 ---------- */
+  anni:[
+    {
+      eyebrow:"第一天 · 布拉格", name:"查理大橋的日出藍調", lead:"時差讓你們 5 點就醒——正好，這是全布拉格最安靜的時刻。",
+      howto:"<b>提案：</b>帶兩杯熱咖啡上橋，日出前 30 分鐘到，拍一張只有你們的查理大橋。"
+    },
+    {
+      eyebrow:"第二天 · 布拉格", name:"三周年紀念晚餐", lead:"聖誕夜的河景餐廳或米其林星光，訂位就是心意。",
+      howto:"<b>提案：</b>Mlýnec（查理大橋景）或 La Degustation；12/25 或 12/26 任選一晚，現在就訂。"
+    },
+    {
+      eyebrow:"第三天 · 布拉格", name:"伏爾塔瓦遊船之夜", lead:"天黑後的河，兩岸燈火慢慢流過身邊。",
+      howto:"<b>提案：</b>晚餐前搭 1 小時燈光遊船；記得坐在右舷看城堡。"
+    },
+    {
+      eyebrow:"第四天～第五天 · 薩爾斯堡", name:"要塞黃昏 × 莫札特巧克力", lead:"夕陽把老城屋頂染成金色，巧克力在口袋裡。",
+      howto:"<b>提案：</b>第四天傍晚河岸先拍要塞夜景，第五天上午纜車上山拍全景，下山帶一盒原創莫札特球。"
+    },
+    {
+      eyebrow:"第七天～第八天 · 茵斯布魯克", name:"2,256 m 山頂合照 × 跨年之吻", lead:"在城市上空的雪山山頂拍一張，午夜在煙火下親一個。",
+      howto:"<b>提案：</b>上午 Nordkette 山頂合照；午夜 Marktplatz 煙火倒數——三周年快樂。"
+    }
+  ],
+
+  /* ---------- Travel Mode ---------- */
+  modes:[
+    { icon:"🎫", name:"車票先訂", desc:"跨國火車 2–4 週前訂位；ÖBB / DB / ČD / RegioJet / FlixBus app 裝好。1/1 是假日班表，出發前一天再確認一次。" },
+    { icon:"📖", name:"訂位生活", desc:"耶誕（12/24–25）與跨年晚餐多為固定菜單、幾乎都要訂位；音樂會、滑雪裝備與雪票也線上先處理。" },
+    { icon:"📴", name:"離線也看得到", desc:"備忘與時刻提醒存在本機，沒網路仍可看文字；天氣、地圖與照片連結需連線。Google 離線地圖先下載三座城。" },
+    { icon:"⚠️", name:"現場為準", desc:"假期營業時間常有變動，以官網與現場公告為準；市集、地鐵與纜車站留意隨身物。緊急電話 112。" }
+  ],
+
+  /* ---------- 天氣城市 ---------- */
+  cities:[
+    { id:"prague", name:"布拉格", lat:50.0875, lon:14.4213 },
+    { id:"salzburg", name:"薩爾斯堡", lat:47.8112, lon:13.0499 },
+    { id:"innsbruck", name:"茵斯布魯克", lat:47.2654, lon:11.3910 }
+  ]
+};
+
+/* =====================================================================
+   以下為渲染與互動（一般不用改）
+   ===================================================================== */
+const $ = (s,el=document)=>el.querySelector(s);
+const $$ = (s,el=document)=>Array.from(el.querySelectorAll(s));
+const enc = encodeURIComponent;
+const mapsSearch = q => `https://www.google.com/maps/search/?api=1&query=${enc(q)}`;
+const imgSearch = q => `https://www.google.com/search?tbm=isch&q=${enc(q)}`;
+const MOVE_IC = { bus:"🚌", train:"🚄", walk:"🚶", plane:"✈️", tram:"🚋", car:"🚗", cable:"🚡" };
+
+/* ---- 版面高度變數（頂欄換行時自適應） ---- */
+function layoutVars(){
+  const h=$("#topbar").offsetHeight||41;
+  document.documentElement.style.setProperty("--topH",h+"px");
+}
+layoutVars(); addEventListener("resize",layoutVars);
+
+/* ---- 雪 ---- */
+(function snow(){
+  const host = $("#snow"); if(!host) return;
+  for(let i=0;i<26;i++){
+    const s=document.createElement("i");
+    const sz=(Math.random()*3+1.5).toFixed(1);
+    s.style.cssText=`left:${(Math.random()*100).toFixed(1)}vw;width:${sz}px;height:${sz}px;opacity:${(Math.random()*.6+.25).toFixed(2)};animation-duration:${(Math.random()*9+9).toFixed(1)}s,${(Math.random()*6+4).toFixed(1)}s;animation-delay:-${(Math.random()*12).toFixed(1)}s,-${(Math.random()*5).toFixed(1)}s`;
+    host.appendChild(s);
+  }
+})();
+
+/* ---- 日期分頁 ---- */
+const tabScroll = $("#tabScroll");
+TRIPDATA.days.forEach((day,i)=>{
+  const b=document.createElement("button");
+  b.type="button"; b.dataset.target=day.id;
+  b.innerHTML=`<b>${day.tab}</b> ${day.d}（${day.wd}）`;
+  b.addEventListener("click",()=>switchDay(day.id));
+  tabScroll.appendChild(b);
+});
+
+/* ---- 渲染每日 ---- */
+const daysHost=$("#days");
+TRIPDATA.days.forEach((day,i)=>{
+  const sec=document.createElement("section");
+  sec.className="day"; sec.id=day.id;
+  const routeLink = day.route && day.route.length>1
+    ? `https://www.google.com/maps/dir/?api=1&origin=${enc(day.route[0])}&destination=${enc(day.route[day.route.length-1])}&waypoints=${day.route.slice(1,-1).map(enc).join("|")}&travelmode=transit`
+    : null;
+  let legsHtml="";
+  day.legs.forEach(leg=>{
+    if(leg.move){
+      legsHtml+=`<div class="move"><span class="ic">${MOVE_IC[leg.move]||"🚏"}</span><span><b style="color:var(--blue)">${leg.dur}</b>｜${leg.txt}</span></div>`;
+    }else{
+      const nav = leg.q ? `<div class="nav"><a href="${mapsSearch(leg.q)}" target="_blank" rel="noopener">📍 導航</a><a href="${imgSearch(leg.n+' '+day.city)}" target="_blank" rel="noopener">🖼 找更多美照</a></div>`:"";
+      legsHtml+=`<div class="stop"><span class="t">${leg.t}</span><span class="n">${leg.n}</span>${leg.s?`<span class="s">｜${leg.s}</span>`:""}${leg.d?`<div class="d">${leg.d}</div>`:""}${nav}</div>`;
+    }
+  });
+  sec.innerHTML=`
+    <div class="day-head">
+      <div class="tagrow">
+        <span class="daychip">${day.tab}</span>
+        <span class="citytag">${day.d}（${day.wd}）· ${day.city}</span>
+        <span class="citytag">${day.tag}</span>
+        ${day.holiday?`<span class="holiday">${day.holiday}</span>`:""}
+      </div>
+      <h2>${day.title}</h2>
+      <p class="intro">${day.intro||""}</p>
+      ${routeLink?`<a class="routemap" href="${routeLink}" target="_blank" rel="noopener">🗺 本日路線 → Google 地圖</a>`:""}
+    </div>
+    <div class="tl">${legsHtml}</div>
+    ${day.cards&&day.cards.length?`<div class="spotcards"></div>`:""}
+    <p class="disclaimer">時間與車程為行前規劃估值，聖誕假期班表與開放時間常有調整，請以現場與官方公告為準。</p>`;
+  const cardsHost=sec.querySelector(".spotcards");
+  if(cardsHost && day.cards){
+    day.cards.forEach(c=>cardsHost.appendChild(buildSpotCard(c)));
+  }
+  daysHost.appendChild(sec);
+});
+
+/* ---- 景點大卡 ---- */
+function buildSpotCard(c){
+  const el=document.createElement("article");
+  el.className="spot";
+  const li = arr => (arr||[]).map(x=>`<li>${x}</li>`).join("");
+  const official = c.official ? `<a href="${c.official.url}" target="_blank" rel="noopener">🔗 ${c.official.name}</a>` : "";
+  const mapA = c.mapQ ? `<a href="${mapsSearch(c.mapQ)}" target="_blank" rel="noopener">📍 導航</a>` : "";
+  const photoA = c.mapQ ? `<a href="${imgSearch(c.mapQ+' 冬天')}" target="_blank" rel="noopener">🖼 找更多美照</a>` : "";
+  el.innerHTML=`
+    <div class="photo w-${c.theme||"prague"}"><span class="em">${c.emoji||"📍"}</span><span class="area">${c.area||""}</span></div>
+    <div class="body">
+      <h3>${c.name}</h3>
+      <p class="lead">${c.lead||""}</p>
+      <h4>⭐ 必看重點</h4><ul>${li(c.best)}</ul>
+      <h4>🍴 推薦吃・買</h4><ul class="eat">${li(c.eat)}</ul>
+      <h4>📷 拍照提醒</h4><ul class="photos">${li(c.photo)}</ul>
+      <h4>⚠️ 行前注意</h4><ul class="care">${li(c.care)}</ul>
+      <div class="links">${official}${mapA}${photoA}</div>
+      <div class="memo">
+        <label>我的現場備忘 <span class="saved">已儲存 ✓</span></label>
+        <textarea data-note="${c.id}" placeholder="例如：訂位編號、想吃的店、集合時間…"></textarea>
+      </div>
+      <div class="remind" data-rem="${c.id}">
+        <div class="ttl"><span>⏰ 時刻提醒</span><button type="button" class="clr">清除</button></div>
+        <form>
+          <input type="datetime-local" required>
+          <select><option value="+01:00">歐洲（歐洲時間）</option><option value="+08:00">台北時間</option></select>
+          <input type="text" placeholder="提醒名稱" value="${c.name}">
+          <button type="submit" class="set">設定</button>
+        </form>
+        <div class="cdline"></div>
+      </div>
+    </div>`;
+  /* 備忘 */
+  const ta=el.querySelector("textarea"); const saved=el.querySelector(".saved");
+  ta.value=localStorage.getItem("note:"+c.id)||"";
+  let deb=null;
+  ta.addEventListener("input",()=>{
+    clearTimeout(deb);
+    deb=setTimeout(()=>{ localStorage.setItem("note:"+c.id,ta.value); saved.classList.add("show"); setTimeout(()=>saved.classList.remove("show"),1600); },350);
+  });
+  /* 提醒 */
+  const rem=el.querySelector(".remind"); const form=rem.querySelector("form");
+  const dt=rem.querySelector('input[type="datetime-local"]');
+  dt.value=(localStorage.getItem("rem:"+c.id+"_v")||"");
+  form.addEventListener("submit",e=>{
+    e.preventDefault();
+    if(!dt.value) return;
+    const off=rem.querySelector("select").value;
+    const label=rem.querySelector('input[type="text"]').value||c.name;
+    localStorage.setItem("rem:"+c.id,JSON.stringify({iso:dt.value+off,label}));
+    localStorage.setItem("rem:"+c.id+"_v",dt.value);
+    tick();
+  });
+  rem.querySelector(".clr").addEventListener("click",()=>{ localStorage.removeItem("rem:"+c.id); localStorage.removeItem("rem:"+c.id+"_v"); rem.querySelector(".cdline").textContent=""; tick(); });
+  return el;
+}
+
+/* ---- 速查／三周年／Travel Mode ---- */
+function pickCard(p,anni){
+  const el=document.createElement("div"); el.className="pick"+(anni?" anni":"");
+  el.innerHTML=`<div class="pk-eyebrow">${p.eyebrow}</div><h3>${p.name}</h3><p class="lead">${p.lead||""}</p>
+    ${p.points?`<ul style="list-style:none">${p.points.map(x=>`<li style="font-size:13.5px;color:#c6d1ea;padding:3px 0 3px 16px;position:relative"><span style="position:absolute;left:0;color:${anni?"#f0a3ab":"var(--gold)"}">●</span>${x}</li>`).join("")}</ul>`:""}
+    ${p.howto?`<div class="howto">${p.howto}</div>`:""}
+    ${p.tip?`<p style="font-size:12.5px;color:var(--dim)">💡 ${p.tip}</p>`:""}
+    ${p.link?`<a class="more" href="${p.link.url}" target="_blank" rel="noopener">${p.link.name} →</a>`:""}`;
+  return el;
+}
+TRIPDATA.picks.forEach(p=>$("#picksGrid").appendChild(pickCard(p,false)));
+TRIPDATA.anni.forEach(p=>$("#anniGrid").appendChild(pickCard(p,true)));
+TRIPDATA.modes.forEach(m=>{
+  const el=document.createElement("div"); el.className="pick";
+  el.innerHTML=`<div class="pk-eyebrow" style="color:var(--gold)">TRAVEL MODE</div><h3>${m.icon} ${m.name}</h3><p class="lead">${m.desc}</p>`;
+  $("#modeGrid").appendChild(el);
+});
+
+/* ---- 倒數（下一個重點時刻） ---- */
+function reminders(){
+  const out=[];
+  for(let i=0;i<localStorage.length;i++){
+    const k=localStorage.key(i);
+    if(k.startsWith("rem:")&&!k.endsWith("_v")){
+      try{ out.push(JSON.parse(localStorage.getItem(k))); }catch(e){}
+    }
+  }
+  return out;
+}
+function fmtCd(ms){
+  const neg=ms<0; ms=Math.abs(ms);
+  const d=Math.floor(ms/864e5), h=Math.floor(ms%864e5/36e5), m=Math.floor(ms%36e5/6e4), s=Math.floor(ms%6e4/1e3);
+  return (neg?"已過 ":"")+(d?d+" 天 ":"")+h+" 時 "+m+" 分 "+s+" 秒";
+}
+function fmtDT(ts){
+  const d=new Date(ts), wd=["日","一","二","三","四","五","六"][d.getDay()];
+  const p=n=>String(n).padStart(2,"0");
+  return `${d.getMonth()+1}/${d.getDate()}（${wd}）${p(d.getHours())}:${p(d.getMinutes())}`;
+}
+function tick(){
+  const now=Date.now();
+  const all=[...TRIPDATA.keyTimes,...reminders()].map(x=>({label:x.label,ts:new Date(x.iso).getTime()})).filter(x=>!isNaN(x.ts));
+  const next=all.filter(x=>x.ts>now).sort((a,b)=>a.ts-b.ts)[0];
+  const nk=$("#nextKey");
+  if(next){
+    nk.innerHTML=`下一個重點時刻：<b>${next.label}</b>（${fmtDT(next.ts)}）倒數 <span class="cd">${fmtCd(next.ts-now)}</span>`;
+  }else{
+    nk.innerHTML="行程已全部結束，感謝這趟旅程 🎉";
+  }
+  /* 各卡提醒列 */
+  $$(".remind").forEach(rem=>{
+    const id=rem.dataset.rem;
+    let data=null; try{ data=JSON.parse(localStorage.getItem("rem:"+id)||"null"); }catch(e){}
+    const line=rem.querySelector(".cdline");
+    if(!data){ line.textContent=""; return; }
+    const diff=new Date(data.iso).getTime()-now;
+    line.innerHTML=`🔔 <b>${data.label}</b>｜${diff>=0?fmtCd(diff):"已過時間"}`;
+    line.className="cdline"+(diff<0?" past":"");
+  });
+  $("#updated").textContent=new Date().toLocaleTimeString("zh-TW",{hour:"2-digit",minute:"2-digit"});
+}
+tick(); setInterval(tick,1000);
+
+/* ---- 網路狀態 ---- */
+function net(){
+  const on=navigator.onLine;
+  $("#netDot").classList.toggle("off",!on);
+  $("#netTxt").textContent=on?"已連線":"離線中（備忘仍可用）";
+}
+addEventListener("online",net); addEventListener("offline",net); net();
+
+/* ---- 單日分頁切換 ---- */
+const tabs=$$("#daytabs button");
+function switchDay(id,scroll){
+  $$(".day").forEach(el=>el.classList.toggle("active",el.id===id));
+  tabs.forEach(tk=>tk.classList.toggle("on",tk.dataset.target===id));
+  try{ localStorage.setItem("ac26_lastday",id); }catch(err){}
+  const vp=$("#days"); if(vp) vp.scrollTop=0;
+}
+TRIPDATA.days.forEach((d,i)=>{
+  const host=document.getElementById(d.id); if(!host) return;
+  const pager=document.createElement("div"); pager.className="daypager";
+  if(i>0){
+    const prev=document.createElement("button");
+    prev.textContent="◀ "+TRIPDATA.days[i-1].tab;
+    prev.addEventListener("click",()=>switchDay(TRIPDATA.days[i-1].id));
+    pager.appendChild(prev);
+  }
+  const home=document.createElement("button");
+  home.textContent="▲ 回本日開頭";
+  home.addEventListener("click",()=>{ const vp=$("#days"); if(vp) vp.scrollTop=0; });
+  pager.appendChild(home);
+  if(i<TRIPDATA.days.length-1){
+    const next=document.createElement("button");
+    next.textContent="▶ "+TRIPDATA.days[i+1].tab;
+    next.addEventListener("click",()=>switchDay(TRIPDATA.days[i+1].id));
+    pager.appendChild(next);
+  }
+  host.appendChild(pager);
+});
+(function(){
+  let last=null;
+  try{ last=localStorage.getItem("ac26_lastday"); }catch(e){}
+  switchDay(last && document.getElementById(last) ? last : TRIPDATA.days[0].id,false);
+})();
+
+/* ---- 回到頂端 ---- */
+$("#backtop").addEventListener("click",()=>scrollTo({top:0,behavior:"smooth"}));
+
+/* ---- 天氣（Open-Meteo，5 分鐘快取） ---- */
+const WMO={0:["☀️","晴"],1:["🌤","大致晴朗"],2:["⛅","局部多雲"],3:["☁️","陰"],45:["🌫","霧"],48:["🌫","凍霧"],51:["🌦","輕毛雨"],53:["🌦","毛雨"],55:["🌧","濃毛雨"],56:["🌧","凍毛雨"],57:["🌧","凍毛雨"],61:["🌧","小雨"],63:["🌧","中雨"],65:["🌧","大雨"],66:["🌧","凍雨"],67:["🌧","凍雨"],71:["🌨","小雪"],73:["🌨","中雪"],75:["🌨","大雪"],77:["🌨","雪粒"],80:["🌦","陣雨"],81:["🌧","陣雨"],82:["🌧","強陣雨"],85:["🌨","陣雪"],86:["🌨","強陣雪"],95:["⛈","雷雨"],96:["⛈","雷雨夾雹"],99:["⛈","雷雨夾雹"]};
+const WD=["日","一","二","三","四","五","六"];
+const wTabs=$("#wTabs"); let wCur=TRIPDATA.cities[0].id;
+TRIPDATA.cities.forEach((c,i)=>{
+  const b=document.createElement("button"); b.type="button"; b.textContent=c.name; b.dataset.city=c.id;
+  if(i===0)b.classList.add("on");
+  b.addEventListener("click",()=>{ wCur=c.id; $$("#wTabs button").forEach(x=>x.classList.toggle("on",x.dataset.city===c.id)); loadWeather(); });
+  wTabs.appendChild(b);
+});
+function wCacheKey(c){ return "wx:"+c; }
+async function loadWeather(){
+  const city=TRIPDATA.cities.find(c=>c.id===wCur);
+  const panel=$("#wPanel");
+  let data=null;
+  try{ const c=JSON.parse(localStorage.getItem(wCacheKey(city.id))||"null");
+    if(c && Date.now()-c.ts<5*60*1000) data=c.data;
+  }catch(e){}
+  if(!data){
+    panel.textContent="正在向 Open-Meteo 讀取 "+city.name+" 最新預報，請稍候…";
+    try{
+      const url=`https://api.open-meteo.com/v1/forecast?latitude=${city.lat}&longitude=${city.lon}&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,snowfall_sum&timezone=auto&forecast_days=7`;
+      const r=await fetch(url); if(!r.ok) throw new Error(r.status);
+      data=await r.json();
+      localStorage.setItem(wCacheKey(city.id),JSON.stringify({ts:Date.now(),data}));
+    }catch(err){
+      panel.innerHTML=`讀取失敗（離線或無網路）。可改用：<br><a href="https://www.windy.com/?${city.lat},${city.lon},7" target="_blank" rel="noopener">Windy 即時預報</a>`;
+      return;
+    }
+  }
+  const d=data.daily; if(!d||!d.time){ panel.textContent="資料格式異常，請稍後再試。"; return; }
+  let html=`<div class="w-grid">`;
+  d.time.forEach((t,i)=>{
+    const dt=new Date(t+"T12:00:00");
+    const w=WMO[d.weather_code[i]]||["🌡","—"];
+    html+=`<div class="w-card">
+      <div class="wd">週${WD[dt.getDay()]}</div>
+      <div class="dt">${dt.getMonth()+1}/${dt.getDate()}</div>
+      <div class="ic">${w[0]}</div>
+      <div class="tx">${Math.round(d.temperature_2m_max[i])}° / ${Math.round(d.temperature_2m_min[i])}°</div>
+      <div class="pp">${w[1]}</div>
+      <div class="pp">💧${d.precipitation_probability_max[i]??0}%${d.snowfall_sum&&d.snowfall_sum[i]>0?" ❄️"+d.snowfall_sum[i].toFixed(1)+"cm":""}</div>
+    </div>`;
+  });
+  html+=`</div>`;
+  panel.innerHTML=html;
+  panel.style.textAlign="left";
+}
+loadWeather();
+addEventListener("focus",loadWeather);
+setInterval(loadWeather,5*60*1000);
+</script>
+</body>
+</html>
