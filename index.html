@@ -284,11 +284,12 @@ html.intro-off .trip-intro{display:none}
 @media (prefers-reduced-motion:reduce){.trip-intro{display:none}}
 .trip-intro{
   border:0;margin:0;padding:0;max-width:none;max-height:none;
+  width:100vw;height:100vh;height:100dvh;                       /* dialog UA 是 fit-content，必須明確滿版 */
   display:grid;place-items:center;position:fixed;inset:0;z-index:2000;overflow:hidden;
   background:
     radial-gradient(620px 420px at 18% 10%,rgba(232,180,92,.15),transparent 62%),
     radial-gradient(760px 520px at 85% 88%,rgba(111,179,224,.12),transparent 62%),
-    rgba(10,16,29,.96);
+    #0a101d;
   color:var(--ink);opacity:1;transition:opacity .55s ease;
 }
 .trip-intro--closing{opacity:0;pointer-events:none}
@@ -296,27 +297,27 @@ html.intro-off .trip-intro{display:none}
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='180' height='180' filter='url(%23n)' opacity='.6'/></svg>");
   animation:intro-noise-shift .9s steps(2) infinite;
 }
-.intro-controls{position:absolute;top:14px;right:16px;z-index:3;display:flex;align-items:center;gap:8px}
+.intro-controls{position:absolute;top:16px;right:16px;z-index:3;display:flex;align-items:center;gap:8px}
 .intro-preference,.intro-skip{
-  display:inline-flex;align-items:center;gap:7px;min-height:38px;padding:0 14px;cursor:pointer;
+  display:inline-flex;align-items:center;gap:7px;min-height:42px;padding:0 14px;cursor:pointer;
   border:1px solid rgba(233,238,251,.16);border-radius:999px;
   background:rgba(233,238,251,.08);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  color:var(--ink);font-size:12.5px;font-weight:500;font-family:inherit;
+  color:var(--ink);font-size:12px;font-weight:500;font-family:inherit;
 }
 .intro-preference:hover,.intro-skip:hover{border-color:var(--gold);color:var(--gold2)}
 .intro-preference input{width:14px;height:14px;margin:0;accent-color:var(--gold);cursor:pointer}
-.intro-ticket-stage{position:relative;z-index:2;text-align:center;width:min(880px,calc(100vw - 3rem))}
+.intro-ticket-stage{position:relative;z-index:2;text-align:center;width:min(920px,calc(100vw - 3rem));padding-top:60px}
 .intro-ticket-stage>*{animation:intro-stage-in .6s cubic-bezier(.2,.8,.2,1) both}
 .intro-ticket-stage>*:nth-child(2){animation-delay:.08s}
 .intro-ticket-stage>*:nth-child(3){animation-delay:.16s}
 .intro-ticket-stage>*:nth-child(4){animation-delay:.24s}
 .intro-ticket-stage>*:nth-child(5){animation-delay:.3s}
-.intro-kicker{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--gold);letter-spacing:.32em;text-indent:.32em;font-size:12px;font-weight:700}
+.intro-kicker{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--gold);letter-spacing:.32em;text-indent:.32em;font-size:10.4px;line-height:1.5;font-weight:700}
 .intro-kicker span{width:36px;height:1px;background:currentColor;opacity:.55;flex:0 0 auto}
-.trip-intro h2{margin:12px 0 8px;font-size:clamp(26px,4vw,44px);font-weight:900;letter-spacing:.04em}
-.intro-ticket-hint{margin:0;color:rgba(233,238,251,.55);font-size:13px}
+.trip-intro h2{margin:9px 0 7px;font-size:clamp(28px,4vw,51.2px);line-height:1.5;font-weight:900;letter-spacing:.04em}
+.intro-ticket-hint{margin:0;color:rgba(233,238,251,.55);font-size:13.1px}
 .intro-ticket{
-  position:relative;display:grid;grid-template-columns:72% 28%;width:100%;max-width:640px;min-height:340px;margin:28px auto 0;
+  position:relative;display:grid;grid-template-columns:72% 28%;width:100%;max-width:none;height:340px;margin:32px auto 0;
   cursor:ns-resize;touch-action:none;user-select:none;-webkit-user-select:none;
   filter:drop-shadow(0 30px 48px rgba(0,0,0,.34));
   --tear-progress:0%;--stub-dx:0px;--stub-rot:0deg;
@@ -330,7 +331,7 @@ html.intro-off .trip-intro{display:none}
 .intro-ticket-main::after{content:"";position:absolute;right:-40px;bottom:-56px;width:176px;height:176px;border:32px solid rgba(232,180,92,.13);border-radius:50%;pointer-events:none}
 .ticket-topline{display:flex;align-items:center;justify-content:space-between;gap:1rem;color:#33658a;letter-spacing:.18em;font-size:12px;font-weight:900}
 .ticket-topline strong{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#2f4858;letter-spacing:.06em;font-size:20px}
-.ticket-route{display:grid;grid-template-columns:auto minmax(90px,1fr) auto;align-items:center;gap:1.3rem;margin:34px 0}
+.ticket-route{display:grid;grid-template-columns:auto minmax(90px,1fr) auto;align-items:center;gap:1.3rem;margin:22px 0}
 .ticket-route>div{display:flex;flex-direction:column;align-items:flex-start}
 .ticket-route .to{align-items:flex-end;text-align:right}
 .ticket-route strong{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:clamp(44px,7vw,84px);font-weight:700;letter-spacing:-.08em;line-height:.9}
@@ -342,8 +343,8 @@ html.intro-off .trip-intro{display:none}
 .ticket-meta span{display:flex;flex-direction:column;gap:3px}
 .ticket-meta small,.intro-ticket-stub small{color:#7b93a3;letter-spacing:.16em;font-size:9px;font-weight:800}
 .ticket-meta strong{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;font-weight:700}
-.ticket-caption{margin:14px 0 0;color:#8ba0ad;letter-spacing:.2em;font-size:9.5px;font-weight:800}
-.ticket-foot{margin:10px 0 0;color:#9fb1bd;letter-spacing:.08em;font-size:10px;font-weight:600}
+.ticket-caption{margin:12px 0 0;color:#8ba0ad;letter-spacing:.2em;font-size:9.5px;font-weight:800}
+.ticket-foot{margin:8px 0 0;color:#9fb1bd;letter-spacing:.08em;font-size:10px;font-weight:600}
 .intro-ticket-stub{
   background:linear-gradient(180deg,var(--gold2) 0%,var(--gold) 58%,#d9a24b 100%);color:#30363f;
   border-radius:0 24px 24px 0;align-items:center;justify-content:center;padding:16px 12px;
@@ -369,7 +370,7 @@ html.intro-off .trip-intro{display:none}
 .intro-ticket[data-ripped="true"] .intro-ticket-main{animation:intro-ticket-left .68s cubic-bezier(.5,.05,.8,.3) both}
 .intro-ticket[data-ripped="true"] .intro-ticket-stub{animation:intro-ticket-right .68s cubic-bezier(.5,.05,.8,.3) both}
 .intro-ticket[data-ripped="true"] .intro-tear-track{opacity:0}
-.intro-tear-fallback{display:inline-block;margin:18px auto 0;padding:2px 2px 4px;background:none;border:none;border-bottom:1px solid rgba(233,238,251,.3);color:rgba(233,238,251,.55);font-size:12px;font-weight:700;font-family:inherit;cursor:pointer}
+.intro-tear-fallback{display:inline-block;margin:18px auto 0;padding:2px 2px 4px;background:none;border:none;border-bottom:1px solid rgba(233,238,251,.3);color:rgba(233,238,251,.55);font-size:11.5px;font-weight:700;font-family:inherit;cursor:pointer}
 .intro-tear-fallback:hover{color:var(--gold2);border-color:var(--gold)}
 footer .rply{background:none;border:none;padding:0;font:inherit;color:var(--gold);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 footer .rply:hover{color:var(--gold2)}
@@ -380,11 +381,13 @@ footer .rply:hover{color:var(--gold2)}
 @keyframes intro-ticket-left{to{opacity:0;transform:translate(-42vw,25vh) rotate(-13deg)}}
 @keyframes intro-ticket-right{to{opacity:0;transform:translate(34vw,-16vh) rotate(16deg)}}
 @media (max-width:640px){
-  .intro-controls{top:10px;right:10px}
-  .intro-ticket-stage{width:min(320px,calc(100vw - 2.25rem))}
-  .trip-intro h2{font-size:26px}
+  .intro-controls{top:16px;left:12px;right:12px;justify-content:space-between}
+  .intro-ticket-stage{width:min(306px,calc(100vw - 3.5rem))}
+  .intro-kicker span{display:none}
+  .intro-kicker{letter-spacing:.18em;text-indent:.18em;font-size:10.4px}
+  .trip-intro h2{font-size:28px}
   .intro-ticket-hint{padding:0 1.5rem;line-height:1.5}
-  .intro-ticket{grid-template-columns:66% 34%;height:clamp(430px,58dvh,510px);min-height:0;max-width:420px;margin-top:18px}
+  .intro-ticket{grid-template-columns:66% 34%;height:clamp(430px,58dvh,510px);min-height:0;max-width:420px;margin-top:16px}
   .intro-ticket-main{border-radius:20px 0 0 20px;padding:18px 16px 14px}
   .intro-ticket-stub{border-radius:0 20px 20px 0;padding:12px 8px}
   .ticket-topline{font-size:10px;letter-spacing:.14em}
