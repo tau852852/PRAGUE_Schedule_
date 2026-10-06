@@ -216,6 +216,7 @@ html{scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.14) transparent}
   background:linear-gradient(180deg,var(--card2),var(--card));
   border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);
 }
+.spot.dice-hit{border-color:var(--gold);box-shadow:0 0 0 2px rgba(232,180,92,.45),var(--shadow)}
 .spot .photo{
   position:relative;height:120px;display:flex;align-items:center;justify-content:center;
   background:linear-gradient(135deg,#22304f 0%,#3a2b45 55%,#59293a 100%);
@@ -349,7 +350,7 @@ body:has(dialog.tool[open]){overflow:hidden}
 .fx-rates label{display:flex;align-items:center;gap:6px}
 .fx-rates input{width:52px;background:none;border:none;border-bottom:1px dashed var(--line);color:var(--gold2);font-size:12.5px;text-align:center;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;outline:none}
 
-/* ============ 命運骰子 ============ */
+/* ============ 今天隨選（骰子） ============ */
 .dice-stage{display:flex;justify-content:center;padding:22px 18px 8px}
 .die{width:72px;height:72px;border-radius:12px;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);padding:8px;background:linear-gradient(150deg,#fff8,#fff2),linear-gradient(150deg,#efe9db,#ddd4c2);border:1px solid var(--line);box-shadow:var(--shadow)}
 .die i{display:flex;align-items:center;justify-content:center}
@@ -755,7 +756,7 @@ try{ if(localStorage.getItem("ac26_intro_again")==="0") document.documentElement
 
 <div id="fabs">
   <button type="button" class="fab" id="fabFx" title="€ / Kč / NT$ 快換算" aria-label="換算器">💶</button>
-  <button type="button" class="fab" id="fabDice" title="讓骰子決定今天去哪" aria-label="命運骰子">🎲</button>
+  <button type="button" class="fab" id="fabDice" title="讓骰子幫你抽今天做什麼" aria-label="今天做什麼（骰子）">🎲</button>
   <button id="backtop" title="回到頂端" aria-label="回到頂端">↑</button>
 </div>
 
@@ -774,14 +775,14 @@ try{ if(localStorage.getItem("ac26_intro_again")==="0") document.documentElement
 </dialog>
 
 <dialog class="tool" id="diceTool" aria-labelledby="diceTitle">
-  <div class="tool-head"><span id="diceTitle">🎲 命運骰子</span><button type="button" class="tool-x" data-tool-close>✕ 關閉</button></div>
+  <div class="tool-head"><span id="diceTitle">🎲 今天做什麼？</span><button type="button" class="tool-x" data-tool-close>✕ 關閉</button></div>
   <div class="dice-stage"><div class="die" id="dieFace" data-v="1"></div></div>
-  <p class="dice-dest" id="diceDest">擲骰看看天意要你去哪裡。</p>
+  <p class="dice-dest" id="diceDest">擲骰看看天意今天要你做什麼。</p>
   <div class="dice-actions">
     <button type="button" class="dice-roll" id="diceRoll">🎲 擲骰</button>
     <button type="button" class="dice-go" id="diceGo" hidden>帶我去 →</button>
   </div>
-  <p class="tool-hint">幫你從「不是你正在看、也不是搭機日」的景點裡隨機抽一張；結果僅供起爭用，命運自負 😏</p>
+  <p class="tool-hint">不知道要做什麼時就交給天意：從你正在看那天的景點裡隨機抽一個點子 😏</p>
 </dialog>
 
 <script>
@@ -1302,6 +1303,7 @@ TRIPDATA.days.forEach((day,i)=>{
 /* ---- 景點大卡 ---- */
 function buildSpotCard(c){
   const el=document.createElement("article");
+  el.id=c.id;
   el.className="spot";
   const li = arr => (arr||[]).map(x=>`<li>${x}</li>`).join("");
   const official = c.official ? `<a href="${c.official.url}" target="_blank" rel="noopener">🔗 ${c.official.name}</a>` : "";
@@ -1543,20 +1545,15 @@ TRIPDATA.days.forEach((d,i)=>{
   switchDay(last && document.getElementById(last) ? last : TRIPDATA.days[0].id,false);
 })();
 
-/* ---- 命運骰子 ---- */
+/* ---- 今天隨選（骰子）：從正在看那天的景點隨機抽一個點子 ---- */
 const PIPS={1:[4],2:[0,8],3:[0,4,8],4:[0,2,6,8],5:[0,2,4,6,8],6:[0,2,3,5,6,8]};
 const DICE_RM=window.matchMedia("(prefers-reduced-motion: reduce)");
 const dieFace=$("#dieFace"),diceDest=$("#diceDest"),diceRollBtn=$("#diceRoll"),diceGoBtn=$("#diceGo");
-let diceCur=null,diceBusy=false;
+let diceCur=null,diceBusy=false,diceHitT=0;
 function dicePool(){
   const on=document.querySelector("#daytabs button.on");
-  const active=on?on.dataset.target:null;
-  const pool=[];
-  TRIPDATA.days.forEach((day,i)=>{
-    if(i===0||day.id===active) return;
-    (day.cards||[]).forEach(c=>pool.push({day:day.id,d:day.d,tab:day.tab,city:day.city,name:c.name,emoji:c.emoji||""}));
-  });
-  return pool;
+  const day=TRIPDATA.days.find(d=>d.id===(on?on.dataset.target:null));
+  return day?(day.cards||[]).map(c=>({id:c.id,name:c.name,emoji:c.emoji||"",d:day.d,tab:day.tab,city:day.city})):[];
 }
 function dieRender(v){
   dieFace.dataset.v=v;
@@ -1565,7 +1562,7 @@ function dieRender(v){
 function rollDice(){
   if(diceBusy) return;
   const pool=dicePool();
-  if(!pool.length){ diceDest.innerHTML="每個景點你都在看了，天意無話可說 😌"; diceGoBtn.hidden=true; return; }
+  if(!pool.length){ diceDest.innerHTML="這天沒有可抽的景點，天意無話可說 🤷"; diceGoBtn.hidden=true; return; }
   const v=1+Math.floor(Math.random()*6);
   const pick=pool[Math.floor(Math.random()*pool.length)];
   diceCur=pick; diceBusy=true; diceGoBtn.hidden=true; diceRollBtn.disabled=true;
@@ -1574,7 +1571,7 @@ function rollDice(){
   const settle=()=>{
     dieFace.classList.remove("rolling");
     diceDest.innerHTML=`<b>${pick.emoji} ${pick.name}</b><br>${pick.d}（${pick.tab}）・${pick.city}`;
-    diceGoBtn.dataset.day=pick.day;
+    diceGoBtn.dataset.card=pick.id;
     diceGoBtn.hidden=false; diceRollBtn.disabled=false; diceBusy=false;
   };
   if(DICE_RM.matches) settle(); else setTimeout(settle,700);
@@ -1582,7 +1579,16 @@ function rollDice(){
 if(dieFace&&diceDest&&diceRollBtn&&diceGoBtn){
   dieRender(1);
   diceRollBtn.addEventListener("click",rollDice);
-  diceGoBtn.addEventListener("click",()=>{ if(!diceCur) return; const t=$("#diceTool"); if(t) t.close(); switchDay(diceCur.day); });
+  diceGoBtn.addEventListener("click",()=>{
+    if(!diceCur) return;
+    const t=$("#diceTool"); if(t) t.close();
+    const card=diceCur.id?document.getElementById(diceCur.id):null;
+    if(!card) return;
+    clearTimeout(diceHitT);
+    card.scrollIntoView({block:"center",behavior:DICE_RM.matches?"auto":"smooth"});
+    card.classList.add("dice-hit");
+    diceHitT=setTimeout(()=>card.classList.remove("dice-hit"),2500);
+  });
 }
 const diceBtn=$("#fabDice");
 if(diceBtn) diceBtn.addEventListener("click",()=>openTool($("#diceTool"),diceBtn));
