@@ -1549,7 +1549,7 @@ TRIPDATA.days.forEach((d,i)=>{
 const PIPS={1:[4],2:[0,8],3:[0,4,8],4:[0,2,6,8],5:[0,2,4,6,8],6:[0,2,3,5,6,8]};
 const DICE_RM=window.matchMedia("(prefers-reduced-motion: reduce)");
 const dieFace=$("#dieFace"),diceDest=$("#diceDest"),diceRollBtn=$("#diceRoll"),diceGoBtn=$("#diceGo");
-let diceCur=null,diceBusy=false,diceHitT=0;
+let diceCur=null,diceBusy=false,diceHitT=0,diceHitEl=null;
 function dicePool(){
   const on=document.querySelector("#daytabs button.on");
   const day=TRIPDATA.days.find(d=>d.id===(on?on.dataset.target:null));
@@ -1584,10 +1584,12 @@ if(dieFace&&diceDest&&diceRollBtn&&diceGoBtn){
     const t=$("#diceTool"); if(t) t.close();
     const card=diceCur.id?document.getElementById(diceCur.id):null;
     if(!card) return;
+    if(diceHitEl&&diceHitEl!==card) diceHitEl.classList.remove("dice-hit");
     clearTimeout(diceHitT);
     card.scrollIntoView({block:"center",behavior:DICE_RM.matches?"auto":"smooth"});
     card.classList.add("dice-hit");
-    diceHitT=setTimeout(()=>card.classList.remove("dice-hit"),2500);
+    diceHitEl=card;
+    diceHitT=setTimeout(()=>{card.classList.remove("dice-hit");diceHitEl=null;},2500);
   });
 }
 const diceBtn=$("#fabDice");
