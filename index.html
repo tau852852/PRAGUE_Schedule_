@@ -1250,6 +1250,7 @@ const TRIPDATA = {
    ===================================================================== */
 const $ = (s,el=document)=>el.querySelector(s);
 const $$ = (s,el=document)=>Array.from(el.querySelectorAll(s));
+const esc = s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const enc = encodeURIComponent;
 const mapsSearch = q => `https://www.google.com/maps/search/?api=1&query=${enc(q)}`;
 const imgSearch = q => `https://www.google.com/search?tbm=isch&q=${enc(q)}`;
@@ -1425,7 +1426,7 @@ function tick(){
   const next=all.filter(x=>x.ts>now).sort((a,b)=>a.ts-b.ts)[0];
   const nk=$("#nextKey");
   if(next){
-    nk.innerHTML=`下一個重點時刻：<b>${next.label}</b>（${fmtDT(next.ts)}）倒數 <span class="cd">${fmtCd(next.ts-now)}</span>`;
+    nk.innerHTML=`下一個重點時刻：<b>${esc(next.label)}</b>（${fmtDT(next.ts)}）倒數 <span class="cd">${fmtCd(next.ts-now)}</span>`;
   }else{
     nk.innerHTML="行程已全部結束，感謝這趟旅程 🎉";
   }
@@ -1436,7 +1437,7 @@ function tick(){
     const line=rem.querySelector(".cdline");
     if(!data){ line.textContent=""; return; }
     const diff=new Date(data.iso).getTime()-now;
-    line.innerHTML=`🔔 <b>${data.label}</b>｜${diff>=0?fmtCd(diff):"已過時間"}`;
+    line.innerHTML=`🔔 <b>${esc(data.label)}</b>｜${diff>=0?fmtCd(diff):"已過時間"}`;
     line.className="cdline"+(diff<0?" past":"");
   });
   $("#updated").textContent=new Date().toLocaleTimeString("zh-TW",{hour:"2-digit",minute:"2-digit"});
