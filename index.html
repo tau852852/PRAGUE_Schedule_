@@ -328,6 +328,25 @@ body:has(dialog.tool[open]){overflow:hidden}
 .fx-rates{display:flex;gap:16px;flex-wrap:wrap;padding:12px 18px 0;font-size:12.5px;color:var(--muted)}
 .fx-rates label{display:flex;align-items:center;gap:6px}
 .fx-rates input{width:52px;background:none;border:none;border-bottom:1px dashed var(--line);color:var(--gold2);font-size:12.5px;text-align:center;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;outline:none}
+
+/* ============ 命運骰子 ============ */
+.dice-stage{display:flex;justify-content:center;padding:22px 18px 8px}
+.die{width:72px;height:72px;border-radius:12px;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);padding:8px;background:linear-gradient(150deg,#fff8,#fff2),linear-gradient(150deg,#efe9db,#ddd4c2);border:1px solid var(--line);box-shadow:var(--shadow)}
+.die i{display:flex;align-items:center;justify-content:center}
+.die i.pip::before{content:"";width:72%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 32% 30%,#3a3a3a,#101010)}
+.die.rolling{animation:diceRoll .7s cubic-bezier(.25,.8,.3,1)}
+@keyframes diceRoll{
+  0%{transform:rotate(0) scale(1)}
+  60%{transform:rotate(430deg) scale(1.18)}
+  100%{transform:rotate(540deg) scale(1)}
+}
+@media (prefers-reduced-motion:reduce){.die.rolling{animation:none}}
+.dice-dest{margin:8px 18px 0;font-size:14.5px;color:var(--ink);text-align:center;line-height:1.7;min-height:2.6em}
+.dice-dest b{color:var(--gold2)}
+.dice-actions{display:flex;justify-content:center;gap:10px;padding:14px 18px 6px}
+.dice-actions button{border:1px solid var(--line);background:rgba(13,21,38,.45);color:var(--ink);border-radius:999px;padding:9px 18px;font-weight:700;cursor:pointer}
+.dice-actions button:hover{border-color:var(--gold);color:var(--gold2)}
+.dice-go{border-color:var(--gold);color:var(--gold)}
 noscript div{padding:40px 20px;text-align:center;color:var(--red)}
 
 /* ============ 開場登機證（星宇 JX101・撕票揭場） ============ */
@@ -711,6 +730,7 @@ try{ if(localStorage.getItem("ac26_intro_again")==="0") document.documentElement
 
 <div id="fabs">
   <button type="button" class="fab" id="fabFx" title="€ / Kč / NT$ 快換算" aria-label="換算器">💶</button>
+  <button type="button" class="fab" id="fabDice" title="讓骰子決定今天去哪" aria-label="命運骰子">🎲</button>
   <button id="backtop" title="回到頂端" aria-label="回到頂端">↑</button>
 </div>
 
@@ -726,6 +746,17 @@ try{ if(localStorage.getItem("ac26_intro_again")==="0") document.documentElement
     <label>1 € = <input id="fxRateTwd" type="text" inputmode="decimal" autocomplete="off"> NT$</label>
   </div>
   <p class="tool-hint">概略換算用；匯率以出發前最新為準，可自行修改（存在本機）。</p>
+</dialog>
+
+<dialog class="tool" id="diceTool" aria-labelledby="diceTitle">
+  <div class="tool-head"><span id="diceTitle">🎲 命運骰子</span><button type="button" class="tool-x" data-tool-close>✕ 關閉</button></div>
+  <div class="dice-stage"><div class="die" id="dieFace" data-v="1"></div></div>
+  <p class="dice-dest" id="diceDest">擲骰看看天意要你去哪裡。</p>
+  <div class="dice-actions">
+    <button type="button" class="dice-roll" id="diceRoll">🎲 擲骰</button>
+    <button type="button" class="dice-go" id="diceGo" hidden>帶我去 →</button>
+  </div>
+  <p class="tool-hint">幫你從「不是你正在看、也不是搭機日」的景點裡隨機抽一張；結果僅供起爭用，命運自負 😏</p>
 </dialog>
 
 <script>
@@ -1408,7 +1439,7 @@ function openTool(dlg,invoker){
   if(!dlg||dlg.open) return;
   dlg._invoker=invoker||null;
   dlg.showModal();
-  const f=dlg.querySelector("input");
+  const f=dlg.querySelector("input")||dlg.querySelector("button:not(.tool-x)");
   if(f) f.focus();
 }
 document.querySelectorAll("dialog.tool").forEach(dlg=>{
@@ -1485,6 +1516,50 @@ TRIPDATA.days.forEach((d,i)=>{
   try{ last=localStorage.getItem("ac26_lastday"); }catch(e){}
   switchDay(last && document.getElementById(last) ? last : TRIPDATA.days[0].id,false);
 })();
+
+/* ---- 命運骰子 ---- */
+const PIPS={1:[4],2:[0,8],3:[0,4,8],4:[0,2,6,8],5:[0,2,4,6,8],6:[0,2,3,5,6,8]};
+const DICE_RM=window.matchMedia("(prefers-reduced-motion: reduce)");
+const dieFace=$("#dieFace"),diceDest=$("#diceDest"),diceRollBtn=$("#diceRoll"),diceGoBtn=$("#diceGo");
+let diceCur=null,diceBusy=false;
+function dicePool(){
+  const on=document.querySelector("#daytabs button.on");
+  const active=on?on.dataset.target:null;
+  const pool=[];
+  TRIPDATA.days.forEach((day,i)=>{
+    if(i===0||day.id===active) return;
+    (day.cards||[]).forEach(c=>pool.push({day:day.id,d:day.d,tab:day.tab,city:day.city,name:c.name,emoji:c.emoji||""}));
+  });
+  return pool;
+}
+function dieRender(v){
+  dieFace.dataset.v=v;
+  dieFace.innerHTML=Array.from({length:9},(_,i)=>`<i class="${PIPS[v].indexOf(i)>=0?"pip":""}"></i>`).join("");
+}
+function rollDice(){
+  if(diceBusy) return;
+  const pool=dicePool();
+  if(!pool.length){ diceDest.innerHTML="每個景點你都在看了，天意無話可說 😌"; diceGoBtn.hidden=true; return; }
+  const v=1+Math.floor(Math.random()*6);
+  const pick=pool[Math.floor(Math.random()*pool.length)];
+  diceCur=pick; diceBusy=true; diceGoBtn.hidden=true; diceRollBtn.disabled=true;
+  dieRender(v);
+  if(!DICE_RM.matches) dieFace.classList.add("rolling");
+  const settle=()=>{
+    dieFace.classList.remove("rolling");
+    diceDest.innerHTML=`<b>${pick.emoji} ${pick.name}</b><br>${pick.d}（${pick.tab}）・${pick.city}`;
+    diceGoBtn.dataset.day=pick.day;
+    diceGoBtn.hidden=false; diceRollBtn.disabled=false; diceBusy=false;
+  };
+  if(DICE_RM.matches) settle(); else setTimeout(settle,700);
+}
+if(dieFace&&diceDest&&diceRollBtn&&diceGoBtn){
+  dieRender(1);
+  diceRollBtn.addEventListener("click",rollDice);
+  diceGoBtn.addEventListener("click",()=>{ if(!diceCur) return; const t=$("#diceTool"); if(t) t.close(); switchDay(diceCur.day); });
+}
+const diceBtn=$("#fabDice");
+if(diceBtn) diceBtn.addEventListener("click",()=>openTool($("#diceTool"),diceBtn));
 
 /* ---- 回到頂端 ---- */
 $("#backtop").addEventListener("click",()=>scrollTo({top:0,behavior:"smooth"}));
