@@ -386,7 +386,7 @@ footer .rply:hover{color:var(--gold2)}
   .intro-kicker span{display:none}
   .intro-kicker{letter-spacing:.18em;text-indent:.18em;font-size:10.4px}
   .trip-intro h2{font-size:28px}
-  .intro-ticket-hint{padding:0 1.5rem;line-height:1.5}
+  .intro-ticket-hint{padding:0 1rem;line-height:1.5}
   .intro-ticket{grid-template-columns:66% 34%;height:clamp(430px,58dvh,510px);min-height:0;max-width:420px;margin-top:16px}
   .intro-ticket-main{border-radius:20px 0 0 20px;padding:18px 16px 14px}
   .intro-ticket-stub{border-radius:0 20px 20px 0;padding:12px 8px}
@@ -405,6 +405,33 @@ footer .rply:hover{color:var(--gold2)}
   .intro-ticket-stub strong{font-size:13px}
   .intro-tear-track{left:66%}
   .intro-tear-fallback{font-size:11px}
+}
+/* 橫向手機／矮視窗（QA 評審要求）：壓縮開場垂直尺寸，確保撕票軌道與 fallback 完整可見、撕票可完成 */
+@media (max-height:600px){
+  .intro-ticket-stage{padding-top:32px}
+  .intro-kicker span{display:none}
+  .trip-intro h2{font-size:clamp(20px,4.5dvh,34px)}
+  .intro-ticket-hint{font-size:11px}
+  .intro-ticket{height:min(clamp(200px,52dvh,340px),calc(100dvh - 166px));margin:14px auto 0}
+  .intro-ticket-main{padding:16px 24px 12px}
+  .ticket-route{margin:12px 0}
+  .ticket-route strong{font-size:clamp(30px,4.5vw,44px)}
+  .ticket-caption{margin:6px 0 0}
+  .ticket-foot{margin:4px 0 0}
+  .ticket-qr{width:64px;height:64px;margin:20px 12px 12px}
+  .intro-tear-fallback{margin-top:8px}
+}
+@media (max-width:640px) and (max-height:600px){
+  .intro-ticket-stage{padding-top:52px}
+  .intro-kicker{display:none}
+  .trip-intro h2{font-size:18px}
+  .intro-ticket-hint{display:none}
+  .intro-ticket{height:clamp(180px,56dvh,510px);margin:10px auto 0}
+  .ticket-route{margin:8px 0}
+  .ticket-route strong{font-size:32px}
+  .ticket-meta{gap:.3rem;padding-top:6px}
+  .ticket-caption,.ticket-foot{display:none}
+  .intro-tear-fallback{margin-top:8px}
 }
 
 @media (max-width:640px){
