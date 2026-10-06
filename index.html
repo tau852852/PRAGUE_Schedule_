@@ -121,25 +121,6 @@ h1,h2,h3,.serif{font-family:"Noto Serif TC","PingFang TC",serif}
   background:linear-gradient(135deg,rgba(232,180,92,.16),rgba(232,180,92,.05));
 }
 
-/* ============ 拍照收集牆 ============ */
-.shotwall{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;min-height:56px}
-.polaroid{
-  width:150px;background:#faf6ec;padding:8px 8px 32px;border:1px solid var(--line);box-shadow:var(--shadow);
-  cursor:pointer;margin:0;transform:rotate(var(--rot,0deg));transition:transform .25s ease,box-shadow .25s ease;
-}
-.polaroid:hover{transform:rotate(0) scale(1.07);box-shadow:0 10px 26px rgba(0,0,0,.4)}
-.polaroid .ph{height:92px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border-radius:3px;background:linear-gradient(135deg,#2b3a5e,#5b2b3f)}
-.polaroid .ph.w-salzburg{background:linear-gradient(135deg,#23444b,#173a4d)}
-.polaroid .ph.w-innsbruck{background:linear-gradient(135deg,#26405e,#3d3357)}
-.polaroid .em{font-size:32px;filter:drop-shadow(0 3px 8px rgba(0,0,0,.45))}
-.polaroid .w-txt{font-size:11px;color:#fff;letter-spacing:.05em;text-align:center;padding:0 4px;line-height:1.5}
-.polaroid figcaption{margin-top:7px;font-size:11px;color:var(--dim);line-height:1.55;text-align:center;word-break:break-word}
-.shots-empty{color:var(--dim);text-align:center;font-size:13px;padding:14px 0}
-.shotcheck{display:inline-flex;align-items:flex-start;gap:6px;cursor:pointer}
-.shotcheck input{accent-color:var(--gold);margin-top:3px;flex:0 0 auto}
-.shotcheck span{font-size:12.5px;line-height:1.6}
-@media (prefers-reduced-motion:reduce){.polaroid{transition:none}}
-
 /* ============ 摘要卡片 ============ */
 section.block{padding:44px 0 8px}
 .sec-head{text-align:center;margin-bottom:26px}
@@ -710,17 +691,6 @@ try{ if(localStorage.getItem("ac26_intro_again")==="0") document.documentElement
     <div class="stamp-done" id="passportDone" hidden>✓ 三城集滿・旅程完成</div>
   </section>
 
-  <!-- 拍照收集牆 -->
-  <section class="block" id="shots">
-    <div class="sec-head">
-      <div class="eyebrow">PHOTO WALL</div>
-      <h2>拍照收集牆</h2>
-      <p>在各天景點卡的「拍照提醒」打勾，這裡就會沖出一張拍立得；點牆上的照片可以取消。</p>
-    </div>
-    <div class="shotwall" id="shotWall"></div>
-    <p class="shots-empty" id="shotsEmpty">還沒有拍立得。逛到了、拍到了，回來打個勾 📷</p>
-  </section>
-
   <!-- 三周年 -->
   <section class="block" id="anniversary">
     <div class="sec-head">
@@ -775,7 +745,7 @@ try{ if(localStorage.getItem("ac26_intro_again")==="0") document.documentElement
 <footer>
   <div class="wrap">
     <span><b>奧捷耶誕跨年隨身攻略</b> — 結婚三周年紀念之旅 v2.0</span>
-    <span>本頁可離線瀏覽（備忘、提醒、集章、拍立得與換算匯率都存在本機）；天氣、地圖與照片連結需網路。</span>
+    <span>本頁可離線瀏覽（備忘、提醒、集章與換算匯率都存在本機）；天氣、地圖與照片連結需網路。</span>
     <span>緊急電話（歐盟）：112 ｜ 防扒提醒：市集與地鐵人潮處留意隨身物。</span>
     <span><button type="button" class="rply" id="replayIntro" title="重播登機證開場動畫">↺ 重播開場動畫</button></span>
   </div>
@@ -1344,7 +1314,7 @@ function buildSpotCard(c){
       <p class="lead">${c.lead||""}</p>
       <h4>⭐ 必看重點</h4><ul>${li(c.best)}</ul>
       <h4>🍴 推薦吃・買</h4><ul class="eat">${li(c.eat)}</ul>
-      <h4>📷 拍照提醒</h4><ul class="photos">${shotListHTML(c)}</ul>
+      <h4>📷 拍照提醒</h4><ul class="photos">${li(c.photo)}</ul>
       <h4>⚠️ 行前注意</h4><ul class="care">${li(c.care)}</ul>
       <div class="links">${official}${mapA}${photoA}</div>
       <div class="memo">
@@ -1489,53 +1459,6 @@ function unlockStamps(dayId){
     renderPassport(); }
 }
 renderPassport();
-
-/* ---- 拍照收集牆 ---- */
-function loadShots(){ let r={}; try{ r=JSON.parse(localStorage.getItem("ac26_shots"))||{}; }catch(err){} return r; }
-function saveShots(s){ try{ localStorage.setItem("ac26_shots",JSON.stringify(s)); }catch(err){} }
-function shotListHTML(c){
-  const got=loadShots();
-  return (c.photo||[]).map((p,pi)=>{
-    const k=c.id+":"+pi;
-    return `<li><label class="shotcheck"><input type="checkbox" data-shot-key="${k}" ${got[k]?"checked":""}><span>${p}</span></label></li>`;
-  }).join("");
-}
-const SHOT_CARDS={};
-TRIPDATA.days.forEach(d=>(d.cards||[]).forEach(c=>SHOT_CARDS[c.id]=c));
-function renderWall(){
-  const wall=$("#shotWall"); if(!wall) return;
-  const shots=loadShots();
-  const keys=Object.keys(shots).sort((a,b)=>shots[a].at-shots[b].at);
-  wall.innerHTML=keys.map((k,i)=>{
-    const c=SHOT_CARDS[k.split(":")[0]];
-    return `<figure class="polaroid" data-shot="${k}" style="--rot:${((i%5)-2)*1.7}deg" title="點一下取消勾選">
-      <span class="ph w-${(c&&c.theme)||"prague"}"><span class="em">${c&&c.emoji?c.emoji:"📷"}</span><span class="w-txt">${c?c.name:""}</span></span>
-      <figcaption>${shots[k].t}</figcaption>
-    </figure>`;
-  }).join("");
-  const empty=$("#shotsEmpty"); if(empty) empty.hidden=keys.length>0;
-}
-const shotsHost=$("#days");
-if(shotsHost) shotsHost.addEventListener("change",ev=>{
-  const t=ev.target;
-  if(!(t&&t.matches&&t.matches("input[data-shot-key]"))) return;
-  const key=t.dataset.shotKey, shots=loadShots();
-  if(t.checked){ const sp=t.closest("label").querySelector("span"); shots[key]={t:sp?sp.textContent:"",at:Date.now()}; }
-  else delete shots[key];
-  saveShots(shots);
-  renderWall();
-});
-const shotWallEl=$("#shotWall");
-if(shotWallEl) shotWallEl.addEventListener("click",ev=>{
-  const fig=ev.target&&ev.target.closest?ev.target.closest(".polaroid"):null;
-  if(!fig) return;
-  const key=fig.dataset.shot, shots=loadShots();
-  delete shots[key]; saveShots(shots);
-  const cb=document.querySelector(`input[data-shot-key="${CSS.escape(key)}"]`);
-  if(cb) cb.checked=false;
-  renderWall();
-});
-renderWall();
 
 /* ---- 工具對話框與換算 ---- */
 function openTool(dlg,invoker){
