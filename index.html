@@ -97,6 +97,30 @@ h1,h2,h3,.serif{font-family:"Noto Serif TC","PingFang TC",serif}
 #daytabs button.on{background:linear-gradient(135deg,rgba(232,180,92,.2),rgba(232,180,92,.08));border-color:var(--gold);color:var(--gold2)}
 #daytabs button.on b{color:var(--gold2)}
 
+/* ============ 護照集章 ============ */
+.passport-grid{display:flex;flex-wrap:wrap;gap:30px 44px;justify-content:center;padding:6px 0 10px}
+.stamp{
+  position:relative;width:120px;height:120px;border-radius:50%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+  border:2px dotted var(--line);color:var(--dim);transform:rotate(var(--rot,0deg));
+}
+.stamp::before{content:"";position:absolute;inset:5px;border-radius:50%;border:1px dotted var(--line)}
+.stamp .zh{font-size:15px;font-weight:900;letter-spacing:.22em;text-indent:.22em}
+.stamp .en{font-size:10px;letter-spacing:.3em;text-indent:.3em;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.stamp .dt{font-size:11.5px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;margin-top:3px}
+.stamp.uncollected{opacity:.5}
+.stamp.collected{
+  border-color:var(--gold);color:var(--gold2);
+  box-shadow:0 0 22px rgba(232,180,92,.14),inset 0 0 18px rgba(232,180,92,.08);
+}
+.stamp.collected::before{border-style:dashed;border-color:var(--gold)}
+.stamp.collected .dt{color:var(--ink)}
+.stamp-done{
+  width:max-content;margin:14px auto 0;padding:6px 20px;border:1px dashed var(--gold);border-radius:999px;
+  color:var(--gold2);font-size:13px;letter-spacing:.14em;
+  background:linear-gradient(135deg,rgba(232,180,92,.16),rgba(232,180,92,.05));
+}
+
 /* ============ 摘要卡片 ============ */
 section.block{padding:44px 0 8px}
 .sec-head{text-align:center;margin-bottom:26px}
@@ -590,6 +614,17 @@ try{ if(localStorage.getItem("ac26_intro_again")==="0") document.documentElement
       <p>城市之間的空檔怎麼用？先選主線，再依剩餘時間加逛。</p>
     </div>
     <div class="picks-grid" id="picksGrid"></div>
+  </section>
+
+  <!-- 護照集章 -->
+  <section class="block" id="passport">
+    <div class="sec-head">
+      <div class="eyebrow">PASSPORT</div>
+      <h2>護照集章</h2>
+      <p>瀏覽每天的行程，抵達的城市自動蓋一章。</p>
+    </div>
+    <div class="passport-grid" id="stampGrid"></div>
+    <div class="stamp-done" id="passportDone" hidden>✓ 三城集滿・旅程完成</div>
   </section>
 
   <!-- 三周年 -->
@@ -1297,14 +1332,47 @@ function net(){
 }
 addEventListener("online",net); addEventListener("offline",net); net();
 
+/* ---- 護照集章 ---- */
+const CITY_SLUGS={"布拉格":"prague","薩爾斯堡":"salzburg","茵斯布魯克":"innsbruck"};
+const STAMP_ROT={prague:-6,salzburg:4,innsbruck:-3};
+const STAMP_META={};
+TRIPDATA.days.forEach((d,i)=>{ if(i===0) return;
+  d.city.split("→").forEach(cRaw=>{ const slug=CITY_SLUGS[cRaw.trim()];
+    if(slug&&!STAMP_META[slug]) STAMP_META[slug]={zh:cRaw.trim(),en:slug.toUpperCase(),dt:d.d};
+  });
+});
+function loadStamps(){ try{ return JSON.parse(localStorage.getItem("ac26_stamps"))||{} }catch(err){ return {} } }
+function renderPassport(){
+  const grid=$("#stampGrid"); if(!grid) return;
+  const got=loadStamps();
+  grid.innerHTML=Object.keys(STAMP_META).map(s=>{
+    const m=STAMP_META[s], on=!!got[s];
+    return `<div class="stamp ${on?"collected":"uncollected"}" data-slug="${s}" style="--rot:${STAMP_ROT[s]}deg">
+      <span class="zh">${m.zh}</span><span class="en">${m.en}</span><span class="dt">${on?m.dt:"— —"}</span></div>`;
+  }).join("");
+  const done=$("#passportDone"); if(done) done.hidden=Object.keys(got).length<Object.keys(STAMP_META).length;
+}
+function unlockStamps(dayId){
+  if(!$("#stampGrid")||dayId==="day1") return;
+  const d=TRIPDATA.days.find(x=>x.id===dayId); if(!d) return;
+  const got=loadStamps(); let changed=false;
+  d.city.split("→").forEach(cRaw=>{ const slug=CITY_SLUGS[cRaw.trim()];
+    if(slug&&!got[slug]){ got[slug]=STAMP_META[slug].dt; changed=true; }
+  });
+  if(changed){ try{ localStorage.setItem("ac26_stamps",JSON.stringify(got)); }catch(err){}
+    renderPassport(); }
+}
+renderPassport();
+
 /* ---- 單日分頁切換 ---- */
 const tabs=$$("#daytabs button");
 function switchDay(id,scroll){
   $$(".day").forEach(el=>el.classList.toggle("active",el.id===id));
   tabs.forEach(tk=>tk.classList.toggle("on",tk.dataset.target===id));
   try{ localStorage.setItem("ac26_lastday",id); }catch(err){}
-  const vp=$("#days"); if(vp) vp.scrollTop=0;
-}
+    const vp=$("#days"); if(vp) vp.scrollTop=0;
+    unlockStamps(id);
+  }
 TRIPDATA.days.forEach((d,i)=>{
   const host=document.getElementById(d.id); if(!host) return;
   const pager=document.createElement("div"); pager.className="daypager";
