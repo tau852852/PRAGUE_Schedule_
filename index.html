@@ -322,6 +322,17 @@ footer b{color:var(--muted)}
 /* ============ 飄雪 ============ */
 #snowfx{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
 
+/* ============ 節日彩蛋 ============ */
+.fest{
+  max-width:1120px;margin:14px auto 0;padding:10px 18px;border:1px dashed var(--gold);border-radius:12px;
+  background:linear-gradient(135deg,rgba(232,180,92,.18),rgba(232,180,92,.06));
+  color:var(--gold2);font-size:14px;font-weight:700;letter-spacing:.04em;
+  display:flex;align-items:center;gap:12px;justify-content:center;text-align:center;
+}
+.fest[hidden]{display:none}
+.fest .fest-x{border:none;background:none;color:var(--dim);font-size:12px;cursor:pointer;white-space:nowrap;padding:2px 6px}
+.fest .fest-x:hover{color:var(--gold)}
+
 #fabs{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:10px}
 #fabs button{
   width:44px;height:44px;border-radius:50%;
@@ -606,6 +617,9 @@ try{ if(localStorage.getItem("ac26_intro_again")==="0") document.documentElement
     <span class="chip red">♥ 結婚三周年</span>
   </div>
 </section>
+
+<!-- 節日彩帶 -->
+<div class="fest" id="festRibbon" hidden></div>
 
 <!-- 日期分頁 -->
 <nav id="daytabs" aria-label="日期分頁"><div class="scroll" id="tabScroll"></div></nav>
@@ -1688,6 +1702,29 @@ document.addEventListener("visibilitychange",()=>{ document.hidden?snowStop():sn
 window.addEventListener("resize",()=>{ clearTimeout(snowRz); snowRz=setTimeout(()=>{ if(snowOn) snowBuild(); },200); });
 SNOW_RM.addEventListener("change",ev=>{ ev.matches?snowStop():snowStart(); });
 snowStart();
+
+/* ---- 節日彩蛋 ---- */
+(function(){
+  const rib=$("#festRibbon"); if(!rib) return;
+  const now=new Date();
+  const md=(now.getMonth()+1)+"/"+now.getDate();
+  const today=md+"/"+now.getFullYear();
+  let off=null; try{ off=localStorage.getItem("ac26_fest"); }catch(err){}
+  if(off===today) return;
+  const M={
+    "12/24":"🎄 今天是聖誕夜！布拉格的市集燈海正亮著，今晚記得抬頭看看星空與廣場。",
+    "12/31":"🎆 今晚跨年！茵斯布魯克煙火 23:59 開始倒數，保暖做好、早點卡位。",
+    "1/1":"🥂 2027 新年快樂！今天移動日：茵斯布魯克 → 慕尼黑 → 布拉格。"
+  };
+  if(!(md in M)) return;
+  rib.innerHTML=`<span>${M[md]}</span><button type="button" class="fest-x" title="今天不再顯示">✕ 今日不再</button>`;
+  rib.hidden=false;
+  const x=rib.querySelector(".fest-x");
+  if(x) x.addEventListener("click",()=>{
+    try{ localStorage.setItem("ac26_fest",today); }catch(err){}
+    rib.hidden=true;
+  });
+})();
 
 /* ---- 回到頂端 ---- */
 $("#backtop").addEventListener("click",()=>scrollTo({top:0,behavior:"smooth"}));
