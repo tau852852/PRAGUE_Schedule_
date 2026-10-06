@@ -53,16 +53,16 @@ h1,h2,h3,.serif{font-family:"Noto Serif TC","PingFang TC",serif}
     radial-gradient(900px 420px at 10% 110%, rgba(111,179,224,.14), transparent 60%),
     linear-gradient(180deg,#0d1526 0%, #0a101d 100%);
   border-bottom:1px solid var(--line);
-  text-align:center;padding:64px 20px 52px;
+  text-align:center;padding:44px 20px 36px;
 }
 #hero .badge{
   display:inline-block;font-size:12px;letter-spacing:.32em;color:var(--gold);
   border:1px solid rgba(232,180,92,.4);border-radius:999px;padding:6px 18px 6px 22px;
-  background:rgba(232,180,92,.07);margin-bottom:22px;font-weight:500;
+  background:rgba(232,180,92,.07);margin-bottom:16px;font-weight:500;
 }
-#hero h1{font-size:clamp(30px,6vw,52px);font-weight:900;line-height:1.28;margin-bottom:14px}
+#hero h1{font-size:clamp(30px,4.6vw,38px);font-weight:900;line-height:1.28;margin-bottom:12px}
 #hero h1 .heart{color:var(--red)}
-#hero .sub{color:var(--muted);font-size:clamp(14px,2.4vw,17px);margin-bottom:26px}
+#hero .sub{color:var(--muted);font-size:clamp(14px,2.4vw,17px);margin-bottom:22px}
 #hero .sub b{color:var(--gold2);font-weight:700}
 #hero .chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
 #hero .chip{
@@ -175,22 +175,28 @@ section.block{padding:44px 0 8px}
   border-radius:999px;padding:9px 22px;background:var(--card);color:var(--muted);
 }
 .daypager button:hover{border-color:var(--gold);color:var(--gold2)}
-/* 定框檢視：行程內容固定在範圍內切換，頁面零捲動 */
+/* 定框檢視：手機在固定範圍內切換；桌機隨右欄等高對齊（v2.1 起） */
 #days{
   height:min(76vh,720px);height:min(76dvh,720px);
   overflow-y:auto;overscroll-behavior:contain;
   border:1px solid var(--line);border-radius:var(--radius);
   background:rgba(13,21,38,.45);scrollbar-width:thin;
 }
-#days::-webkit-scrollbar{width:8px}
-#days::-webkit-scrollbar-track{background:transparent}
-#days::-webkit-scrollbar-thumb{background:var(--line);border-radius:4px}
+/* 滾輪：細版・半透明白融入深色背景（v2.1 起全站統一） */
+::-webkit-scrollbar{width:8px;height:8px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,.14);border-radius:8px}
+::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,.25)}
+html{scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.14) transparent}
 #days .day{padding:24px 16px 6px;margin:0 14px}
 /* 兩欄版面：行程左・提醒右（≥1000px 並排；窄螢幕堆疊，行程在前） */
 .cols{display:grid;gap:26px;align-items:start;padding-top:26px}
 #summary.block{padding-top:26px}
 @media (min-width:1000px){
-  .cols{grid-template-columns:minmax(0,1fr) 340px}
+  .cols{grid-template-columns:minmax(0,1fr) 340px;position:relative}
+  /* v2.1：行程框改絕對定位填滿欄格（abspos 不參與列高結算）→ 列高僅由右欄決定，兩欄底部切齊、下方零流空 */
+  #days{position:absolute;grid-area:1/1/2/2;top:0;left:0;right:0;bottom:0;height:auto}
+  #summary{grid-area:1/2/2/3}
   #days .spotcards{grid-template-columns:repeat(auto-fit,minmax(255px,1fr))}
 }
 .day-head{margin-bottom:18px}
