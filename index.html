@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>奧捷耶誕跨年隨身攻略｜12 天 11 夜 · 結婚三周年</title>
-<meta name="description" content="布拉格 → 薩爾斯堡 → 茵斯布魯克 → 布拉格：耶誕市集 × 滑雪 × 跨年煙火，2026 聖誕季自由行隨身攻略。">
+<title>奧捷耶誕跨年隨身攻略｜10 天 9 夜 · 結婚三周年</title>
+<meta name="description" content="布拉格 → 庫倫洛夫 → 哈修塔特・阿爾陶湖 → 布拉格：耶誕市集 × 鹽礦 × 湖區雪景 × 跨年煙火，2026–27 聖誕季自由行隨身攻略。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
@@ -222,8 +222,9 @@ html{scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.14) transparent}
   background:linear-gradient(135deg,#22304f 0%,#3a2b45 55%,#59293a 100%);
 }
 .spot .photo.w-prague{background:linear-gradient(135deg,#2b3a5e,#5b2b3f)}
-.spot .photo.w-salzburg{background:linear-gradient(135deg,#23444b,#173a4d)}
-.spot .photo.w-innsbruck{background:linear-gradient(135deg,#26405e,#3d3357)}
+.spot .photo.w-krumlov{background:linear-gradient(135deg,#4a3550,#5d2f33)}
+.spot .photo.w-hallstatt{background:linear-gradient(135deg,#1f4653,#173a4d)}
+.spot .photo.w-altaussee{background:linear-gradient(135deg,#26405e,#2e5744)}
 .spot .photo .em{font-size:44px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.45))}
 .spot .photo .area{
   position:absolute;left:14px;bottom:10px;font-size:12px;letter-spacing:.2em;color:rgba(255,255,255,.85);
@@ -370,7 +371,7 @@ body:has(dialog.tool[open]){overflow:hidden}
 .dice-go{border-color:var(--gold);color:var(--gold)}
 noscript div{padding:40px 20px;text-align:center;color:var(--red)}
 
-/* ============ 開場登機證（星宇 JX101・撕票揭場） ============ */
+/* ============ 開場登機證（撕票揭場） ============ */
 /* 偏好關閉或使用者要求減少動態：整層不亮相（main 腳本會再把 DOM 移除） */
 body:has(.trip-intro){overflow:hidden}
 html.intro-off .trip-intro{display:none}
@@ -540,7 +541,7 @@ try{ if(localStorage.getItem("ac26_intro_again")==="0") document.documentElement
 </head>
 <body>
 
-<!-- 開場登機證（星宇 JX101）：拖曳撕開後揭開網站；偏好關閉或減少動態時由 CSS 隱藏、主腳本移除 -->
+<!-- 開場登機證：拖曳撕開後揭開網站；偏好關閉或減少動態時由 CSS 隱藏、主腳本移除 -->
 <dialog class="trip-intro" open aria-modal="true" aria-label="開場登機證：撕開後進入網站">
   <div class="intro-noise" aria-hidden="true"></div>
   <div class="intro-controls">
@@ -548,27 +549,27 @@ try{ if(localStorage.getItem("ac26_intro_again")==="0") document.documentElement
     <button type="button" class="intro-skip" id="introSkip">略過 ⏭</button>
   </div>
   <section class="intro-ticket-stage" aria-label="由上往下撕開登機證">
-    <div class="intro-kicker"><span></span>AUSTRIA ✕ CZECH · DEC 2026<span></span></div>
+    <div class="intro-kicker"><span></span>AUSTRIA ✕ CZECH · DEC 2026 — JAN 2027<span></span></div>
     <h2>旅程，從一張機票開始</h2>
     <p class="intro-ticket-hint">用滑鼠或手指沿虛線由上往下拉，撕開登機證</p>
     <div class="intro-ticket" id="introTicket" data-ripped="false">
       <div class="intro-ticket-main">
-        <div class="ticket-topline"><span>BOARDING PASS</span><strong>JX101</strong></div>
+        <div class="ticket-topline"><span>BOARDING PASS</span><strong>TPE ✈ PRG</strong></div>
         <div class="ticket-route">
           <div><strong>TPE</strong><span>臺北桃園</span></div>
           <div class="ticket-flight-line" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg><i></i></div>
           <div class="to"><strong>PRG</strong><span>布拉格</span></div>
         </div>
         <div class="ticket-meta">
-          <span><small>DATE</small><strong>23 DEC 2026</strong></span>
-          <span><small>DEPART</small><strong>21:15</strong></span>
-          <span><small>ARRIVE</small><strong>06:05 +1</strong></span>
+          <span><small>DATE</small><strong>24 DEC 2026</strong></span>
+          <span><small>DEPART</small><strong>00:05</strong></span>
+          <span><small>ARRIVE</small><strong>08:15</strong></span>
         </div>
-        <p class="ticket-caption">TAIPEI → PRAGUE · 12 DAYS · 3RD ANNIVERSARY ♥</p>
-        <p class="ticket-foot">STARLUX AIRLINES · 航班資訊以電子機票為準</p>
+        <p class="ticket-caption">TAIPEI → PRAGUE · 10 DAYS · 3RD ANNIVERSARY ♥</p>
+        <p class="ticket-foot">航班資訊以電子機票為準 · TPE TERMINAL 2</p>
       </div>
       <div class="intro-ticket-stub">
-        <span class="ticket-stub-code">JX<br>101</span>
+        <span class="ticket-stub-code">TPE<br>PRG</span>
         <div class="ticket-qr" aria-hidden="true"></div>
         <small>SEAT</small><strong>3A</strong>
         <small>CLASS</small><strong>ANNIV ♥</strong>
@@ -595,13 +596,13 @@ try{ if(localStorage.getItem("ac26_intro_again")==="0") document.documentElement
 <!-- Hero -->
 <section id="hero">
   <div class="snow" id="snow"></div>
-  <div class="badge">PRAGUE · SALZBURG · INNSBRUCK · DEC 2026 — JAN 2027</div>
+  <div class="badge">PRAGUE · KRUMLOV · HALLSTATT · ALTAUSSEE · DEC 2026 — JAN 2027</div>
   <h1>奧捷耶誕跨年隨身攻略<span class="heart"> ♥</span></h1>
-  <p class="sub">布拉格 → 薩爾斯堡 → 茵斯布魯克（滑雪）→ 布拉格<br><b>耶誕市集 × 冰河滑雪 × 跨年煙火</b> — 結婚三周年紀念之旅</p>
+  <p class="sub">布拉格 → 庫倫洛夫 → 哈修塔特・阿爾陶湖 → 布拉格<br><b>耶誕市集 × 鹽礦秘境 × 湖區雪景 × 跨年煙火</b> — 結婚三周年紀念之旅</p>
   <div class="chips">
-    <span class="chip">12 天 11 夜（住宿 9 晚）</span>
-    <span class="chip">自由行</span>
-    <span class="chip">布拉格 4 晚 · 薩爾斯堡 1 晚 · 茵斯布魯克 4 晚</span>
+    <span class="chip">10 天 9 夜（住宿 9 晚）</span>
+    <span class="chip">自由行＋跨境自駕</span>
+    <span class="chip">布拉格 5 晚 · 庫倫洛夫 2 晚 · 阿爾陶湖 2 晚</span>
     <span class="chip red">♥ 結婚三周年</span>
   </div>
 </section>
@@ -633,24 +634,24 @@ try{ if(localStorage.getItem("ac26_intro_again")==="0") document.documentElement
           <span class="em">🛫</span>
           <div class="dir">
             <div class="route">桃園 TPE → 布拉格 PRG</div>
-            <div class="time">12/23（三）21:15 起飛 → 12/24（四）06:05 抵達</div>
+            <div class="time">12/24（四）00:05 起飛（TPE 二航廈）→ 12/24（四）08:15 抵達</div>
           </div>
         </div>
         <div class="flight-row">
           <span class="em">🛬</span>
           <div class="dir">
             <div class="route">布拉格 PRG → 桃園 TPE</div>
-            <div class="time">2027/1/2（六）10:55 起飛 → 1/3（日）07:10 抵達</div>
+            <div class="time">2027/1/2（六）10:25 起飛 → 1/3（日）抵達桃園（依機票轉機安排）</div>
           </div>
         </div>
-        <p class="note">航班號依電子機票為準。去程建議 <b>18:15 前</b> 抵達桃園機場；回程建議 <b>08:00 前</b> 抵達 PRG（退稅預留 60–90 分鐘）。</p>
+        <p class="note">航班號依電子機票為準。去程 <b>12/23 21:00 前</b> 抵達桃園二航廈；回程 <b>08:00 前</b> 抵達 PRG（退稅預留 60–90 分鐘）。</p>
       </div>
       <div class="panel">
         <h3>🧣 12–1 月穿著提醒</h3>
         <p class="note" style="font-size:13.5px;line-height:1.9">
-          布拉格約 <b>−5～3°C</b>；茵斯布魯克市區 <b>−8～0°C</b>，雪場體感可低於 <b>−15°C</b>。<br>
+          布拉格與庫倫洛夫約 <b>−5～3°C</b>；阿爾陶湖湖區 <b>−8～0°C</b>，清晨湖畔體感更低。<br>
           發熱衣＋羊毛/刷毛中層＋防水雪衣；防滑防水靴；毛帽、圍脖、防水手套必備。<br>
-          雪地墨鏡/護目鏡、護唇與乳液防乾裂；室內暖氣強，洋蔥式穿脫。
+          護唇與乳液防乾裂；室內暖氣強，洋蔥式穿脫；車上備薄外套備用。
         </p>
       </div>
     </div>
@@ -662,10 +663,12 @@ try{ if(localStorage.getItem("ac26_intro_again")==="0") document.documentElement
         <span>eSIM 或漫遊開通</span>
         <span>歐規插頭（奧 C/F、捷 C/E）</span>
         <span>EUR＋CZK 現金</span>
-        <span>旅平險＋滑雪加購</span>
-        <span>跨國火車票先訂位</span>
+        <span>國際駕照與駕照正本（兩人都帶）</span>
+        <span>SIXT 取車聲明跨奧地利・確認冬胎</span>
+        <span>高速公路通行證先買（捷 300 CZK・奧 €12.80）</span>
+        <span>旅平險＋租車自負額保障</span>
         <span>耶誕／跨年晚餐訂位</span>
-        <span>滑雪裝備（雪衣褲、手套、護目鏡）或當地租</span>
+        <span>鹽礦導覽線上預約（12/30 09:00 場）</span>
       </div>
     </div>
   </section>
@@ -689,7 +692,7 @@ try{ if(localStorage.getItem("ac26_intro_again")==="0") document.documentElement
       <p>瀏覽每天的行程，抵達的城市自動蓋一章。</p>
     </div>
     <div class="passport-grid" id="stampGrid"></div>
-    <div class="stamp-done" id="passportDone" hidden>✓ 三城集滿・旅程完成</div>
+    <div class="stamp-done" id="passportDone" hidden>✓ 四城集滿・旅程完成</div>
   </section>
 
   <!-- 三周年 -->
@@ -697,7 +700,7 @@ try{ if(localStorage.getItem("ac26_intro_again")==="0") document.documentElement
     <div class="sec-head">
       <div class="eyebrow" style="color:#f0a3ab">3RD ANNIVERSARY</div>
       <h2>給三周年的浪漫提案</h2>
-      <p> ♥ 十二天裡，把這幾個時刻留給彼此。</p>
+      <p> ♥ 十天裡，把這幾個時刻留給彼此。</p>
     </div>
     <div class="picks-grid" id="anniGrid"></div>
   </section>
@@ -716,7 +719,7 @@ try{ if(localStorage.getItem("ac26_intro_again")==="0") document.documentElement
     <div class="sec-head">
       <div class="eyebrow">WEATHER</div>
       <h2>三城市七日天氣</h2>
-      <p>出發前後貼近實際；七日預報為區域尺度，山區雪況以雪場官方為準。</p>
+      <p>出發前後貼近實際；七日預報為區域尺度，山區與湖區天氣、路面結冰以現場為準。</p>
     </div>
     <div class="tabs" id="wTabs"></div>
     <div class="panel" id="wPanel" style="text-align:center;color:var(--muted);padding:26px 18px">讀取中…</div>
@@ -735,9 +738,9 @@ try{ if(localStorage.getItem("ac26_intro_again")==="0") document.documentElement
       <h2>資料來源與版本說明</h2>
     </div>
     <div class="panel" style="font-size:13px;color:var(--muted);line-height:2">
-      本頁為<b style="color:var(--gold2)"> v2.1（2026-10-06）：桌機版面微調・移除拍照收集牆・骰子改「當天做什麼」隨機建議</b>；<b style="color:var(--gold2)">v2.0 趣味包（2026-10-06）：護照集章・拍照收集牆・命運骰子・€ 兌 Kč/TWD 快換算・全頁飄雪・節日彩帶</b>；v1.1 行前改版（2026-10-05）：<b style="color:var(--gold2)">九天分頁・定框切換（12/24 第一天起算），薩爾斯堡 1 晚・茵斯布魯克 4 晚</b>，路線：布拉格 → 薩爾斯堡 → 茵斯布魯克 → 布拉格。<br>
-      交通時刻與車程為<b style="color:var(--gold2)">行前預估</b>：跨國列車以 ÖBB、DB、ČD、RegioJet 與 FlixBus 官方公告為準；1/1 為假日班表，務必先確認。<br>
-      景點門票、耶誕假期與週日營業時間常有調整，以各景點官網與現場公告為準；雪場開放與雪票價以 <b style="color:var(--gold2)">2026–27 雪季官網</b>為準。<br>
+      本頁為<b style="color:var(--gold2)"> v3.0 全新路線（2026-10-12）：10 天 9 夜・布拉格 → 庫倫洛夫 → 哈修塔特・阿爾陶湖 → 布拉格・SIXT 跨境自駕（12/27–12/31）・12/24 00:05 起飛航班・四城集章（原薩爾斯堡、茵斯布魯克路線見 git 歷史）</b>；<b style="color:var(--gold2)">v2.0 趣味包（2026-10-06）：護照集章・命運骰子・€ 兌 Kč/TWD 快換算・全頁飄雪・節日彩帶</b>；v1.1 行前改版（2026-10-05）：九天分頁・定框切換（12/24 第一天起算）。<br>
+      交通時刻與車程為<b style="color:var(--gold2)">行前預估</b>：自駕路線與過境時間以 Google Maps 即時路況、ASFINAG（奧地利通行證）、edalnice.gov.cz（捷克通行證）為準；奧地利 11/1–3/31 強制冬胎；1/1 為假日班表，市區大眾運輸先查 DPP 官網。<br>
+      景點門票、耶誕假期與週日營業時間常有調整（庫倫洛夫城堡室內 12/22–1/2 冬休、Salzwelten 鹽礦冬季每日整點導覽、耶誕市集 12/24 僅開至 14:00），以各景點官網與現場公告為準。<br>
       天氣由 Open-Meteo 提供，僅供行前參考。所有行程資料可直接編輯本頁頂端的 TRIPDATA 後重新開啟即可更新。
     </div>
   </section>
@@ -745,7 +748,7 @@ try{ if(localStorage.getItem("ac26_intro_again")==="0") document.documentElement
 
 <footer>
   <div class="wrap">
-    <span><b>奧捷耶誕跨年隨身攻略</b> — 結婚三周年紀念之旅 v2.1</span>
+    <span><b>奧捷耶誕跨年隨身攻略</b> — 結婚三周年紀念之旅 v3.0</span>
     <span>本頁可離線瀏覽（備忘、提醒、集章與換算匯率都存在本機）；天氣、地圖與照片連結需網路。</span>
     <span>緊急電話（歐盟）：112 ｜ 防扒提醒：市集與地鐵人潮處留意隨身物。</span>
     <span><button type="button" class="rply" id="replayIntro" title="重播登機證開場動畫">↺ 重播開場動畫</button></span>
@@ -791,352 +794,367 @@ try{ if(localStorage.getItem("ac26_intro_again")==="0") document.documentElement
    ===================================================================== */
 const TRIPDATA = {
   keyTimes: [
-    { label:"桃園機場建議抵達", iso:"2026-12-23T18:15:00+08:00" },
-    { label:"TPE 起飛（往布拉格）", iso:"2026-12-23T21:15:00+08:00" },
-    { label:"抵達布拉格 PRG", iso:"2026-12-24T06:05:00+01:00" },
-    { label:"建議出發：布拉格 → 薩爾斯堡（訂票後請設定實際時間）", iso:"2026-12-27T08:30:00+01:00" },
-    { label:"建議出發：薩爾斯堡 → 茵斯布魯克（訂票後請設定實際時間）", iso:"2026-12-28T12:30:00+01:00" },
+    { label:"桃園機場二航廈報到建議（起飛前 3 小時）", iso:"2026-12-23T21:00:00+08:00" },
+    { label:"TPE 起飛（往布拉格）", iso:"2026-12-24T00:05:00+08:00" },
+    { label:"抵達布拉格 PRG", iso:"2026-12-24T08:15:00+01:00" },
+    { label:"SIXT 取車（Hilton Atrium，全年 08:00–20:00）", iso:"2026-12-27T10:00:00+01:00" },
+    { label:"抵達庫倫洛夫・Penzion Prelát", iso:"2026-12-27T12:33:00+01:00" },
+    { label:"哈修塔特 P1 停車場（Salinenplatz）", iso:"2026-12-29T14:03:00+01:00" },
+    { label:"SIXT 還車（Hilton Atrium）", iso:"2026-12-31T14:41:00+01:00" },
     { label:"跨年煙火！", iso:"2026-12-31T23:59:00+01:00" },
-    { label:"建議出發：茵斯布魯克 → 慕尼黑 → 布拉格（訂票後請設定實際時間）", iso:"2027-01-01T09:30:00+01:00" },
-    { label:"出發前往 PRG 機場", iso:"2027-01-02T07:45:00+01:00" },
-    { label:"PRG 起飛（回台北）", iso:"2027-01-02T10:55:00+01:00" },
-    { label:"抵達桃園，歡迎回家", iso:"2027-01-03T07:10:00+08:00" }
+    { label:"出發前往 PRG 機場", iso:"2027-01-02T07:30:00+01:00" },
+    { label:"PRG 起飛（回台北）10:25", iso:"2027-01-02T10:25:00+01:00" }
   ],
   days: [
-  /* ---------- 出發 12/23 ---------- */
-  {
-    id:"day1", tab:"出發", d:"12/23", wd:"三", city:"台北 → 布拉格", tag:"✈️ 飛行日", title:"出發．夜宿機上",
-    intro:"三周年之旅啟程。抵達歐洲是 12/24 清晨，機上好好睡，先贏時差一半。",
-    legs:[
-      { t:"14:00", n:"出發前往桃園機場", s:"家 → TPE", d:"國際線建議起飛前 3 小時抵達；航廈依機票確認。" },
-      { t:"18:15", n:"機場報到・托運", s:"桃園機場", d:"確認行李直掛布拉格；行動電源、貴重物品隨身。" },
-      { t:"21:15", n:"TPE 起飛", s:"台北 → 布拉格", d:"機上過夜，明日 06:05 抵達 PRG。" }
-    ],
-    cards:[
-      {
-        id:"d1-check", emoji:"🧾", area:"出發前", theme:"innsbruck", name:"行前最後檢查", lead:"登機前的最後確認，拍一張清單照存手機。",
-        best:["護照效期 6 個月以上＋電子機票確認頁","歐盟 EES／ETIAS 新制：出發前至官方網站確認是否需線上申請","旅平險生效（含滑雪加購）"],
-        eat:["保溫瓶過安檢後裝水帶上機","機上乾燥：乳液、護唇、眼罩耳塞"],
-        photo:["登機證兩張合照——三周年之旅的第一張照片"],
-        care:["eSIM 出發前先開通測試","現金：歐元 EUR 為主，捷克備少量克朗 CZK"]
-      }
-    ]
-  },
   /* ---------- 第一天 12/24 ---------- */
   {
-    id:"day2", tab:"第一天", d:"12/24", wd:"四", city:"布拉格", tag:"🎄 耶誕夜", title:"抵達布拉格・耶誕夜",
-    intro:"清晨落地、放慢節奏。時差讓你自然早醒，正好把清晨的查理大橋拍成明信片。",
-    route:["Vaclav Havel Airport Prague","Charles Bridge","Old Town Square Prague"],
+    id:"day1", tab:"第一天", d:"12/24", wd:"四", city:"台北 → 布拉格", tag:"✈️ 抵達・耶誕夜", title:"抵達布拉格・耶誕夜",
+    intro:"00:05 從桃園起飛、08:15 落地布拉格——時差讓你早醒，正好把老城的耶誕夜走滿。市集今天 14:00 提早收攤，但燈海一路亮到深夜。",
+    route:["Vaclav Havel Airport Prague","Dancing House Prague","Old Town Square Prague"],
     legs:[
-      { t:"06:05", n:"抵達布拉格機場", s:"Václav Havel Airport", d:"入境（歐盟 EES 需拍照/指紋）、提領行李。" },
-      { move:"bus", dur:"約 45–60 分", txt:"巴士 119 → Nádraží Veleslavín 轉地鐵 A 線；Bolt/計程車約 30 分" },
-      { t:"08:30", n:"飯店寄放行李", s:"舊城區", d:"建議住老城/猶太區一帶，景點步行可達。" },
-      { t:"09:00", n:"早餐", s:"Café Louvre 或 Café Savoy", d:"百年咖啡館，悠閒開場。" },
-      { t:"10:30", n:"查理大橋 + 康帕島", s:"伏爾塔瓦河", d:"清晨橋面人最少，最適合拍照。" },
-      { t:"12:30", n:"老城廣場耶誕市集 + 天文鐘", s:"Staroměstské náměstí", d:"12/24 部分攤位提早收攏，主體市集傍晚前仍熱鬧（現場公告為準）。" },
-      { t:"13:30", n:"午餐", s:"Lokál Dlouhá 等捷克家常餐廳", d:"耶誕夜建議訂位。" },
-      { t:"15:00", n:"回飯店 Check-in・補眠", s:"", d:"短睡 30–60 分鐘對抗時差，別睡到晚上。" },
-      { t:"16:30", n:"舊城散步", s:"火藥塔、共和廣場", d:"16:00 天黑後市集與街道燈飾最迷人。" },
-      { t:"18:30", n:"耶誕夜晚餐", s:"預先訂位", d:"多數餐廳當晚供應固定菜單，務必提前預訂。" },
-      { t:"24:00", n:"（自由參加）午夜彌撒", s:"泰恩教堂/聖維特主教座堂", d:"免費入場、提早入座，氣氛莊嚴浪漫。" }
+      { t:"00:05", n:"TPE 起飛（二航廈）", s:"台北 → 布拉格", d:"機上過夜；航班資訊以電子機票為準。" },
+      { t:"08:15", n:"抵達布拉格機場", s:"Václav Havel Airport", d:"入境（EES 拍照／指紋新制）、提領行李。" },
+      { move:"bus", dur:"約 45–60 分", txt:"巴士 119 → Nádraží Veleslavín 轉地鐵 A 線；或 Bolt 車程約 30 分" },
+      { t:"10:00", n:"公寓寄放行李・稍作梳洗", s:"St. Hubert Legacy（Michalská 440）", d:"老城中心、火藥塔旁；正式 Check-in 多在 15:00 前後。" },
+      { t:"11:00", n:"跳舞的房子・河畔散步", s:"Dancing House", d:"第一步就走到河邊：伏爾塔瓦河面與對岸山色。" },
+      { t:"12:19", n:"哈維爾市集街", s:"Havelské tržiště", d:"中世紀就存在的市場街；12/24 部分攤位提早收攤。" },
+      { t:"13:21", n:"午餐：Havelská Koruna 自助", s:"Havelská 23", d:"秤重計價的捷克家常自助，每日 10:00–20:00——耶誕夜少數開著的平民食堂。" },
+      { t:"14:26", n:"老城廣場・天文鐘", s:"Staroměstské náměstí", d:"12/24 市集只開到 14:00；廣場、泰恩教堂與聖誕樹依舊在。" },
+      { t:"15:28", n:"舊城聖尼古拉教堂", s:"Husova", d:"巴洛克内部；假期開放時間以現場公告為準。" },
+      { t:"16:33", n:"Crème de la Crème 熱巧克力", s:"Husova 231/12", d:"Trolley 酒吧風甜點店，每日 10:30–22:30。" },
+      { t:"17:38", n:"回公寓 Check-in・補眠", s:"", d:"短睡 30–60 分鐘對抗時差，記得設鬧鐘。" },
+      { t:"19:00", n:"耶誕夜晚餐（已訂位）", s:"預先訂位", d:"耶誕夜多為固定菜單；方案見下方卡片。" },
+      { t:"21:30", n:"老城燈海夜散步", s:"火藥塔・共和廣場", d:"16:00 天黑後燈飾最美；今晚早點休息。" }
     ],
     cards:[
       {
-        id:"d2-oldtown", emoji:"🎄", area:"布拉格 舊城", theme:"prague", name:"老城廣場・天文鐘",
-        lead:"耶誕市集主舞台。整點報時、旋轉木馬與紅屋頂一次收藏。",
-        best:["天文鐘整點報時（十二使徒現身）","舊市政廳塔樓俯瞰整片紅屋頂","泰恩教堂雙塔與市集燈飾同框"],
-        eat:["Svařák 熱紅酒（押金杯記得退）","Trdelník 肉桂捲、薑餅、蜂蜜蛋糕"],
-        photo:["塔樓拍紅屋頂海；藍調時刻約 15:40–16:10 最美"],
-        care:["市集人潮多留意隨身物","12/24 部分攤位提早收攤"],
+        id:"d1-arrival", emoji:"🧳", area:"布拉格 舊城", theme:"prague", name:"耶誕夜落地動線",
+        lead:"多數室內景點公休的 12/24——戶外就是全部：市集、燈海與石板路都在營業。",
+        best:["老城廣場：天文鐘整點報時與泰恩教堂","哈維爾市集街 Havelské tržiště——最老的市場街","跳舞的房子河畔視角"],
+        eat:["Havelská Koruna 自助（Havelská 23）每日 10:00–20:00","Crème de la Crème（Husova 231/12）每日 10:30–22:30"],
+        photo:["藍調 16:00 前後的老城屋頂與聖誕樹","清晨時差紅利：空無一人的廣場"],
+        care:["12/24 市集僅到 14:00 收攤","多數商店與室內景點公休","聖誕樹光秀 16:30–21:30 每日循環"],
         official:{ url:"https://www.prague.eu/en", name:"布拉格官方旅遊網" },
         mapQ:"Old Town Square, Prague"
       },
       {
-        id:"d2-charles", emoji:"🌉", area:"布拉格 伏爾塔瓦河", theme:"prague", name:"查理大橋",
-        lead:"1357 年開建的老石橋。清晨薄霧時分最像電影。",
-        best:["30 座巴洛克聖像一路排開","橋塔登頂看橋身全景","對岸小城區橋頭視角"],
-        eat:["橋頭咖啡館早餐","過橋後小城區巷內早午餐"],
-        photo:["清晨順光拍舊城方向；日出前藍調人最少"],
-        care:["清晨石面可能結霜濕滑","相機別放在欄杆上（掉河預約制）"],
-        mapQ:"Charles Bridge, Prague"
+        id:"d1-xmaseve", emoji:"🕯️", area:"12/24 耶誕夜", theme:"prague", name:"耶誕夜晚餐方案",
+        lead:"公休潮裡的倖存者名單，與一條訂位提醒。",
+        best:["Červený Jelen（Hybernská 1034/5）：耶誕夜照常營業","集團型餐廳多數照開——出發前一週用 email 再確認","菜單多為耶誕固定菜單，價位上修屬正常"],
+        eat:["耶誕菜單常見烤鴨、鯉魚等捷克傳統","餐後想喝一杯：廣場旁咖啡館與酒館內用的熱紅酒（市集攤位今天 14:00 已收）"],
+        photo:["餐後火藥塔到老城廣場的深夜燈海","天文鐘夜間仰角"],
+        care:["訂位確認信截留存底","若想參加午夜彌撒：泰恩教堂免費、提早入座","地鐵 12/24 照常營運（班距略疏）"],
+        mapQ:"Cerveny Jelen, Hybernska 5, Prague"
       }
     ]
   },
   /* ---------- 第二天 12/25 ---------- */
   {
-    id:"day3", tab:"第二天", d:"12/25", wd:"五", city:"布拉格", tag:"🎄 聖誕節", holiday:"12/25 捷克國定假日", title:"布拉格城堡日．三周年晚餐",
-    intro:"聖誕節多數室內景點公休或縮短，城堡區照常開放，正好用步行把布拉格最高點走完。",
-    route:["Prague Castle","Nerudova Street","Lennon Wall","Petřín Tower"],
+    id:"day2", tab:"第二天", d:"12/25", wd:"五", city:"布拉格", tag:"🎄 聖誕節", holiday:"12/25 捷克國定假日", title:"聖誕節：城堡與小城",
+    intro:"聖誕節的布拉格：聖維特 13:00 才開門（假期特別時刻表）——上午留給小城區河岸，午後上城堡，晚餐吃全年無休的義式。",
     legs:[
-      { t:"09:00", n:"布拉格城堡區", s:"Pražský hrad", d:"聖維特主教座堂（聖誕節有彌撒）、舊皇宮、黃金小巷 22 號卡夫卡故居。" },
-      { move:"walk", dur:"下山約 15 分", txt:"聶魯達街慢慢逛下小城區" },
-      { t:"12:30", n:"小城區午餐", s:"Malá Strana", d:"巷內傳統餐館，Svíčková 奶油燉牛肉配捷克麵糰。" },
-      { t:"14:00", n:"列儂牆 → 康帕島", s:"小城區河岸", d:"彩繪牆與河畔磨坊輪，散步順路。" },
-      { t:"15:00", n:"佩特任山纜車 + 瞭望塔", s:"Petřín", d:"仿艾菲爾小塔，黃昏看整座城市點燈（日落約 16:00）。" },
-      { t:"17:30", n:"回市區休息", s:"", d:"換上好一點的外套——今晚是三周年晚餐。" },
-      { t:"19:00", n:"♥ 三周年紀念晚餐", s:"需提早數週訂位", d:"河景 Mlýnec（查理大橋景）、米其林 La Degustation 或 Field，任選一間。" }
+      { t:"08:00", n:"悠悠早餐（睡到自然醒）", s:"St. Hubert Legacy", d:"12/25 室內景點晚開，上午不排硬行程。" },
+      { t:"10:00", n:"小城區散步・康帕島與列儂牆", s:"Kampa & Čertovka", d:"聖誕早晨的小城區最安靜；水車、天鵝與列儂牆一路順。" },
+      { t:"12:00", n:"午餐：Pork's 烤豬膝", s:"Mostecká 47/16", d:"全年 12:00–23:30——聖誕節照開的城堡區救星。" },
+      { t:"13:00", n:"聖維特主教座堂", s:"Pražský hrad", d:"12/25 特別時段 13:00–15:30（末入 15:10）；慕夏之窗必看。" },
+      { t:"14:02", n:"布拉格城堡群", s:"舊皇宮・聖喬治聖殿", d:"12/25 開放狀況以現場公告為準；庭院與觀景平台全年開放。" },
+      { t:"15:06", n:"黃金小巷", s:"Golden Lane", d:"若票亭已收：16:00 後巷道免費通行，回頭再走一次；22 號為卡夫卡故居外觀。" },
+      { t:"16:22", n:"城堡窄巷・Nerudova 下山", s:"小城區", d:"城堡下階梯旁有全布拉格最窄的紅綠燈小巷；順 Nerudova 街徽一路下坡。" },
+      { t:"17:42", n:"晚餐：GamberoRosso", s:"Jakubská 744/4", d:"全年 11:00–23:00，聖誕節照常營業的義式小館。" },
+      { t:"19:15", n:"老城廣場・瓦茨拉夫市集夜場", s:"Staroměstské & Václavské nám.", d:"12/25–26 市集 12:00–22:00 照常；樹光秀 16:30–21:30。" }
     ],
     cards:[
       {
-        id:"d3-castle", emoji:"🏰", area:"布拉格 城堡區", theme:"prague", name:"布拉格城堡",
-        lead:"世界最大古城堡群。聖誕節教堂有彌撒，動線可能微調。",
-        best:["聖維特主教座堂彩繪玻璃（慕夏之窗）","黃金小巷 22 號——卡夫卡故居","衛兵交接（整點）"],
-        eat:["城堡區葡萄園小舖（季節性）","下山後小城區傳統餐館"],
-        photo:["城堡西側平台俯瞰全市紅屋頂","換崗整點、教堂玫瑰窗逆光"],
-        care:["聖誕節參觀動線以現場公告為準","塔樓與教堂門票分開買"],
+        id:"d2-castle", emoji:"🏰", area:"布拉格 城堡區", theme:"prague", name:"聖誕節城堡攻略",
+        lead:"12/25 全區特別時刻：聖維特 13:00–15:30 開放，末入 15:10——你的 13:00 剛好卡上。",
+        best:["聖維特主教座堂（12/25 特別時段 13:00–15:30）","黃金巷 16:00 後免費通行段","城堡庭院與西觀景平台——全年開放"],
+        eat:["Pork's（Mostecká 47/16）全年 12:00–23:30","下山後小城區咖啡館的午後熱紅酒"],
+        photo:["聖維特玫瑰窗午後逆光","西平台俯瞰小城紅屋頂與河灣"],
+        care:["聖誕節參觀動線與票種以現場告示為準","整點衛兵交接在第一庭院","下坡石板結霜慢走"],
         official:{ url:"https://www.hrad.cz/en", name:"布拉格城堡官網" },
-        mapQ:"Prague Castle"
+        mapQ:"St. Vitus Cathedral Prague"
       },
       {
-        id:"d3-anniv", emoji:"💍", area:"三周年提案", theme:"prague", name:"聖誕夜的紀念晚餐",
-        lead:"12/25 或 12/26 任選一晚，好好慶祝三周年。",
-        best:["Mlýnec：河岸第一排、查理大橋景","La Degustation：波希米亞 tasting menu","Field：米其林一星"],
-        eat:["建議搭餐酒（pairing）","甜點留給市集的熱紅酒與薑餅"],
-        photo:["晚餐後河岸散步，橋上夜景收尾"],
-        care:["聖誕期間多為固定菜單、價位較高","幾乎都要訂位——現在就設提醒"],
-        mapQ:"Mlýnec Prague"
+        id:"d2-market", emoji:"🎆", area:"12/25 市集夜場", theme:"prague", name:"耶誕市集假期時刻表",
+        lead:"12/24 早收、12/25–26 午後起開——搞懂時段就不撲空。",
+        best:["老城廣場＋瓦茨拉夫廣場主市集：11/28–1/6","12/24 只到 14:00；12/25–26 為 12:00–22:00","聖誕樹光秀每日 16:30–21:30"],
+        eat:["Svařák 熱紅酒（押金杯記得退）","Trdelník 肉桂捲、薑餅與蜂蜜蛋糕"],
+        photo:["樹光秀啟動瞬間（每 30 分鐘一輪）","天文鐘＋聖誕樹＋市集同框"],
+        care:["人潮高峰 17:00–20:00，留意隨身物","離場前退還押金杯","地鐵夜間照常"],
+        mapQ:"Wenceslas Square Christmas Market"
       }
     ]
   },
   /* ---------- 第三天 12/26 ---------- */
   {
-    id:"day4", tab:"第三天", d:"12/26", wd:"六", city:"布拉格", tag:"🎄 布拉格", title:"高堡・猶太區外觀・音樂會日",
-    intro:"聖誕假期的布拉格最適合散步與聽音樂；週六猶太博物館休館，改以街區巡禮。",
-    route:["Vyšehrad","Dancing House","Obecní dům"],
+    id:"day3", tab:"第三天", d:"12/26", wd:"六", city:"布拉格", tag:"🏨 換宿日", title:"換宿 Holešovice・溫泉泡湯",
+    intro:"今天不趕路：上午自由，中午在 Holešovice 工業聚落吃文青午餐，下午搬進溫泉飯店——連三天拉車前先把自己歸零。",
     legs:[
-      { t:"09:00", n:"維謝赫拉德（高堡）", s:"Vyšehrad", d:"免費開放的河畔城堡遺跡，聖馬丁圓廳、城牆河景。" },
-      { t:"11:00", n:"伏爾塔瓦河畔散步 → 跳舞樓", s:"Dancing House", d:"河岸一路往市中心走，順路拍照。" },
-      { t:"12:30", n:"午餐", s:"河畔/共和廣場一帶", d:"餐廳多恢復正常營業。" },
-      { t:"14:00", n:"猶太區巡禮（外觀）", s:"Josefov", d:"舊新猶太會堂（歐洲最古老之一）、希伯來時鐘、巴黎街；週六館區休館。" },
-      { t:"15:30", n:"市政廳導覽", s:"Obecní dům", d:"新藝術風格大廳，內部導覽值得參加。" },
-      { t:"17:00", n:"瓦茨拉夫廣場 + 聖誕市集", s:"Wenceslas Square", d:"第二個市集舞台，規模較小但好逛。" },
-      { t:"19:00", n:"晚餐", s:"", d:"音樂會前簡單吃。" },
-      { t:"20:00", n:"聖誕音樂會", s:"市政廳斯美塔那廳/魯道夫廳", d:"行前於官網或售票網先訂票，聖誕週場次多。" }
+      { t:"08:30", n:"老城最後散步・咖啡早餐", s:"St. Hubert Legacy 一帶", d:"猶太區外觀巡禮：舊新猶太會堂、希伯來時鐘（週六館區休館）。" },
+      { t:"11:00", n:"退房・行李隨行", s:"", d:"Bolt 或地鐵 A 轉 C 前往 Holešovice，車程約 20 分。" },
+      { t:"11:24", n:"VNITROBLOCK 工業聚落", s:"Tusarova 1227/47", d:"舊廠房變身的咖啡、選物與攝影棚聚落；週六照常營業。" },
+      { t:"13:34", n:"Absolutum Check-in", s:"Jablonského 4", d:"地鐵 C 線 Nádraží Holešovice 站步行 3 分；明天取車的 Hilton Atrium 就在河對岸。" },
+      { t:"15:00", n:"Wellness 泡湯・三溫暖", s:"飯店泳池", d:"泳池、桑拿、蒸氣室住客免費——把飛行與時差的疲勞蒸掉。" },
+      { t:"18:30", n:"彈性夜：瓦茨拉夫市集或河畔晚餐", s:"", d:"地鐵 C 直達 Muzeum；明早起連三天開車，早睡也是好選項。" }
     ],
     cards:[
       {
-        id:"d4-vysehrad", emoji:"⛰", area:"布拉格 高堡", theme:"prague", name:"維謝赫拉德 Vyšehrad",
-        lead:"傳說中捷克發源地。人少、安靜、河景開闊。",
-        best:["城牆步道俯瞰伏爾塔瓦河大轉彎","聖彼得保羅教堂與墓園（德弗札克長眠處）","聖馬丁圓形羅馬教堂"],
-        eat:["高堡草地野餐（天氣好時）","回市區再正餐"],
-        photo:["城牆轉角拍鐵橋與河景","傍晚藍調配河面倒影"],
-        care:["冬季風大，注意保暖","坡道結霜慢走"],
-        mapQ:"Vyšehrad, Prague"
+        id:"d3-vnitroblock", emoji:"🏭", area:"Holešovice", theme:"prague", name:"VNITROBLOCK 工業聚落",
+        lead:"舊工廠變身的生活聚落：咖啡、選物、攝影棚與展覽，走進去一小時跑不掉。",
+        best:["烘焙咖啡與週末市集（依活動檔期）","攝影棚 Open Studio 與小眾展覽","Tusarova 街區的工業風立面與塗鴉牆"],
+        eat:["聚落內咖啡館輕食（午餐就在這解決）","河岸方向的工人食堂風啤酒館（晚餐備選）"],
+        photo:["紅磚廠房與天車軌道","咖啡館落地窗側拍"],
+        care:["個別店家週六可能休——先看官網當月檔期","區域空曠、冬季風大","行李多時先寄飯店再逛"],
+        mapQ:"Vnitroblock Praha"
       },
       {
-        id:"d4-concert", emoji:"🎻", area:"布拉格 音樂", theme:"prague", name:"聖誕音樂會",
-        lead:"德弗札克與斯美塔那的故鄉，聖誕週音樂會場次密集。",
-        best:["市政廳 Obecní dům 斯美塔那廳","魯道夫音樂廳 Dvořák 廳","教堂燭光音樂會（老城多處）"],
-        eat:["中場休息吧台通常有香檳"],
-        photo:["音樂廳穹頂與水晶燈","演出中禁攝影，中場再拍"],
-        care:["票券先上網訂，現場排隊不一定有","提前 30 分鐘入場找位"],
-        mapQ:"Rudolfinum Prague"
+        id:"d3-spa", emoji:"♨️", area:"布拉格 Absolutum", theme:"prague", name:"溫泉飯店泡湯夜",
+        lead:"三週年之旅的中場檔修：泳池、桑拿、蒸氣室，住客免費。",
+        best:["室內泳池與熱水池","桑拿＋蒸氣室循環（入池前先淋浴）","地下停車場就位——明天開車免找位"],
+        eat:["飯店吧檯調酒與熱飲","明早退房前把握自助早餐"],
+        photo:["泳池畔夜間氛圍","C 線 Nádraží Holešovice 站台光影"],
+        care:["Wellness 開放時段以大廳公告為準","泳裝自備；泳帽視規定現場確認","Check-in 15:00 起"],
+        mapQ:"Absolutum Wellness Hotel Prague"
       }
     ]
   },
   /* ---------- 第四天 12/27 ---------- */
   {
-    id:"day5", tab:"第四天", d:"12/27", wd:"日", city:"布拉格 → 薩爾斯堡", tag:"🚄 移動日", holiday:"12/27 奧地利週日（商店多公休）", title:"前往薩爾斯堡",
-    intro:"跨國移動日，也是薩爾斯堡唯一一晚——今晚把老城走完，明早上要塞再出發。火車沿河谷走，車窗就是風景。",
+    id:"day4", tab:"第四天", d:"12/27", wd:"日", city:"布拉格 → 庫倫洛夫", tag:"🚗 自駕日①", holiday:"12/27 捷克週日（商家多休）", title:"取車自駕 → 庫倫洛夫",
+    intro:"自駕日①：取車直下南波希米亞。Můstek 週日只開到 16:00——原排的 17:12 會撲空，午餐先吃再逛斗篷橋，順序就是品質。",
+    route:["Hilton Prague, Pobrezni 311/1","Penzion Prelat, Objizdkova 128, Cesky Krumlov"],
     legs:[
-      { t:"08:30", n:"布拉格中央車站出發", s:"Praha hl.n.", d:"火車往林茲（Linz）轉乘至薩爾斯堡；車票提早 2–4 週訂，票面時間以訂票為準。" },
-      { move:"train", dur:"約 5.5–6.5 小時（含轉乘）", txt:"林茲轉乘約 20–40 分；FlixBus 直達約 6 小時為替代方案" },
-      { t:"14:30", n:"抵達薩爾斯堡", s:"Salzburg Hbf", d:"飯店寄放行李，老城步行可達。" },
-      { t:"15:30", n:"糧食胡同老城散步", s:"Getreidegasse", d:"週日奧地利商店多公休，餐廳與景點照常；鍛鐵招牌本身就是風景。" },
-      { t:"17:00", n:"莫札特出生地", s:"Getreidegasse 9", d:"17:00 前入場（開放時間以現場為準）。" },
-      { t:"18:00", n:"大教堂廣場、莫札特廣場", s:"DomQuartier", d:"市集已收攤，但燈飾與要塞夜景仍在。" },
-      { t:"19:00", n:"晚餐", s:"Augustiner Bräustübl", d:"修道院酒館，自取酒杯打酒，每日營業。" }
+      { t:"08:00", n:"早餐後退房・行李上車", s:"Absolutum Wellness Hotel", d:"後車廂先放大件；導航設「Penzion Prelát」。" },
+      { t:"10:00", n:"SIXT 取車（約 30 分手續）", s:"Hilton Atrium・Pobřežní 311/1", d:"前台全年 08:00–20:00；務必聲明 12/29 過境奧地利、確認冬胎與自負額。" },
+      { move:"car", dur:"南向 175 km・約 2h10m", txt:"出發前先線上買捷克 10 日通行證（edalnice.gov.cz・300 CZK・即時生效）" },
+      { t:"12:33", n:"抵達庫倫洛夫・Penzion Prelát", s:"Objížďková 128", d:"老城周邊限行：行李卸下後把車停回民宿車位，今晚不必再開。" },
+      { t:"12:45", n:"午餐：Můstek Beer & Burger", s:"Masná 136", d:"週日只開 12:00–16:00、週一休——午餐時段直接解決，別排傍晚。" },
+      { t:"14:54", n:"斗篷橋・城堡庭院", s:"Zámek 免費區域", d:"室內博物館與彩繪塔 12/22–1/2 冬休；庭院、橋廊與城牆外圈照常開放。" },
+      { t:"16:00", n:"晚餐：Švejk 酒館", s:"Latrán 12", d:"全年 11:30–22:00；中世紀地窖與大杯生啤。" },
+      { t:"17:15", n:"理髮師橋夜景", s:"Lazebnický most", d:"橋頭左側經典機位：彩繪塔、河灣與燈串同框。" },
+      { t:"18:22", n:"回 Penzion Prelát", s:"", d:"小鎮入夜極安靜；明早 8:30 晨光攝影，早點睡。" }
     ],
     cards:[
       {
-        id:"d5-salzburgold", emoji:"🎻", area:"薩爾斯堡 老城", theme:"salzburg", name:"糧食胡同・莫札特出生地",
-        lead:"老城最熱鬧的一條街，鍛鐵招牌一戶一個樣子。",
-        best:["莫札特出生地（Hagenauerhaus）","9 號黃色房子前的排隊人潮地標","老城廣場與要塞纜車入口"],
-        eat:["Café Fürst 的莫札特巧克力（原創店）","巷內香腸攤與麵包舖"],
-        photo:["鍛鐵招牌特寫一路拍到 9 號","傍晚要塞燈光下的老城屋頂"],
-        care:["週日商店公休，伴手禮改晚餐後或明早買","老城石板路，行李箱輪子會辛苦"],
-        official:{ url:"https://www.salzburg.info/en", name:"薩爾斯堡官方旅遊網" },
-        mapQ:"Getreidegasse, Salzburg"
+        id:"d4-sixt", emoji:"🚗", area:"跨境自駕檢查單", theme:"krumlov", name:"SIXT 取車 × 跨境聲明",
+        lead:"Hilton Atrium 前台取車（全年 08:00–20:00），跨奧地利務必當場聲明——之後三天都從這 30 分鐘開始。",
+        best:["櫃檯聲明 12/29 過境奧地利（Foreign Use 逐日計費）","冬胎 11/1–3/31 奧地利強制——確認已配","捷克 10 日通行證 300 CZK：edalnice.gov.cz 即買即生效"],
+        eat:["取車後附近咖啡館補一杯再上高速","車上備水與零食——南波希米亞段服務區少"],
+        photo:["上車前手機繞車錄影一圈（取車存證）","啟程前與 Hilton Atrium 門口拍一張"],
+        care:["滿油出、滿油還（12/31 14:41 前加滿）","奧地利 10 日通行證 €12.80：ASFINAG 線上或過境後機台","行照與救援卡放手套箱"],
+        official:{ url:"https://www.sixt.com", name:"SIXT 官網" },
+        mapQ:"Hilton Prague, Pobrezni 311/1"
+      },
+      {
+        id:"d4-krumlov", emoji:"🏰", area:"庫倫洛夫 舊城", theme:"krumlov", name:"冬天的庫倫洛夫這樣逛",
+        lead:"城堡室內 12/22–1/2 冬休——庭院、斗篷橋、城牆外圈照樣免費開放，反而像包場。",
+        best:["斗篷橋與第一、二庭院（免費區域）","理髮師橋 Lazebnický most 夜景","彩繪塔順光晨光（明早 8:30 檔）"],
+        eat:["Můstek 啤酒漢堡（Masná 136）：週日 12–16、週一休","Švejk 老牌酒館（Latrán 12）：全年 11:30–22:00"],
+        photo:["斗篷橋俯拍熊溝與老城屋瓦","理髮師橋拍彩繪塔側顏"],
+        care:["室內景點冬休：彩繪塔一票 1/2 後重開","週日晚間多數店家早收——16:00 進場晚餐剛好","石板路結霜慢走"],
+        mapQ:"Cloak Bridge, Cesky Krumlov"
       }
     ]
   },
   /* ---------- 第五天 12/28 ---------- */
   {
-    id:"day6", tab:"第五天", d:"12/28", wd:"一", city:"薩爾斯堡 → 茵斯布魯克", tag:"🚄 移動＋要塞", title:"要塞晨遊 → 前往茵斯布魯克",
-    intro:"一晚版薩爾斯堡：上午要塞與米拉貝爾快速巡禮，午後火車進阿爾卑斯；傍晚茵斯布魯克舊城走完、滑雪裝備搞定。",
-    route:["Hohensalzburg Fortress","Mirabell Palace","Innsbruck Hauptbahnhof"],
+    id:"day5", tab:"第五天", d:"12/28", wd:"一", city:"庫倫洛夫", tag:"📷 慢活日", title:"冬日庫倫洛夫慢遊",
+    intro:"整個小鎮都是你們的：晨光、城牆步道、地窖酒館午餐與超市補給——用最鬆的節奏過一個庫倫洛夫的 24 小時。",
     legs:[
-      { t:"08:30", n:"退房・行李寄放（或寄車站置物櫃）", s:"飯店", d:"輕裝上要塞，行李傍晚才需要。" },
-      { t:"09:30", n:"要塞纜車上山・海布倫要塞", s:"Hohensalzburg", d:"開門即上人最少；城牆全景必看、博物館快速走。" },
-      { t:"11:00", n:"下山・Café Fürst 採買莫札特球", s:"Brodgasse（原創店）", d:"銀藍包裝才是原創；順路舊市集廣場。" },
-      { t:"11:45", n:"米拉貝爾花園快速巡禮", s:"Mirabellgarten", d:"真善美 Do-Re-Mi 場景，往車站方向順路。" },
-      { t:"12:30", n:"火車往茵斯布魯克", s:"Salzburg Hbf → Innsbruck Hbf", d:"直達約 1 小時 50 分–2 小時；以訂票班次為準。" },
-      { move:"train", dur:"約 2 小時", txt:"阿爾卑斯山谷路線，右側車窗山景" },
-      { t:"14:30", n:"抵達茵斯布魯克・寄放行李", s:"Innsbruck Hbf → 舊城飯店", d:"舊城步行 10–15 分可達。" },
-      { t:"15:30", n:"舊城巡禮：黃金屋頂、城市塔樓、皇宮", s:"Altstadt", d:"1500 年鍍金屋瓦、31 m 城市塔、Hofburg 皇宮。" },
-      { t:"17:00", n:"🎿 滑雪裝備租借＋確認巴士與雪票", s:"Glanzer / Intersport 等", d:"先租好明早直取；雪票線上買省排隊。" },
-      { t:"19:00", n:"晚餐", s:"Goldener Adler（1390 年老店）", d:"Tyrol 風味：Käsespätzle、Speckknödel。" }
+      { t:"08:30", n:"晨光攝影", s:"理髮師橋・老城巷弄", d:"日出約 07:45；霧氣加順光的彩繪塔是明信片級清晨。" },
+      { t:"10:30", n:"城牆步道外圈", s:"Horní hrad 城牆", d:"免費區域全年開放：老城屋瓦與河灣的制高點。" },
+      { t:"12:45", n:"午餐：Krčma Šatlava", s:"Horní 157", d:"岩石地窖炭火酒館，全年營業（約 11:00 至 22 時左右）；info@satlava.cz 先訂位。" },
+      { t:"14:30", n:"誓約廣場・黑塔外觀", s:"nám. Svornosti", d:"12/28 週一：博物館休、商店少開——正好慢慢走巷弄與雜貨店。" },
+      { t:"17:00", n:"黃昏制高點＋超市補給", s:"", d:"導航最近的 Lidl／Albert，買齊明晨車上早餐與零食。" },
+      { t:"18:00", n:"回民宿", s:"Penzion Prelát", d:"今晚早睡——明天是最長的一個駕駛日。" }
     ],
     cards:[
       {
-        id:"d6-festung", emoji:"🏔", area:"薩爾斯堡 要塞", theme:"salzburg", name:"海布倫要塞",
-        lead:"1077 年起建的山頂要塞，薩爾斯堡天際線的主角。",
-        best:["城牆 360° 眺望老城與阿爾卑斯山","要塞博物館與木偶博物館","纜車上升過程的老城屋頂視角"],
-        eat:["山頂咖啡館的薩赫蛋糕（Sachertorte）","下山後 Stieglkeller 景觀午餐"],
-        photo:["北塔平台拍老城全景","黃昏要塞打燈後從糧食胡同回望"],
-        care:["冬季纜車排隊 15–30 分","山上風大體感低 5 度"],
-        mapQ:"Hohensalzburg Fortress"
+        id:"d5-satlava", emoji:"🕯️", area:"庫倫洛夫 酒館", theme:"krumlov", name:"Krčma Šatlava 地窖酒館",
+        lead:"中世紀岩石地窖裡的炭火烤肉與生啤酒——全年營業、週一照開（這在冬休的小鎮是稀缺品）。",
+        best:["炭烤豬膝與烤肋排","岩石地窖拱頂與燭光座位","Horní 157：老城區中心、誓約廣場步行 2 分"],
+        eat:["火烤豬膝（vepřové koleno）","Goulash 燉牛肉配麵糰子（dumplings）"],
+        photo:["地窖拱頂燭光","餐後老城巷弄雪燈"],
+        care:["info@satlava.cz 訂位——週一午餐人也不少","12/28 老城多家公休，這家照開","地窖空間不大、大件行李留民宿"],
+        mapQ:"Krcma Satlava, Horni 157, Cesky Krumlov"
       },
       {
-        id:"d7-innsbruckold", emoji:"⛰", area:"茵斯布魯克 舊城", theme:"innsbruck", name:"黃金屋頂・舊城",
-        lead:"半小時內可以走完的舊城，卻有兩次冬奧（1964/1976）的底氣。",
-        best:["黃金屋頂（約 2,600 片鍍金瓦）","城市塔樓俯瞰舊城屋頂與北鏈山","Hofburg 皇宮與宮廷教堂（馬克西米利安一世的 28 座青銅像）"],
-        eat:["Goldener Adler 老店","Die Wilderin 當地食材現代料理","路邊攤的 Kiachl 油炸麵包"],
-        photo:["黃金屋頂前廣場仰拍","安娜柱配上北鏈山雪頂","傍晚從 Inn 河岸拍舊城天際線"],
-        care:["舊城餐廳週末與假期需訂位","商店街營業至 18:00–18:30 左右"],
-        official:{ url:"https://www.innsbruck.info/en", name:"茵斯布魯克官方旅遊網" },
-        mapQ:"Golden Roof, Innsbruck"
-      },
-      {
-        id:"d7-skigear", emoji:"🎿", area:"茵斯布魯克 滑雪準備", theme:"innsbruck", name:"滑雪裝備與雪票",
-        lead:"行前最後一晚把裝備搞定，明天 8 點直接上山。",
-        best:["雪板＋雪鞋＋雪杖套餐約 €30–45/天（依等級）","服飾（雪衣褲）多數店可加租","手套、護目鏡、安全帽自備較衛生"],
-        eat:["滑雪午餐山上餐廳（另計）","溫水瓶——奧地利山屋多可裝熱水"],
-        photo:["裝備店門口先拍一張帥的"],
-        care:["假期週（12/26–1/6）人潮多，前一晚租好","雪票線上買省排隊；價格以 2026–27 雪季官網為準","旅平險多不含滑雪，記得加購"],
-        mapQ:"Intersport Innsbruck old town"
+        id:"d5-slow", emoji:"📷", area:"庫倫洛夫 慢活", theme:"krumlov", name:"24 小時小鎮節奏表",
+        lead:"城堡上午逆光、下午順光；河灣與巷弄留給黃昏——攝影師的休息日。",
+        best:["08:30 彩繪塔順光（理髮師橋或民宿窗景）","10:30 城牆步道外圈制高點","17:00 黃昏河灣與超市補給"],
+        eat:["老城咖啡館早午餐（週一的營業名單現場看招牌）","超市採買車上早餐與零食"],
+        photo:["日出前後的河灣倒影藍調","巷弄鐵藝招牌與曬衣繩"],
+        care:["石板結霜、鞋底抓地","咖啡館多 10:00 後開","12/28 週一：博物館與城堡室內續休"],
+        mapQ:"Old Town, Cesky Krumlov"
       }
     ]
   },
   /* ---------- 第六天 12/29 ---------- */
   {
-    id:"day7", tab:"第六天", d:"12/29", wd:"二", city:"茵斯布魯克", tag:"🎿 滑雪日①", title:"史度拜冰河滑雪日",
-    intro:"全年雪無虞的冰河雪場。全日滑雪主場日，晚上早睡——明天還有一天滑雪。",
+    id:"day6", tab:"第六天", d:"12/29", wd:"二", city:"庫倫洛夫 → 哈修塔特", tag:"🚗 自駕日②", title:"越境 → 哈修塔特三段光",
+    intro:"自駕日②：跨過奧地利邊界、穿 Bad Ischl 進鹽湖區——在明信片角度收集白天、藍調、夜燈三種光，夜宿阿爾陶湖畔。",
+    route:["Penzion Prelat, Cesky Krumlov","Salinenplatz Hallstatt","Helis Holiday Suites, Altaussee 75"],
     legs:[
-      { t:"07:30", n:"早餐・取裝備", s:"飯店/租具店", d:"雪票若線上買好，先截圖離線可用。" },
-      { move:"bus", dur:"單程約 50–60 分", txt:"滑雪巴士往 Stubai Glacier（班次以官網/現場為準）" },
-      { t:"09:30", n:"滑雪開始", s:"Stubai Glacier", d:"纜車最高約 3,200 m，冰河視野開闊；中級雪道為主。" },
-      { t:"12:00", n:"山上午餐", s:"3,040 m 餐廳（Jochdohle 等）", d:"邊吃邊看冰河全景。" },
-      { t:"15:30", n:"收板・巴士回程", s:"", d:"末班巴士時間務必先確認。" },
-      { t:"18:30", n:"晚餐・早睡", s:"舊城", d:"Tiroler Gröstl（煎馬鈴薯牛肉蛋），滑雪是體力活。" }
+      { t:"09:30", n:"退房出發", s:"Penzion Prelát", d:"行李全上車；今晚起住阿爾陶湖。" },
+      { t:"09:50", n:"過境 Wullowitz → 奧地利", s:"CZ／AT 邊界", d:"奧地利 10 日通行證 €12.80：ASFINAG 線上先買，或過境後第一個加油站機台。" },
+      { move:"car", dur:"約 2h20m", txt:"山路接河谷往 Bad Ischl——窗外的雪壁山影就是鹽湖區的序曲" },
+      { t:"12:15", n:"Bad Ischl 午餐", s:"Kaiser-Franz-Josef-Str. 3–5", d:"Rührwerk 總店所在的皇家溫泉小城；同街咖啡館林立，營業以現場為準。" },
+      { move:"car", dur:"20 km・約 25 分", txt:"湖岸山路最後一段——轉過彎，哈修塔特出現在湖對面" },
+      { t:"14:03", n:"P1 停車場（Salinenplatz）", s:"冬季唯一停車場", d:"機台購票約 €10–12／4–6 小時；穿隧道入市鎮步行 5 分。" },
+      { t:"14:15", n:"明信片角度・白天版", s:"Gosaumühlstraße", d:"南端湖畔步行 5–8 分即達：教堂尖塔、山壁與湖面倒影。" },
+      { t:"15:07", n:"Rührwerk 哈修塔特店", s:"Seestraße 179", d:"招牌 Schaumrollen 泡芙捲配咖啡；每日 10:00–18:00（冬季以現場為準）。" },
+      { t:"16:10", n:"市集廣場・藍調", s:"Marktplatz", d:"日落約 16:15：聖三一柱與山城屋瓦，等第一批燈亮。" },
+      { t:"17:15", n:"明信片角度・夜燈版", s:"Gosaumühlstraße", d:"同一個角度換一種光——小鎮燈火倒影湖面（回停車場順路）。" },
+      { t:"18:22", n:"取車 → 阿爾陶湖", s:"Hallstatt → Altaussee", d:"約 30–40 分山路；留意陰影處結冰與出沒的鹿。" },
+      { t:"19:02", n:"Helis Holiday Suites 入住", s:"Altaussee 75", d:"密碼自助入住；私人停車位、廚具齊全，湖畔步行 2 分。" }
     ],
     cards:[
       {
-        id:"d8-stubai", emoji:"🏔", area:"茵斯布魯克 雪場", theme:"innsbruck", name:"史度拜冰河雪場",
-        lead:"從河谷一路滑上海拔 3,200 公尺的冰河，雪況全年穩定。",
-        best:["Schaufeljoch 山頂平台 360° 環景","冰河裂隙與雪簷地形（遠觀即可）","長程紅線一路滑回谷站"],
-        eat:["Jochdohle（3,040 m）景觀餐廳","Eisgrat 中繼站的薯條與熱巧克力"],
-        photo:["山頂平台雲海與南阿爾卑斯主峰群","午後順光拍冰河","纜車站建築與雪原大景"],
-        care:["海拔高：動作放慢、多喝水、注意高山反應","雪鏡必備（雪盲風險）、防曬要補","假設雪票約 €70–80（以官網為準）"],
-        official:{ url:"https://www.stubaigletscher.com/en", name:"Stubai Glacier 官網" },
-        mapQ:"Stubai Glacier, Neustift"
+        id:"d6-hallstatt", emoji:"📮", area:"哈修塔特", theme:"hallstatt", name:"明信片角度三段光",
+        lead:"同一個角度拍三次：14:15 白天版、16:10 廣場藍調、17:15 夜燈版——回程剛好順路。",
+        best:["Gosaumühlstraße 南端湖畔（P1 步行 5–8 分）","Marktplatz 聖三一柱與層次屋瓦","Seestraße 湖岸第一排（Rührwerk 露天座）"],
+        eat:["Rührwerk（Seestraße 179）：Schaumrollen 泡芙捲＋咖啡","Bad Ischl 午餐：Rührwerk 總店（Kaiser-Franz-Josef-Str. 3–5）"],
+        photo:["白天版：尖塔＋山壁＋倒影的標準明信片","夜燈版：小鎮燈火串倒影在湖裡"],
+        care:["P1 Salinenplatz 冬季唯一停車場（約 €10–12／4–6h）","穿隧道入市鎮後先往南拍角度再折返北逛","冬季 17:00 後店家多已收攤"],
+        mapQ:"Gosaumuhlstrasse, Hallstatt"
+      },
+      {
+        id:"d6-drive", emoji:"🛣️", area:"跨境車程", theme:"hallstatt", name:"過境與通行證速記",
+        lead:"兩國通行證、過境點與山路駕駛——一張卡看完。",
+        best:["捷克 10 日通行證 300 CZK（edalnice.gov.cz・即時生效）","奧地利 10 日通行證 €12.80（ASFINAG 線上／機台）","Wullowitz 過境即行即過"],
+        eat:["Bad Ischl 中途午餐（皇家溫泉小城）","車上備水與薑糖——山路暈車對策"],
+        photo:["過境後的第一段奧地利湖景","哈修塔特隧道口與湖面的第一照"],
+        care:["清晨與陰影處結冰、減速","冬季日落早：16:15 後就是夜景檔","野生動物清晨黃昏出沒（尤其鹿）"],
+        mapQ:"Wullowitz border crossing"
       }
     ]
   },
   /* ---------- 第七天 12/30 ---------- */
   {
-    id:"day8", tab:"第七天", d:"12/30", wd:"三", city:"茵斯布魯克", tag:"🎿 滑雪日②", title:"滑雪日2：Nordkette 或奧運雪場",
-    intro:"滑雪第二天。預設市區直達的 Nordkette 輕鬆滑；想再大雪山，冰河二訪或 Axamer Lizum 二選一。",
-    route:["Nordkette Innsbruck","Golden Roof, Innsbruck"],
+    id:"day7", tab:"第七天", d:"12/30", wd:"三", city:"阿爾陶湖", tag:"🧂 鹽礦日", title:"鹽礦與湖畔",
+    intro:"不打領帶的一天：上午鹽礦（冬季限定開放、線上預約 9:00 整點場），下午看天氣二選一，晚上爐邊晚餐。",
     legs:[
-      { t:"08:30", n:"早餐・取裝備", s:"飯店/租具店", d:"線上雪票先截圖，離線也能過閘。" },
-      { move:"cable", dur:"市中心 → 2,256 m", txt:"Hungerburg 纜車（Zaha Hadid 車站）→ Seegrube → Hafelekar" },
-      { t:"09:30", n:"Nordkette 滑雪／觀景", s:"Hafelekar", d:"雪道小而精、視野無敵；或改 Axamer Lizum（巴士約 30–40 分）。" },
-      { t:"12:00", n:"山上午餐", s:"Seegrube 餐廳", d:"露臺座位與整座城市同框。" },
-      { t:"15:30", n:"回市區・最後採買", s:"商店街", d:"多數商店營業至傍晚，15:00 前買完最從容。" },
-      { t:"17:30", n:"回飯店休息", s:"", d:"把體力留給跨年夜。" },
-      { t:"19:00", n:"晚餐・早睡", s:"Stiftskeller Innsbruck", d:"明天跨年日，留點力氣。" }
+      { t:"08:00", n:"公寓早餐", s:"Helis・Altaussee 75", d:"爐具齊全：超市麵包、蛋與咖啡開機。" },
+      { t:"09:00", n:"Salzwelten Altaussee 導覽（9:00 場）", s:"鹽礦入口（車行 5 分）", d:"冬季 12/19–1/10 每日整點發團、每場約 90 分、約 €27；僅休 12/24 與 12/31——你選的 12/30 正好開。" },
+      { t:"11:30", n:"湖畔午餐・阿爾陶湖散步", s:"Altaussee", d:"小鎮餐館冬季營業以現場為準；湖就在散步路線上。" },
+      { t:"14:00", n:"午後二選一", s:"依天氣", d:"好天：Grundlsee 雪湖車遊；壞天：Bad Ischl＋Café Zauner 皇家糕餅。" },
+      { t:"17:00", n:"小鎮超市補給", s:"公寓 5 分內", d:"今晚爐邊晚餐食材＋明晨車上早餐。" },
+      { t:"18:30", n:"爐邊晚餐", s:"Helis Holiday Suites", d:"湖景公寓自己煮一頓——跨年前夜養精蓄銳。" }
     ],
     cards:[
       {
-        id:"d9-nordkette", emoji:"🚡", area:"茵斯布魯克 北鏈山", theme:"innsbruck", name:"Nordkette 北鏈山",
-        lead:"從舊城 5 分鐘上山、20 分鐘到 2,256 m，世界罕見的城市滑雪。",
-        best:["Hafelekar 頂點俯瞰 Inn 河谷與城市","Seegrube 觀景台咖啡","夜間山頂看城市燈海（另計場次）"],
-        eat:["Seegrube 餐廳（露天座位）","山頂熱紅酒"],
-        photo:["山頂合照——背景是整座城市","從山上俯拍舊城屋頂與河流","夕陽時段山頂西向大景"],
-        care:["滑雪票與觀景纜車票不同，看清楚再買","山頂風大，體感可低於 −15°C","假期週（12/26–1/6）人潮多，早上山早收工"],
-        official:{ url:"https://www.nordkette.com/en", name:"Nordkette 官網" },
-        mapQ:"Nordkette Innsbruck"
+        id:"d7-saltmine", emoji:"🧂", area:"阿爾陶湖 鹽礦", theme:"altaussee", name:"Salzwelten Altaussee 導覽",
+        lead:"冬季限定營運（12/19–1/10 每日整點發團）——聖誕跨年檔正好在線，僅 12/24 與 12/31 公休。",
+        best:["整點場次 9:00–15:00、每場約 90 分","成人門票約 €27，線上預約優先","礦坑小火車與地下滑梯——阿爾陶湖版本的經典體驗"],
+        eat:["導覽前咖啡：小鎮麵包店","湖畔午餐——導覽後直接覓食"],
+        photo:["導覽結束走出坑道的仰角雪山","阿爾陶湖午後順光湖面"],
+        care:["坑內約 8°C：薄外套必帶","9:00 場最滿——預約時直接鎖定","今天非 12/24、12/31——正常開放日"],
+        official:{ url:"https://www.salzwelten.at/en/altaussee", name:"Salzwelten Altaussee 官網" },
+        mapQ:"Salzwelten Altaussee"
       },
       {
-        id:"d8-ski2", emoji:"🎿", area:"茵斯布魯克 滑雪日2", theme:"innsbruck", name:"滑雪日2 怎麼選",
-        lead:"第二天滑哪裡？看雪況、體力與心情。",
-        best:["Nordkette：市區直達、半天可成，風景第一","Axamer Lizum：1976 冬奧雪場，中型雪場（巴士 30–40 分）","史度拜二訪：雪況最好、票價最高"],
-        eat:["山上餐廳簡單吃，省時間多滑一趟"],
-        photo:["Hafelekar 山頂俯瞰 Inn 河谷","Seegrube 露臺與城市同框"],
-        care:["惡天氣備案：Swarovski 水晶世界（Wattens，車程約 20–25 分）或舊城博物館","連續第二天滑雪注意膝蓋與體力，適時收工"],
-        mapQ:"Axamer Lizum"
+        id:"d7-lakes", emoji:"🏞️", area:"鹽湖區", theme:"altaussee", name:"下午二選一：Grundlsee 或 Bad Ischl",
+        lead:"好天往湖走、壞天去吃蛋糕——Salzkammergut 的冬日下午沒有錯誤答案。",
+        best:["Grundlsee 湖畔車遊（路邊展望即拍）","Bad Ischl：Café Zauner 皇家糕餅老店","阿爾陶湖岸：公寓出門 2 分鐘"],
+        eat:["Café Zauner 的皇家糕點與熱巧克力","小鎮超市（傍晚前打烊）補齊爐邊晚餐"],
+        photo:["Grundlsee 結凍湖面的鏡射（運氣好時）","Bad Ischl 皇家溫泉小城街景"],
+        care:["12/30 週三：小鎮店家傍晚陸續收","山路結冰再評估是否遠行","爐邊晚餐食材 17:00 補給一次買齊"],
+        mapQ:"Grundlsee, Austria"
       }
     ]
   },
   /* ---------- 第八天 12/31 ---------- */
   {
-    id:"day9", tab:"第八天", d:"12/31", wd:"四", city:"茵斯布魯克", tag:"🎆 跨年日", title:"跨年日・Guten Rutsch！",
-    intro:"自由暖身的一天：悠閒早餐、市區散步，晚餐後河岸卡位煙火，午夜說聲三周年快樂。",
+    id:"day8", tab:"第八天", d:"12/31", wd:"四", city:"阿爾陶湖 → 布拉格", tag:"🎆 跨年日", title:"回布拉格・跨年之夜",
+    intro:"自駕日③：一早山區出發、午後還車、傍晚跨年——從油門到煙火，一年就這樣收尾。",
+    route:["Altaussee","Le Palais Art Hotel Prague","Hilton Prague, Pobrezni 311/1"],
     legs:[
-      { t:"09:30", n:"悠閒早餐・自由晨間", s:"飯店", d:"睡飽最重要；想加滑半日 Nordkette 可自費（雪票另計）。" },
-      { t:"11:30", n:"舊城最後散步・紀念品", s:"Marktplatz 商圈", d:"12/31 多數商店營業至傍晚，先買先安心。" },
-      { t:"15:00", n:"回飯店休息、換裝", s:"", d:"發熱衣、暖暖包全上，今晚會很冷。" },
-      { t:"18:30", n:"跨年晚餐", s:"務必預先訂位", d:"多數餐廳為固定菜單（3–5 道式）。" },
-      { t:"22:30", n:"舊城散步卡位", s:"Marktplatz / Inn 河岸", d:"河岸與北鏈山為背景的煙火視角最佳。" },
-      { t:"00:00", n:"🎆 跨年煙火・Guten Rutsch！", s:"茵斯布魯克", d:"三周年快樂，親愛的。" }
+      { t:"08:00", n:"早餐後出發", s:"Helis → 布拉格", d:"行李再巡一遍；跨年日上午車少。" },
+      { move:"car", dur:"約 4h30m（380 km＋加油休息一次）", txt:"Bad Ischl 方向 → 過境 Wullowitz → 林茲（Linz）北上接 D1 → 布拉格" },
+      { t:"13:30", n:"Le Palais 寄放行李", s:"U Zvonařky 1", d:"I.P. Pavlova 站步行 3 分；行李寄妥後先去加油。" },
+      { t:"14:20", n:"還車前加滿油", s:"近還車點加油站", d:"滿油進、滿油還；加滿後再確認一次油錶。" },
+      { t:"14:41", n:"SIXT 還車", s:"Hilton Atrium・Pobřežní 311/1", d:"12/31 前台 08:00–20:00 照收；手套箱、充電線最後掃一遍。" },
+      { t:"15:41", n:"Le Palais Check-in・補眠", s:"U Zvonařky 1", d:"45 分小睡設鬧鐘——跨年夜體力打底。" },
+      { t:"17:30", n:"跨年晚餐（已訂位）", s:"Vinohrady／老城", d:"12/31 多為固定菜單；訂位確認信出發前再點開一次。" },
+      { t:"22:30", n:"Letná 公園卡位", s:"Letenské sady", d:"河谷煙火最佳免費視角；發熱衣、暖暖包、保溫瓶全上。" },
+      { t:"23:59", n:"倒數・跨年煙火", s:"伏爾塔瓦河上空", d:"約 15–20 分；布拉格 1 區私人煙火禁放，官方高空煙火照常施放。" },
+      { t:"00:30", n:"散步回地鐵／飯店", s:"", d:"地鐵延駛至約 02:30——新年快樂，親愛的。" }
     ],
     cards:[
       {
-        id:"d9-nye", emoji:"🎆", area:"茵斯布魯克 跨年", theme:"innsbruck", name:"跨年夜 Innsbruck",
-        lead:"舊城廣場、河岸與山邊同步放煙火，阿爾卑斯式的 Silvester。",
-        best:["Marktplatz Inn 河岸視角","舊城 Marktplatz 廣場人群同歡","飯店窗景跨年（備案）"],
-        eat:["香檳帶上山放河岸（玻璃杯小心）","跨年菜單多為三至五道式"],
-        photo:["煙火＋北鏈山剪影同框","倒數瞬間的眾人歡呼"],
-        care:["餐廳跨年菜單需提早訂位","深夜冷到骨頭：發熱衣、暖暖包全上","走路回飯店注意結霜路面"],
-        mapQ:"Marktplatz Innsbruck"
+        id:"d8-return", emoji:"🧾", area:"還車檢查", theme:"prague", name:"SIXT 還車一哩清單",
+        lead:"13:30 抵 Le Palais、14:20 油加滿、14:41 準時還——三步不回頭。",
+        best:["加滿油＋留收據（選近還車點的加油站）","繞車錄影第二輪：與取車存證對照","手套箱與後車廂最後掃一遍"],
+        eat:["還車後 I.P. Pavlova 站邊咖啡回神","跨年晚餐訂位確認信再點開一次"],
+        photo:["與車的最後合照（還車點門口）","伏爾塔瓦河畔的 12/31 黃昏"],
+        care:["12/31 前台 08:00–20:00 照常營業","押金與授權解凍時間現場問清楚","過境記錄一併回報櫃檯"],
+        mapQ:"Le Palais Art Hotel Prague"
+      },
+      {
+        id:"d8-nye", emoji:"🎆", area:"布拉格 跨年", theme:"prague", name:"跨年夜方案：Letná 制高",
+        lead:"河谷高空煙火在午夜——Letná 公園是免費視野最好的卡位點，地鐵延駛到 02:30。",
+        best:["Letenské sady（Letná 公園）南眺城堡與河灣","老城／查理大橋一帶：熱鬧但視線打折","跨年夜地鐵與電車延駛至約 02:30"],
+        eat:["跨年多為固定菜單——訂位＋確認信","保溫瓶熱可可——卡位 90 分鐘的保暖對策"],
+        photo:["23:59–00:01 三連拍：河灣上空齊發","倒數後親吻的剪影（煙火當背景）"],
+        care:["布拉格 1 區（老城／小城）私人煙火禁放","22:30 前抵達卡位避開人潮峰值","體感可低至 −8°C：發熱衣＋暖暖包＋毛帽"],
+        mapQ:"Letna Park, Prague"
       }
     ]
   },
   /* ---------- 第九天 1/1 ---------- */
   {
-    id:"day10", tab:"第九天", d:"1/1", wd:"五", city:"茵斯布魯克 → 慕尼黑 → 布拉格", tag:"🚄 移動日", holiday:"1/1 假日班表", title:"跨國移動．回布拉格",
-    intro:"縱貫阿爾卑斯的一日。火車翻山越嶺，抵達布拉格正好夜幕降臨。",
+    id:"day9", tab:"第九天", d:"1/1", wd:"五", city:"布拉格", tag:"🥂 新年日", holiday:"1/1 捷克國定假日", title:"新年：高堡與老城",
+    intro:"新年第一天慢慢來：11:12 才出門——高堡城牆、墓園與 U Kroka 的 svíčková，最後一晚自由中收尾。",
     legs:[
-      { t:"08:30", n:"早餐・退房", s:"", d:"行李前晚先整理，早上輕鬆出發。" },
-      { t:"09:30", n:"火車往慕尼黑", s:"Innsbruck Hbf → München Hbf", d:"RJX 約 1 小時 45 分，穿越阿爾卑斯。" },
-      { t:"12:30", n:"慕尼黑轉乘", s:"München Hbf", d:"行李可寄置物櫃；轉乘預留 40 分以上。" },
-      { move:"train", dur:"約 5–5.5 小時", txt:"慕尼黑 → 布拉格（1/1 假日班表，務必先查先訂）" },
-      { t:"19:30", n:"抵達布拉格", s:"Praha hl.n.", d:"飯店選在車站與舊城之間，明天趕飛機更穩。" },
-      { t:"20:30", n:"舊城最後散步・輕食", s:"", d:"安靜的 1/1 夜晚，跟布拉格好好道別。" }
+      { t:"09:30", n:"自然醒・飯店早餐", s:"Le Palais", d:"1/1 假日排下午剛好舒服。" },
+      { t:"11:12", n:"地鐵 C 線 → 維謝赫拉德（高堡）", s:"I.P. Pavlova → Vyšehrad", d:"站出口上坡即城牆入口；公園冬季閘門 7:00–19:00。" },
+      { t:"11:40", n:"高堡城牆環線", s:"Vyšehrad", d:"免費區域：俯瞰伏爾塔瓦河大轉彎的經典視角。" },
+      { t:"12:15", n:"聖伯多祿聖保祿聖殿", s:"Bazilika sv. Petra a Pavla", d:"冬季每天開放（休週一）至 16:00；1/1 彌撒時段尊重現場動線。" },
+      { t:"12:45", n:"高堡墓園", s:"Slavín", d:"德弗札克與慕夏長眠——新年午後最安靜的角落。" },
+      { t:"13:23", n:"午餐：U Kroka", s:"Vratislavova 28", d:"全年 11:30–23:00（16:00–17:00 廚房休息）；svíčková 奶油匙醬牛肉必點。" },
+      { t:"14:48", n:"C 線回飯店休息", s:"", d:"補眠 30 分，或直接出發最後一晚的散步。" },
+      { t:"18:30", n:"自由之夜・老城燈海", s:"", d:"老城市集 1/1 照常 10:00–22:00——最後一杯熱紅酒在廣場收尾。" }
     ],
     cards:[
       {
-        id:"d10-transfer", emoji:"🚄", area:"跨國移動", theme:"innsbruck", name:"跨國火車轉乘攻略",
-        lead:"三段車一次搞定：茵斯布魯克 → 慕尼黑 → 布拉格。",
-        best:["ÖBB / DB / ČD 官方 app 查即時動態","跨國段建議訂位（假期週一位難求）","慕尼黑站內置物櫃先寄行李再吃飯"],
-        eat:["慕尼黑中央車站麵包與香腸","布拉格抵達後舊城熱湯收尾"],
-        photo:["阿爾卑斯雪谷車窗（靠山側座位）","慕尼黑車站月台一景作結"],
-        care:["1/1 為假日班表，班次縮減務必先確認","轉乘預留 40 分鐘以上容錯","行李不離視線"],
-        mapQ:"München Hbf"
+        id:"d9-vysehrad", emoji:"⛰️", area:"布拉格 高堡", theme:"prague", name:"新年：Vyšehrad 高堡",
+        lead:"傳說中波希米亞的起點——免費、人少、河景開闊，新年第一天來此剛剛好。",
+        best:["城牆步道俯瞰伏爾塔瓦河大轉彎","聖伯多祿聖保祿聖殿（冬季休週一、開至 16:00）","Slavín 墓園：德弗札克、慕夏長眠之地"],
+        eat:["U Kroka（Vratislavova 28）全年 11:30–23:00（16–17 時廚房休息）","svíčková 奶油匙醬牛肉＋饅頭片——新年暖胃"],
+        photo:["城牆轉角拍鐵橋與河面","聖殿雙塔與墓園松樹的層次"],
+        care:["1/1 假日班表出發前查 DPP 官網／app","彌撒時段保持靜默","冬季城牆風大"],
+        mapQ:"Vysehrad, Prague"
+      },
+      {
+        id:"d9-lastnight", emoji:"🌙", area:"最後一夜", theme:"prague", name:"最後一晚：隨心散步",
+        lead:"14:48 回飯店小憩後——這一晚留白：地鐵到老城或窗邊熱茶，都是好答案。",
+        best:["老城市集 1/1 照常（10:00–22:00）","Vinohrady 街區巷弄咖啡","房間暖氣與行李箱打包儀式感"],
+        eat:["甜點店外帶蜂蜜蛋糕回房","老城廣場的最後一杯熱紅酒"],
+        photo:["老城廣場最後一張夜拍","房間窗外的 Vinohrady 夜色"],
+        care:["隔天 07:00 退房——23:30 前收心","退稅單預先整理，明早機場時間夠用","鑰匙與房卡歸位"],
+        mapQ:"Old Town Square, Prague"
       }
     ]
   },
-  /* ---------- 回程 1/2–1/3 ---------- */
+  /* ---------- 回程 1/2 ---------- */
   {
-    id:"day11", tab:"回程", d:"1/2", wd:"六", city:"布拉格 → 台北", tag:"✈️ 回程", title:"回程．退稅別忘記",
-    intro:"1/2（六）10:55 起飛、1/3（日）07:10 抵達桃園。退稅要留時間，行李要留空位。",
+    id:"day10", tab:"回程", d:"1/2", wd:"六", city:"布拉格 → 台北", tag:"✈️ 回程", title:"回程・退稅別忘記",
+    intro:"07:30 出發、08:00 抵 PRG、10:25 起飛——退稅章壓在托運前完成，三周年之旅圓滿打包。",
     legs:[
-      { t:"07:00", n:"早餐・退房", s:"", d:"行李前晚整理完畢。" },
-      { t:"07:45", n:"前往機場", s:"PRG 機場", d:"Bolt/計程車約 25–30 分，前一晚預約。" },
-      { t:"08:00", n:"報到托運 + 退稅", s:"PRG", d:"退稅單需海關驗章，預留 60–90 分鐘；國際線多於 T2（依機票）。" },
-      { t:"10:55", n:"PRG 起飛", s:"布拉格 → 台北", d:"回家。" },
-      { move:"plane", dur:"夜宿機上", txt:"1/3（日）上午抵達台北（依機票轉機安排）" },
-      { t:"07:10", n:"抵達桃園機場", s:"TPE", d:"三周年之旅，完美收官——這週多喝水、早點睡。" }
+      { t:"07:00", n:"早餐・退房", s:"Le Palais", d:"行李前晚打包；退稅單與收據放隨身。" },
+      { t:"07:30", n:"Bolt 前往機場", s:"U Zvonařky → PRG", d:"約 25–35 分；跨年次晨交通正常，前一晚預約加分。" },
+      { t:"08:00", n:"報到・托運・退稅", s:"PRG（航廈依機票）", d:"退稅海關章務必在托運前；預留 60–90 分鐘（10:25 起飛）。" },
+      { t:"10:25", n:"PRG 起飛（回家）", s:"布拉格 → 台北", d:"航班資訊以電子機票為準。" },
+      { move:"plane", dur:"夜宿機上", txt:"1/3 返抵桃園——三周年之旅完美收官：這週多喝水、早點睡。" }
     ],
     cards:[
       {
-        id:"d11-taxfree", emoji:"💶", area:"布拉格機場", theme:"prague", name:"退稅與返程檢查",
-        lead:"把該拿回來的拿回來，把該帶回家的帶回家。",
-        best:["退稅單（Global Blue 等）海關章在托運前處理","液體與登機行李規定再確認","護照、機票、旅平險單據收好"],
-        eat:["機場咖啡與最後一塊蜂蜜蛋糕"],
-        photo:["登機證＋機窗最後一張：三周年之旅完滿"],
-        care:["退稅排隊尖峰在起飛前 2–3 小時，早到早贏","免稅品收據與退稅單分開收"],
+        id:"d10-taxfree", emoji:"💶", area:"布拉格機場", theme:"prague", name:"退稅與返程檢查",
+        lead:"把該拿回來的拿回來，把該帶回家的帶回家——退稅章壓在托運前。",
+        best:["退稅單（Global Blue 等）海關章：托運報到前處理","液體與登機行李規定再確認","護照、機票、保險單據收納"],
+        eat:["機場咖啡與最後一塊蜂蜜蛋糕","機上餐先選好"],
+        photo:["登機證＋機窗最後一張：三周年之旅完滿","機場落地窗前的行李箱合照"],
+        care:["退稅高峰在起飛前 2–3 小時——08:00 報到正好","免稅收據與退稅單分開收","08:00–10:25 間的免稅採買留 30 分鐘餘裕"],
         mapQ:"Vaclav Havel Airport Prague"
       }
     ]
@@ -1146,79 +1164,64 @@ const TRIPDATA = {
   /* ---------- 城市速查 ---------- */
   picks:[
     {
-      eyebrow:"布拉格 · 第一天～第三天", name:"咖啡與甜點線", lead:"百年咖啡館與市集甜食，一條河岸散步串起來。",
-      points:["Café Louvre（1902，愛因斯坦常客）","Café Savoy：穹頂早餐","Choco- Café 熱巧克力、市集 Trdelník"],
-      howto:"<b>走法：</b>舊城 → 查理大橋 → 小城區河岸 → 咖啡館，全程步行。",
-      tip:"熱門店 10:00 前入座最從容。",
-      link:{ url:"https://www.prague.eu/en", name:"布拉格旅遊官網" }
+      eyebrow:"布拉格", name:"假期覓食線", lead:"聖誕跨年長假覓食原則：先看全年營業，再看市場內用。",
+      points:["Havelská Koruna（Havelská 23）：10:00–20:00 平價道地捷克菜","Crème de la Crème（Husova 231/12）：10:30–22:30 甜點名店","Pork's（Mostecká 47/16）：12:00–23:30 全年無休肋排","GamberoRosso（Jakubská 744/4）：11:00–23:00 老城義式酒館"],
+      howto:"假期時段常縮水——把全年營業的店家列為第一順位，時段被壓縮時自動頂上。",
+      tip:"Havelská Koruna 無服務費、無訂位；Pork's 全年無休，是假期覓食保底。",
+      link:{ url:"https://www.prague.eu", name:"prague.eu 官方旅遊網" }
     },
     {
-      eyebrow:"布拉格 · 第三天", name:"購物與伴手線", lead:"波希米亞水晶、慕夏海報與藥妝，一次買齊。",
-      points:["Palladium / Kotva 百貨（共和廣場）","波希米亞水晶與慕夏海報專賣店","Becherovka 草藥酒、木偶與卡夫卡周邊"],
-      howto:"<b>走法：</b>猶太區 → 共和廣場百貨 → 舊城市集收尾。",
-      tip:"假期與週日營業時間先查，水晶易碎請手提。",
-      link:{ url:"https://www.prague.eu/en", name:"購物指南" }
+      eyebrow:"庫倫洛夫", name:"冬休小鎮的開門地圖", lead:"冬季 CK 像慢動作：室內多休、免費區域敞開——照時段排就不撲空。",
+      points:["斗篷橋・城堡庭院・城牆外圈全年免費","Můstek（Masná 136）：冬季週日 12:00–16:00、週一休","Švejk（Latrán 12）：11:30–22:00 全年","Krčma Šatlava（Horní 157）：全年營業的岩石地窖"],
+      howto:"把全年營業的兩家排進正餐時段；廣場與巷弄穿插其間。",
+      tip:"城堡室內 12/22–1/2 冬休——庭院與城牆免費區域反而像包場。",
+      link:{ url:"https://www.ckrumlov.info", name:"ckrumlov.info 官方旅遊網" }
     },
     {
-      eyebrow:"薩爾斯堡 · 第四天～第五天", name:"老城與伴手線", lead:"莫札特的故鄉，甜點與音樂一樣有名。",
-      points:["Café Fürst 莫札特巧克力（原創，銀藍包裝）","糧食胡同鍛鐵招牌街","真善美半日導覽（若時間充裕）"],
-      howto:"<b>走法：</b>火車站 → 巴士/步行進老城 → 糧食胡同 → 河岸拍要塞。",
-      tip:"奧地利週日商店公休；伴手禮抓週一早上補齊。",
-      link:{ url:"https://www.salzburg.info/en", name:"薩爾斯堡旅遊官網" }
+      eyebrow:"哈修塔特", name:"明信片湖鎮半日公式", lead:"P1 停車、三個時段拍照、一個下午結束。",
+      points:["P1 Salinenplatz 冬季唯一停車場（約 €10–12／4–6h）","明信片角度在 Gosaumühlstraße 南端（步行 5–8 分）","Rührwerk（Seestraße 179）：10:00–18:00 甜點咖啡","日落約 16:15——藍調後就是夜燈版"],
+      howto:"白天版 → 廣場藍調 → 夜燈版：同一個角度三種光，回停車場順路。",
+      tip:"市鎮汽車禁入——P1 停妥後全程步行最省事。",
+      link:{ url:"https://www.hallstatt.net", name:"hallstatt.net 官方旅遊網" }
     },
     {
-      eyebrow:"茵斯布魯克 · 第五天～第九天", name:"市區與施華洛世奇", lead:"水晶世界半日， Tyrol 紀念品一次打包。",
-      points:["Swarovski Kristallwelten（Wattens，車程約 20–25 分）","Tyrol 毛氈帽與傳統服飾店","Kaufhaus Tyrol 商圈與老城紀念品店"],
-      howto:"<b>走法：</b>中央車站搭巴士/火車至 Wattens → 巨人入口進水晶世界 → 回程逛市中心。",
-      tip:"12/26–1/6 為奧地利假期，店休與人潮都要預期。",
-      link:{ url:"https://kristallwelten.swarovski.com/en/", name:"Swarovski 水晶世界" }
+      eyebrow:"阿爾陶湖", name:"鹽礦與爐邊晚餐", lead:"冬季限定的礦坑小旅行＋超市自煮——阿爾陶湖的安靜聖誕。",
+      points:["Salzwelten 導覽冬季 12/19–1/10 每日整點（僅休 12/24、12/31）","成人票約 €27、每場約 90 分","坑內約 8°C——薄外套","下午 Grundlsee 或 Bad Ischl 二選一"],
+      howto:"線上預約鎖 9:00 場 → 湖畔午餐 → 下午看天氣走湖或逛街 → 傍晚超市補給。",
+      tip:"門票先線上買——跨年期間現場排隊不划算。",
+      link:{ url:"https://www.salzwelten.at/en/altaussee", name:"Salzwelten 官網" }
     },
     {
-      eyebrow:"滑雪 · 第六天～第八天", name:"滑雪裝備攻略", lead:"兩天滑雪的裝備與雪票，一次看懂。",
-      points:["大型連鎖租具（Glanzer / Intersport 等）前一晚先租","雪票線上預購，掃碼進閘","Innsbruck Card 適合觀景與博物館，不含滑雪票"],
-      howto:"<b>動線：</b>第六天 史度拜冰河（巴士 50–60 分）→ 第七天 Nordkette（市區直達）。",
-      tip:"假期週 8:30 前上纜車避開人龍；手套護目鏡自備。",
-      link:{ url:"https://www.innsbruck.info/en/experience/winter.html", name:"茵斯布魯克冬季指南" }
+      eyebrow:"跨年夜", name:"煙火與倒數攻略", lead:"Letná 卡位、地鐵延駛、1 區禁私人煙火——跨年安全的全部細節。",
+      points:["Letenské sady：免費視野最好的河谷煙火","地鐵電車延駛至約 02:30","布拉格 1 區（老城／小城）私人煙火禁放","官方高空煙火約 15–20 分"],
+      howto:"17:30 晚餐 → 22:30 步行上 Letná → 23:59 倒數 → 00:30 從地鐵回飯店。",
+      tip:"發熱衣＋暖暖包＋保溫瓶：卡位 90 分鐘比晚餐更冷。",
+      link:{ url:"https://www.prague.eu", name:"prague.eu 跨年資訊" }
     }
   ],
 
   /* ---------- 三周年提案 ---------- */
   anni:[
-    {
-      eyebrow:"第一天 · 布拉格", name:"查理大橋的日出藍調", lead:"時差讓你們 5 點就醒——正好，這是全布拉格最安靜的時刻。",
-      howto:"<b>提案：</b>帶兩杯熱咖啡上橋，日出前 30 分鐘到，拍一張只有你們的查理大橋。"
-    },
-    {
-      eyebrow:"第二天 · 布拉格", name:"三周年紀念晚餐", lead:"聖誕夜的河景餐廳或米其林星光，訂位就是心意。",
-      howto:"<b>提案：</b>Mlýnec（查理大橋景）或 La Degustation；12/25 或 12/26 任選一晚，現在就訂。"
-    },
-    {
-      eyebrow:"第三天 · 布拉格", name:"伏爾塔瓦遊船之夜", lead:"天黑後的河，兩岸燈火慢慢流過身邊。",
-      howto:"<b>提案：</b>晚餐前搭 1 小時燈光遊船；記得坐在右舷看城堡。"
-    },
-    {
-      eyebrow:"第四天～第五天 · 薩爾斯堡", name:"要塞黃昏 × 莫札特巧克力", lead:"夕陽把老城屋頂染成金色，巧克力在口袋裡。",
-      howto:"<b>提案：</b>第四天傍晚河岸先拍要塞夜景，第五天上午纜車上山拍全景，下山帶一盒原創莫札特球。"
-    },
-    {
-      eyebrow:"第七天～第八天 · 茵斯布魯克", name:"2,256 m 山頂合照 × 跨年之吻", lead:"在城市上空的雪山山頂拍一張，午夜在煙火下親一個。",
-      howto:"<b>提案：</b>上午 Nordkette 山頂合照；午夜 Marktplatz 煙火倒數——三周年快樂。"
-    }
+    { eyebrow:"第一天・布拉格", name:"老城燈海的第一眼", lead:"00:05 起飛、08:15 落地——布拉格用一整片燈海接住你：先讓心跳再落地一次。", howto:"10:00 St. Hubert 咖啡可頌開場，11:00 跳舞的房子順河走進老城——第一次看見廣場時記得停三秒。" },
+    { eyebrow:"第二天・布拉格", name:"聖維特的午後光", lead:"聖誕節的城堡區只剩大教堂與少數商家開著——哥德式尖拱把光切成藍色。", howto:"13:00 開放入場（末入 15:10）、14:02 城堡廣場、15:06 黃金巷——光線在午後最立體（相機先暖機）。" },
+    { eyebrow:"第四天・庫倫洛夫", name:"理髮師橋上的夜", lead:"河灣彩繪塔與小鎮燈串同框——三周年的第四天，像住進一張明信片。", howto:"16:00 Švejk 晚餐後、17:15 橋頭左側卡位——手機靠欄杆穩定，雪夜的河面是慢速光軌。" },
+    { eyebrow:"第六天・哈修塔特", name:"同一個角度兩種光", lead:"14:15 明信片角度的湖光、17:15 同一個角度的燈火——十年後你們還會記得這個午後。", howto:"白天版之後往北逛到廣場，16:10 等藍調、17:15 折返同一個位置——等第一批燈亮起來。" },
+    { eyebrow:"第八天・布拉格", name:"Letná 煙火與跨年之吻", lead:"一年最後 60 秒：河谷上空齊發的煙火下，年度的重逢與親吻。", howto:"22:30 卡位、23:59 三連拍——倒數時把手機收口袋，眼睛看她。" }
   ],
 
   /* ---------- Travel Mode ---------- */
   modes:[
-    { icon:"🎫", name:"車票先訂", desc:"跨國火車 2–4 週前訂位；ÖBB / DB / ČD / RegioJet / FlixBus app 裝好。1/1 是假日班表，出發前一天再確認一次。" },
-    { icon:"📖", name:"訂位生活", desc:"耶誕（12/24–25）與跨年晚餐多為固定菜單、幾乎都要訂位；音樂會、滑雪裝備與雪票也線上先處理。" },
-    { icon:"📴", name:"離線也看得到", desc:"備忘與時刻提醒存在本機，沒網路仍可看文字；天氣、地圖與照片連結需連線。Google 離線地圖先下載三座城。" },
-    { icon:"⚠️", name:"現場為準", desc:"假期營業時間常有變動，以官網與現場公告為準；市集、地鐵與纜車站留意隨身物。緊急電話 112。" }
+    { icon:"🚗", name:"跨境自駕檢查", desc:"取車聲明跨奧地利・冬胎・兩國通行證——卡在集章裡，隨時點開確認。" },
+    { icon:"📖", name:"訂位生活", desc:"聖誕／跨年晚餐訂位與鹽礦導覽——出發前兩週完成預約。" },
+    { icon:"📴", name:"離線也看得到", desc:"行程存在手機裡——飛航、斷網、山區照樣查時間表。" },
+    { icon:"⚠️", name:"現場為準", desc:"開放時間、交通與天氣以現場公告為準；緊急救援 112。" }
   ],
 
   /* ---------- 天氣城市 ---------- */
   cities:[
     { id:"prague", name:"布拉格", lat:50.0875, lon:14.4213 },
-    { id:"salzburg", name:"薩爾斯堡", lat:47.8112, lon:13.0499 },
-    { id:"innsbruck", name:"茵斯布魯克", lat:47.2654, lon:11.3910 }
+    { id:"krumlov", name:"庫倫洛夫", lat:48.8127, lon:14.3175 },
+    { id:"altaussee", name:"阿爾陶湖", lat:47.6374, lon:13.7663 }
   ]
 };
 
@@ -1431,10 +1434,10 @@ function net(){
 addEventListener("online",net); addEventListener("offline",net); net();
 
 /* ---- 護照集章 ---- */
-const CITY_SLUGS={"布拉格":"prague","薩爾斯堡":"salzburg","茵斯布魯克":"innsbruck"};
-const STAMP_ROT={prague:-6,salzburg:4,innsbruck:-3};
+const CITY_SLUGS={"布拉格":"prague","庫倫洛夫":"krumlov","哈修塔特":"hallstatt","阿爾陶湖":"altaussee"};
+const STAMP_ROT={prague:-6,krumlov:4,hallstatt:-3,altaussee:5};
 const STAMP_META={};
-TRIPDATA.days.forEach((d,i)=>{ if(i===0) return;
+TRIPDATA.days.forEach((d,i)=>{
   d.city.split("→").forEach(cRaw=>{ const slug=CITY_SLUGS[cRaw.trim()];
     if(slug&&!STAMP_META[slug]) STAMP_META[slug]={zh:cRaw.trim(),en:slug.toUpperCase(),dt:d.d};
   });
@@ -1451,7 +1454,7 @@ function renderPassport(){
   const done=$("#passportDone"); if(done) done.hidden=Object.keys(got).length<Object.keys(STAMP_META).length;
 }
 function unlockStamps(dayId){
-  if(!$("#stampGrid")||dayId==="day1") return;
+  if(!$("#stampGrid")) return;
   const d=TRIPDATA.days.find(x=>x.id===dayId); if(!d) return;
   const got=loadStamps(); let changed=false;
   d.city.split("→").forEach(cRaw=>{ const slug=CITY_SLUGS[cRaw.trim()];
@@ -1650,9 +1653,10 @@ snowStart();
   let off=null; try{ off=localStorage.getItem("ac26_fest"); }catch(err){}
   if(off===today) return;
   const M={
-    "12/24":"🎄 今天是聖誕夜！布拉格的市集燈海正亮著，今晚記得抬頭看看星空與廣場。",
-    "12/31":"🎆 今晚跨年！茵斯布魯克煙火 23:59 開始倒數，保暖做好、早點卡位。",
-    "1/1":"🥂 2027 新年快樂！今天移動日：茵斯布魯克 → 慕尼黑 → 布拉格。"
+    "12/24":"🎄 今天是聖誕夜！老城市集只開到 14:00——16:30 起聖誕樹光秀登場，晚餐後把燈海走滿。",
+    "12/25":"⛪ 聖誕節快樂！聖維特主教座堂 13:00–15:30 開放（末入 15:10）；市集中午起照常。",
+    "12/31":"🎆 今晚跨年！22:30 前上 Letná 公園卡位——河谷煙火＋地鐵延駛到約 02:30。",
+    "1/1":"🥂 2027 新年快樂！下午高堡城牆走走，U Kroka 一碗 svíčková 開年。"
   };
   if(!(md in M)) return;
   rib.innerHTML=`<span>${M[md]}</span><button type="button" class="fest-x" title="今天不再顯示">✕ 今日不再</button>`;
@@ -1720,7 +1724,7 @@ addEventListener("focus",loadWeather);
 setInterval(loadWeather,5*60*1000);
 
 /* =====================================================================
-   開場登機證（星宇 JX101・撕票揭場）：--tear-progress 由拖曳驅動；
+   開場登機證（撕票揭場）：--tear-progress 由拖曳驅動；
    撕滿 → 主票身左飛、票根右飛 → overlay 淡出並自 DOM 移除（:has lock 隨之解除）
    ===================================================================== */
 (function(){
